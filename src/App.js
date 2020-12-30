@@ -1,9 +1,12 @@
 import { poems } from './data/poemsSample';
+import PoemContainer from './components/PoemContainer';
+const displayPoems = () => poems.map(poem => PoemContainer(poem));
+
 
 const App = () => {
   return (
     <div className="App">
-      { poems.map(poem => console.log(poem)) }
+      { displayPoems() }
     </div>
   );
 }
