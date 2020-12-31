@@ -1,13 +1,13 @@
 import { poems } from './data/poemsSample';
-import PoemContainer from './components/PoemContainer';
-const displayPoems = () => poems.map(poem => PoemContainer(poem));
+import PoemsView from './components/PoemsView';
+// const PoemsView = () => 'Hello world';
 
 
 const App = () => {
   return (
-    <div className="App">
-      { displayPoems() }
-    </div>
+    <main className="App">
+      { <PoemsView poems={poems} /> }
+    </main>
   );
 }
 
