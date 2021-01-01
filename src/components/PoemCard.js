@@ -5,8 +5,9 @@ import {
 } from "../helpers";
 
 const PoemCard = ({poem, language, getWordMethod, getCharacterMethod}) => {
+    let langAttr = (getCharacterMethod !== getTheRomaji && language !== 'en') ? {'lang': language} : ''
     return (
-        <section className={`poem__card poem__card--${getCharacterMethod !== getTheRomaji ? `${language}` : 'romaji' }`}>
+        <section {...langAttr} className={`poem__card poem__card--${getCharacterMethod !== getTheRomaji ? `${language}` : 'romaji' }`}>
             <AuthorTitle poemId={poem.id} poemAuthor={poem.author} language={language} getWordMethod={getWordMethod} getCharacterMethod={getCharacterMethod} />
             <p className="poem__text">{getPoemText(poem.id, poem.poem, language, getWordMethod, getCharacterMethod)}</p>
         </section>

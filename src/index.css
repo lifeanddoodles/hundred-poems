@@ -1,13 +1,132 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  font-size: 1em;
+  background-color: #f3f3f3;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+button {
+  background-color: #e6e6e6;
+  border: 1px solid transparent;
+  padding: 0.75em 1em;
+}
+
+button:hover,
+button:active {
+  background-color: #ccc;
+}
+
+.App {
+  flex-grow: 1;
+}
+
+.poem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  padding: 0 1em;
+  height: calc(100%);
+}
+
+.poem__columns {
+  display: flex;
+  max-width: 100%;
+  overflow-x: scroll;
+}
+
+.poem__number {
+  scroll-margin-top: 72px;
+}
+
+.poem__card {
+  padding: 2em;
+}
+
+.poem__author {
+  width: 100%;
+  font-size: 2.5em;
+  margin-block-start: 0;
+  justify-content: center;
+}
+
+.poem__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.poem__card--ja .line {
+  display: flex;
+  align-items: flex-end;
+}
+
+.poem__card--ja .word__container {
+  display: flex;
+  align-items: flex-end;
+}
+
+.poem__card--romaji .romaji:first-child:not(.particle),
+.poem__author--en {
+  text-transform: capitalize;
+}
+
+.poem__author--romaji,
+.poem__author--en {
+  line-height: 2;
+  margin-block-end: 1rem;
+}
+
+.poem__card--romaji .poem__text,
+.poem__card--en .poem__text {
+  font-size: 1.5em;
+  line-height: 1.95;
+}
+
+.poem__card--ja .word__container + .word__container {
+  margin-inline-start: 0.75em;
+}
+
+.character__container {
+  display: flex;
+  flex-direction: column;
+  max-width: max-content;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 2.8125rem;
+}
+
+.poem__author--ja .character__container {
+  min-height: 3.5625rem;
+}
+
+.character {
+  line-height: 1;
+}
+
+.poem__text .character {
+  font-size: 1.75em;
+}
+
+.furigana {
+  font-size: 0.75em;
+  width: max-content;
+}
+
+.poem__author .furigana {
+  font-size: 0.35em;
 }

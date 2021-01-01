@@ -9,4 +9,4 @@ const AuthorTitle = ({poemId, poemAuthor, language, getWordMethod, getCharacterM
     )
 }
 
-export default AuthorTitle
+export default AuthorTitle;

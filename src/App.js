@@ -1,7 +1,5 @@
 import { poems } from './data/poemsSample';
 import PoemsView from './components/PoemsView';
-// const PoemsView = () => 'Hello world';
-
 
 const App = () => {
   return (
