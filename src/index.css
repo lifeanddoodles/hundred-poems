@@ -124,9 +124,56 @@ button:active {
 
 .furigana {
   font-size: 0.75em;
+  line-height: 1;
   width: max-content;
 }
 
 .poem__author .furigana {
   font-size: 0.35em;
 }
+
+/* START: Traditional style */
+.poem__card--ja-traditional {
+  display: flex;
+  direction: rtl;
+  flex-direction: row;
+}
+
+.poem__card--ja-traditional .character__container {
+  flex-direction: row;
+  min-width: 2.8125rem;
+}
+
+.poem__card--ja-traditional .poem__text {
+  direction: rtl;
+  flex-direction: row;
+}
+
+.poem__card--ja-traditional .line,
+.poem__card--ja-traditional .word__container {
+  flex-direction: column;
+}
+
+.poem__card--ja-traditional .word__container {
+  align-items: center;
+  width: 100%;
+}
+
+.poem__card--ja-traditional :not(.poem__author) .line {
+  margin-inline-start: 1em;
+}
+
+.poem__card--ja-traditional .furigana {
+  width: 1.25em;
+}
+
+.poem__card--ja-traditional .word__container + .word__container {
+  margin-inline-start: 0;
+  margin-block-start: 0.75em;
+}
+
+.poem__card--ja-traditional .character__container {
+  min-height: initial;
+}
+
+/* END: Traditional style */
