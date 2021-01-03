@@ -3,9 +3,9 @@ import {
     getAuthor,
 } from "../helpers";
 
-const AuthorTitle = ({poemId, poemAuthor, language, getWordMethod, getCharacterMethod}) => {
+const AuthorTitle = ({poemAuthor, language, getWordMethod, getCharacterMethod}) => {
     return (
-        <h3 id={`${poemId}__author--${language}`} className={`poem__author poem__author--${getCharacterMethod === getTheRomaji ? 'romaji' : language} line`}>{getAuthor(poemId, poemAuthor, language, getWordMethod, getCharacterMethod)}</h3>
+        <h3 className={`poem__author poem__author--${getCharacterMethod === getTheRomaji ? 'romaji' : language} line`}>{getAuthor(poemAuthor, language, getWordMethod, getCharacterMethod)}</h3>
     )
 }
 

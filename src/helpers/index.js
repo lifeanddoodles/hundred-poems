@@ -1,4 +1,5 @@
 import React from 'react';
+import Word from "../components/Word";
 import CharacterContainer from "../components/CharacterContainer";
 
 export const getTheCharacter = (characterObject) => {
@@ -38,32 +39,31 @@ export const getTheWord = (wordObject, getWordCallback, getCharactersCallback) =
 // TODO: Add 'no' particle in special cases for Japanese readings, like last names, depending on roleInSentence
 // TODO: Add 'hasSpecialReading' key to word objects, potentially with index to special reading
 
-export const getAllWords = (poemId, lineIndex, lineInContent, language, getWordCallback, getCharactersCallback) => {
+export const getAllWords = (lineInContent, language, getWordCallback, getCharactersCallback) => {
     const words = lineInContent.map((wordObjectInLine,index) => {
         const space = '\u0020';
-        const word = <React.Fragment key={`${poemId}-${language}-${lineIndex}-${index}`}>
-                        <span className="word__container">{getTheWord(wordObjectInLine, getWordCallback, getCharactersCallback)}</span>
-                        {index < lineInContent.length - 1 ? space : ''}
-                    </React.Fragment>
-        return word;
+        return <React.Fragment key={index}>
+                    <Word wordObjectInLine={wordObjectInLine} wordCallback={getWordCallback} charactersCallback={getCharactersCallback} />
+                    {index < lineInContent.length - 1 ? space : ''}
+                </React.Fragment>
     })
     return words
 }
 
 // Get poem content
-export const getAuthor = (poemId, author, language, getWordCallback, getCharactersCallback) => {
+export const getAuthor = (author, language, getWordCallback, getCharactersCallback) => {
     const authorLine = author[language].content;
     return (
-        getAllWords(poemId, 'author', authorLine, language, getWordCallback, getCharactersCallback)
+        getAllWords(authorLine, language, getWordCallback, getCharactersCallback)
     );
 }
 
-export const getPoemText = (poemId, poemLines, language, getWordCallback, getCharactersCallback) => {
+export const getPoemText = (poemLines, language, getWordCallback, getCharactersCallback) => {
     const newLine = '\u000A';
     const lines = poemLines[language].content.map(
         (lineInPoem, index) =>  {
-            return  <React.Fragment key={`${poemId}-${language}-line${index}`}>
-                        <span className="line">{getAllWords(poemId, `line${index}`, lineInPoem, language, getWordCallback, getCharactersCallback)}</span>
+            return  <React.Fragment key={index}>
+                        <span className="line">{getAllWords(lineInPoem, language, getWordCallback, getCharactersCallback)}</span>
                         { index < poemLines[language].content.length ? newLine : '' }
                     </React.Fragment>
     })
