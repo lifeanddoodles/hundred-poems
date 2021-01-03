@@ -1,11 +1,22 @@
-import {
-    getTheRomaji,
-    getAuthor,
-} from "../helpers";
+import Line from "./Line";
 
-const AuthorTitle = ({poemAuthor, language, getWordMethod, getCharacterMethod}) => {
+const AuthorTitle = ({
+    poemAuthor,
+    language,
+    wordCallback,
+    charactersCallback}) => {
+        
     return (
-        <h3 className={`poem__author poem__author--${getCharacterMethod === getTheRomaji ? 'romaji' : language} line`}>{getAuthor(poemAuthor, language, getWordMethod, getCharacterMethod)}</h3>
+        <h3 className={
+            `poem__author poem__author--${charactersCallback === 'romaji' ?
+            'romaji' : language}`
+         }>
+            <Line
+                lineInPoem={poemAuthor[language].content}
+                wordCallback={wordCallback}
+                charactersCallback={charactersCallback}
+            />
+        </h3>
     )
 }
 

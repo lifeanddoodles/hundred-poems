@@ -1,13 +1,16 @@
-import {
-    getTheWord
-} from "../helpers";
+import { getTheWord } from "../helpers";
 
-const Word = ({wordObjectInLine,
+const Word = ({
+    wordObjectInLine,
     wordCallback,
     charactersCallback}) => {
     return (
         <span className="word__container">
-            {getTheWord(wordObjectInLine, wordCallback, charactersCallback)}
+            {getTheWord(
+                wordObjectInLine,
+                wordCallback,
+                charactersCallback
+            )}
         </span>
     )
 }
