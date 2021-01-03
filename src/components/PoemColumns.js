@@ -5,6 +5,10 @@ import {
 } from "../helpers";
 
 const PoemColumns = ({poem}) => {
+
+    const toggleRomaji = false;
+    const toggleEnglish = false;
+
     return [
         <PoemCard
             key={`${poem.id}--ja`}
@@ -12,12 +16,14 @@ const PoemColumns = ({poem}) => {
             wordCallback={getEachCharacter}
             charactersCallback='character'
         />,
+        toggleRomaji &&
         <PoemCard
             key={`${poem.id}--romaji`}
             poem={poem} language={'ja'}
             wordCallback={getEachCharacter}
             charactersCallback='romaji'
         />,
+        toggleEnglish &&
         <PoemCard
             key={`${poem.id}--en`}
             poem={poem} language={'en'}
