@@ -4,7 +4,7 @@ import {
     getCompleteWordString
 } from "../helpers";
 
-const PoemColumns = ({poem}) => {
+const PoemColumns = ({poem, traditionalJapanese}) => {
 
     const toggleRomaji = false;
     const toggleEnglish = false;
@@ -15,6 +15,7 @@ const PoemColumns = ({poem}) => {
             poem={poem} language={'ja'}
             wordCallback={getEachCharacter}
             charactersCallback='character'
+            traditionalJapanese={traditionalJapanese}
         />,
         toggleRomaji &&
         <PoemCard

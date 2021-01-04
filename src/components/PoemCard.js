@@ -5,16 +5,17 @@ const PoemCard = ({
     poem,
     language,
     wordCallback,
-    charactersCallback}) => {
+    charactersCallback,
+    traditionalJapanese}) => {
 
-    const toggleTraditionalJapanese = true;
+    // const traditionalJapanese = true;
 
     let langAttr = 
     (charactersCallback !== 'romaji' && language !== 'en') ?
     {'lang': language} : '';
     
     let directionAttr = 
-    (language === 'ja' && charactersCallback !== 'romaji' && toggleTraditionalJapanese) ?
+    (language === 'ja' && charactersCallback !== 'romaji' && traditionalJapanese) ?
     {'dir': 'rtl'} : '';
 
     return (
@@ -23,7 +24,7 @@ const PoemCard = ({
             // {...directionAttr}
             className={
                 `poem__card poem__card--${charactersCallback !== 'romaji' ?
-                `${language}` : 'romaji' } ${(language === 'ja' && charactersCallback !== 'romaji' && toggleTraditionalJapanese) ?
+                `${language}` : 'romaji' } ${(language === 'ja' && charactersCallback !== 'romaji' && traditionalJapanese) ?
                 'poem__card--ja-traditional' : ''}`
             }
         >
