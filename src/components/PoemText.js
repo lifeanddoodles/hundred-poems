@@ -5,8 +5,10 @@ const PoemText = ({
     poemLines,
     language,
     wordCallback,
-    charactersCallback
+    charactersCallback,
+    showFurigana
 }) => {
+    
     const newLine = '\u000A';
     const lines = poemLines[language].content.map((
         lineInPoem,
@@ -17,6 +19,7 @@ const PoemText = ({
                         lineInPoem={lineInPoem}
                         wordCallback={wordCallback}
                         charactersCallback={charactersCallback}
+                        showFurigana={showFurigana}
                     />
                     {
                         index < poemLines[language].content.length ?

@@ -1,14 +1,7 @@
-import {
-    getTheCharacter,
-    getTheFurigana,
-    getTheRomaji
-} from "../helpers";
-
-const showFurigana = true;
-
 const CharacterContainer = ({
     characterObject,
-    characterCallback}) => {
+    characterCallback,
+    showFurigana}) => {
 
     const isKanji = characterObject.isKanji;
 

@@ -3,9 +3,14 @@ import { poems } from './data/poemsSample';
 import PoemsView from './components/PoemsView';
 
 const App = () => {
+  const [showFurigana, toggleShowFurigana] = useState(false);
   const [traditionalJapanese, toggleTraditionalJapanese] = useState(false);
   const [showRomajiColumn, toggleShowRomajiColumn] = useState(false);
   const [showEnglishColumn, toggleShowEnglishColumn] = useState(false);
+
+  const handleToggleShowFurigana = () => {
+    toggleShowFurigana(!showFurigana);
+  }
 
   const handleToggleTraditionalJapanese = () => {
     toggleTraditionalJapanese(!traditionalJapanese);
@@ -23,6 +28,19 @@ const App = () => {
     <Fragment>
       <nav className="site-header">
         <section className="controls">
+        <label>
+          Enable Furigana
+          <div className="toggle">
+            <input
+              type="checkbox"
+              aria-label="Enable Furigana"
+              id="furigana_checkbox"
+              value={showFurigana}
+              onChange={handleToggleShowFurigana}
+            />
+            <span className="slider round"></span>
+          </div>
+        </label>
           <label>
             Enable Traditional
             <div className="toggle">
@@ -68,6 +86,7 @@ const App = () => {
         { <PoemsView
           poems={poems}
           traditionalJapanese={traditionalJapanese}
+          showFurigana={showFurigana}
           showEnglishColumn={showEnglishColumn}
           showRomajiColumn={showRomajiColumn}
         /> }

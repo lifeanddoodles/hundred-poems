@@ -1,4 +1,6 @@
-* {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
@@ -59,7 +61,6 @@ main {
   justify-content: center;
   background-color: #f9f9f9;
   padding: 0 1em;
-  height: calc(100%);
 }
 
 .poem__columns {

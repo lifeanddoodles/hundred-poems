@@ -6,9 +6,8 @@ const PoemCard = ({
     language,
     wordCallback,
     charactersCallback,
-    traditionalJapanese}) => {
-
-    // const traditionalJapanese = true;
+    traditionalJapanese,
+    showFurigana}) => {
 
     let langAttr = 
     (charactersCallback !== 'romaji' && language !== 'en') ?
@@ -33,12 +32,14 @@ const PoemCard = ({
                 language={language}
                 wordCallback={wordCallback}
                 charactersCallback={charactersCallback}
+                showFurigana={showFurigana}
             />
             <PoemText
                 poemLines={poem.poem}
                 language={language}
                 wordCallback={wordCallback}
                 charactersCallback={charactersCallback}
+                showFurigana={showFurigana}
             />
         </section>
     )

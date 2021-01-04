@@ -4,7 +4,8 @@ const AuthorTitle = ({
     poemAuthor,
     language,
     wordCallback,
-    charactersCallback}) => {
+    charactersCallback,
+    showFurigana}) => {
         
     return (
         <h3 className={
@@ -15,6 +16,7 @@ const AuthorTitle = ({
                 lineInPoem={poemAuthor[language].content}
                 wordCallback={wordCallback}
                 charactersCallback={charactersCallback}
+                showFurigana={showFurigana}
             />
         </h3>
     )
