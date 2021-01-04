@@ -4,9 +4,19 @@ import PoemsView from './components/PoemsView';
 
 const App = () => {
   const [traditionalJapanese, toggleTraditionalJapanese] = useState(false);
-  const handleToggleTraditionalJapanese = (event) => {
-      toggleTraditionalJapanese(!traditionalJapanese);
-      // console.log('clicked')
+  const [showRomajiColumn, toggleShowRomajiColumn] = useState(false);
+  const [showEnglishColumn, toggleShowEnglishColumn] = useState(false);
+
+  const handleToggleTraditionalJapanese = () => {
+    toggleTraditionalJapanese(!traditionalJapanese);
+  }
+  
+  const handleToggleShowRomajiColumn = () => {
+    toggleShowRomajiColumn(!showRomajiColumn);
+  }
+
+  const handleToggleShowEnglishColumn = () => {
+    toggleShowEnglishColumn(!showEnglishColumn);
   }
 
   return (
@@ -25,11 +35,39 @@ const App = () => {
             <span className="slider round"></span>
           </div>
         </label>
+        <label>
+          View English column
+          <div className="switch">
+            <input
+              type="checkbox"
+              aria-label="Enable English column"
+              id="english_checkbox"
+              value={showEnglishColumn}
+              onChange={handleToggleShowEnglishColumn}
+            />
+            <span className="slider round"></span>
+          </div>
+        </label>
+        <label>
+          View romaji column
+          <div className="switch">
+            <input
+              type="checkbox"
+              aria-label="Enable romaji column"
+              id="romaji_checkbox"
+              value={showRomajiColumn}
+              onChange={handleToggleShowRomajiColumn}
+            />
+            <span className="slider round"></span>
+          </div>
+        </label>
       </nav>
       <main className="App">
         { <PoemsView
           poems={poems}
           traditionalJapanese={traditionalJapanese}
+          showEnglishColumn={showEnglishColumn}
+          showRomajiColumn={showRomajiColumn}
         /> }
       </main>
     </Fragment>
