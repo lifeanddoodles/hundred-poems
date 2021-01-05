@@ -28,7 +28,7 @@ const App = () => {
     <Fragment>
       <nav className="site-header">
         <section className="controls">
-        <label>
+        <label className="controls__label">
           Enable Furigana
           <div className="toggle">
             <input
@@ -41,7 +41,7 @@ const App = () => {
             <span className="slider round"></span>
           </div>
         </label>
-          <label>
+          <label className="controls__label">
             Enable Traditional
             <div className="toggle">
               <input
@@ -54,7 +54,7 @@ const App = () => {
               <span className="slider round"></span>
             </div>
           </label>
-          <label>
+          <label className="controls__label">
             View English column
             <div className="toggle">
               <input
@@ -67,7 +67,7 @@ const App = () => {
               <span className="slider round"></span>
             </div>
           </label>
-          <label>
+          <label className="controls__label">
             View romaji column
             <div className="toggle">
               <input

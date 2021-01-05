@@ -197,9 +197,13 @@ main {
 
 /* END: Traditional style */
 
-.controls label {
+/* .controls {
   display: flex;
   align-items: center;
+} */
+.controls__label {
+  display: inline-block;
+  margin-block-end: 1em;
 }
 
 /* The toggle - the box around the slider */
@@ -259,4 +263,28 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.controls__label .toggle {
+  margin-inline-start: 0.5em;
+}
+
+@media screen and (min-width: 30em) {
+  .controls__label {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .controls {
+    display: flex;
+  }
+
+  .controls__label {
+    width: initial;
+  }
+
+  .controls__label + .controls__label {
+    margin-inline-start: 1em;
+  }
 }
