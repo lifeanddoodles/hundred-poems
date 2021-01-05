@@ -7,6 +7,7 @@ const App = () => {
   const [traditionalJapanese, toggleTraditionalJapanese] = useState(false);
   const [showRomajiColumn, toggleShowRomajiColumn] = useState(false);
   const [showEnglishColumn, toggleShowEnglishColumn] = useState(false);
+  const [currentPoem, setCurrentPoem] = useState(0);
 
   const handleToggleShowFurigana = () => {
     toggleShowFurigana(!showFurigana);
@@ -24,8 +25,20 @@ const App = () => {
     toggleShowEnglishColumn(!showEnglishColumn);
   }
 
+  const nextPoem = () => {
+    setCurrentPoem((currentPoem + 1) % poems.length);
+}
+
+const prevPoem = () => {
+    if ((currentPoem - 1) % poems.length === -1) {
+        setCurrentPoem(poems.length - 1);
+        return;
+    }
+    setCurrentPoem(currentPoem - 1);
+}
+// console.log(`current: ${currentPoem}`);
   return (
-    <Fragment>
+    <div className="App">
       <nav className="site-header">
         <section className="controls">
         <label className="controls__label">
@@ -82,16 +95,29 @@ const App = () => {
           </label>
         </section>
       </nav>
-      <main className="App">
+      <main className="poems">
         { <PoemsView
           poems={poems}
           traditionalJapanese={traditionalJapanese}
           showFurigana={showFurigana}
           showEnglishColumn={showEnglishColumn}
           showRomajiColumn={showRomajiColumn}
+          currentPoem={currentPoem}
         /> }
       </main>
-    </Fragment>
+      <section className="poem-controls">
+        <button
+          className="control control--prev"
+          onClick={prevPoem}>
+            Previous
+        </button>
+        <button
+          className="control control--next"
+          onClick={nextPoem}>
+            Next
+        </button>
+      </section>
+    </div>
   );
 }
 

@@ -5,7 +5,8 @@ const PoemsView = ({
     traditionalJapanese,
     showFurigana,
     showEnglishColumn,
-    showRomajiColumn}) => {
+    showRomajiColumn,
+    currentPoem}) => {
 
     return poems.map(poem => <PoemContainer
             key={poem.id}
@@ -14,6 +15,7 @@ const PoemsView = ({
             showFurigana={showFurigana}
             showEnglishColumn={showEnglishColumn}
             showRomajiColumn={showRomajiColumn}
+            currentPoem={currentPoem}
         />)
 }
 export default PoemsView;
