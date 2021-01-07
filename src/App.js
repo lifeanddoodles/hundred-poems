@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 import { poems } from './data/poemsSample';
 import PoemsView from './components/PoemsView';
 
@@ -9,6 +9,7 @@ const App = () => {
   const [showEnglishColumn, toggleShowEnglishColumn] = useState(false);
   const [currentPoem, setCurrentPoem] = useState(0);
   const [carouselView, toggleCarouselView] = useState(true);
+  const [selectedLayout, setSelectedLayout] = useState('main--left');
 
   const handleToggleCarouselView = () => {
     toggleCarouselView(!carouselView);
@@ -21,7 +22,7 @@ const App = () => {
   const handleToggleTraditionalJapanese = () => {
     toggleTraditionalJapanese(!traditionalJapanese);
   }
-  
+
   const handleToggleShowRomajiColumn = () => {
     toggleShowRomajiColumn(!showRomajiColumn);
   }
@@ -41,8 +42,14 @@ const prevPoem = () => {
     }
     setCurrentPoem(currentPoem - 1);
 }
+
+const handleOptionChange = (event) => {
+  setSelectedLayout(event.target.value);
+}
 // console.log(`current: ${currentPoem}`);
-console.log(`carouselView?: ${carouselView}`);
+// console.log(`carouselView?: ${carouselView}`);
+// console.log(`showRomajiColumn?: ${showRomajiColumn}`);
+// console.log(selectedLayout);
   return (
     <div className="App">
       <nav className="site-header">
@@ -112,9 +119,18 @@ console.log(`carouselView?: ${carouselView}`);
               <span className="slider round"></span>
             </div>
           </label>
+          <select name="selected_layout" id="selected_layout" value={selectedLayout} onChange={handleOptionChange}>
+            <option value="main--left">Main left</option>
+            <option value="main--right">Main right</option>
+            <option value="main--top">Main top</option>
+            <option value="main--bottom">Main bottom</option>
+          </select>
         </section>
       </nav>
-      <main className={`poems ${carouselView ? 'poems--carousel' : ''}`}>
+      <main className={`poems ${carouselView ?
+      'poems--carousel' : ''} ${showRomajiColumn || showEnglishColumn ?
+        showRomajiColumn && showEnglishColumn ?
+        'poems--three-cards' : 'poems--two-cards' : ''}`}>
         { <PoemsView
           poems={poems}
           traditionalJapanese={traditionalJapanese}
