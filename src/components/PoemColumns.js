@@ -20,19 +20,19 @@ const PoemColumns = ({
             traditionalJapanese={traditionalJapanese}
             showFurigana={showFurigana}
         />,
-        showRomajiColumn &&
-        <PoemCard
-            key={`${poem.id}--romaji`}
-            poem={poem} language={'ja'}
-            wordCallback={getEachCharacter}
-            charactersCallback='romaji'
-        />,
         showEnglishColumn &&
         <PoemCard
             key={`${poem.id}--en`}
             poem={poem} language={'en'}
             wordCallback={getCompleteWordString}
             charactersCallback={null}
+        />,
+        showRomajiColumn &&
+        <PoemCard
+            key={`${poem.id}--romaji`}
+            poem={poem} language={'ja'}
+            wordCallback={getEachCharacter}
+            charactersCallback='romaji'
         />,
     ];
 }
