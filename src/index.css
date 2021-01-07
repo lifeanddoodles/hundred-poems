@@ -43,15 +43,21 @@ button:active {
   padding: 1em 1.5em;
 }
 
-main {
+.poems {
   margin-block-start: 3.5em;
   display: flex;
   flex-direction: column;
-  /* height: calc(100vh - 3.5em); */
+  flex-grow: 1;
 }
 
-.poems {
-  flex-grow: 1;
+.poem-controls {
+  pointer-events: none;
+  display: flex;
+}
+
+.control {
+  pointer-events: all;
+  width: 50%;
 }
 
 .poem {
@@ -197,10 +203,24 @@ main {
 
 /* END: Traditional style */
 
-/* .controls {
+/* Carousel styles */
+
+main.poems--carousel {
+  height: calc(100vh - 4.5em - 1.3125em);
+}
+
+.poems--carousel .poem {
+  min-height: 100%;
+}
+
+.poems--carousel .poem {
+  display: none;
+}
+
+.poems--carousel .poem.active {
   display: flex;
-  align-items: center;
-} */
+}
+
 .controls__label {
   display: inline-block;
   margin-block-end: 1em;
