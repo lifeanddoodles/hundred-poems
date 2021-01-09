@@ -32,6 +32,12 @@ button:active {
   background-color: #ccc;
 }
 
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .site-header {
   display: flex;
   align-items: center;
@@ -44,9 +50,7 @@ button:active {
 }
 
 .poems {
-  margin-block-start: 3.5em;
-  display: flex;
-  flex-direction: column;
+  margin-block-start: 9.5em;
   flex-grow: 1;
 }
 
@@ -69,10 +73,92 @@ button:active {
   padding: 0 1em;
 }
 
-.poem__columns {
-  display: flex;
-  max-width: 100%;
-  overflow-x: scroll;
+@media screen and (min-width: 45em) {
+  @supports (display: flex) {
+    .columns .poem__columns,
+    .poems--two-cards .poem__columns {
+      display: flex;
+      max-width: 100%;
+      overflow-x: scroll;
+    }
+
+    .poems--two-cards .poem__card {
+      width: 50%;
+    }
+
+    .poems--two-cards.main--right .poem__columns {
+      flex-direction: row-reverse;
+    }
+
+    .poems--two-cards.main--top .poem__columns {
+      flex-direction: column;
+    }
+
+    .poems--two-cards.main--bottom .poem__columns {
+      flex-direction: column-reverse;
+    }
+
+    .poems--two-cards.main--top .poem__card,
+    .poems--two-cards.main--bottom .poem__card {
+      width: 100%;
+    }
+
+    .poems--three-cards.columns .poem__card {
+      width: calc(100% / 3);
+    }
+  }
+
+  @supports (display: grid) {
+    .poems {
+      margin-block-start: 4.5em;
+    }
+
+    .poems--three-cards:not(.columns) .poem__columns {
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .poem__card--ja {
+      grid-area: main;
+    }
+
+    .poem__card--en {
+      grid-area: secondary--one;
+    }
+
+    .poem__card--romaji {
+      grid-area: secondary--two;
+    }
+
+    .poems--three-cards.main--left .poem__columns {
+      grid-template-areas:
+        'main secondary--one'
+        'main secondary--two';
+    }
+    .poems--three-cards.main--right .poem__columns {
+      grid-template-areas:
+        'secondary--one main'
+        'secondary--two main';
+    }
+    .poems--three-cards.main--top .poem__columns {
+      grid-template-areas:
+        'main main'
+        'secondary--one secondary--two';
+    }
+    .poems--three-cards.main--bottom .poem__columns {
+      grid-template-areas:
+        'secondary--one secondary--two'
+        'main main';
+    }
+
+    .main--left .poem__card--ja,
+    .main--right .poem__card--ja,
+    .main--top .poem__card--ja,
+    .main--bottom .poem__card--ja {
+      justify-self: center;
+    }
+  }
 }
 
 .poem__number {
@@ -204,20 +290,19 @@ button:active {
 /* END: Traditional style */
 
 /* Carousel styles */
-
-main.poems--carousel {
-  height: calc(100vh - 4.5em - 1.3125em);
+.poems--carousel {
+  display: flex;
 }
 
 .poems--carousel .poem {
-  min-height: 100%;
+  width: 100%;
 }
 
 .poems--carousel .poem {
   display: none;
 }
 
-.poems--carousel .poem.active {
+.poem.active {
   display: flex;
 }
 

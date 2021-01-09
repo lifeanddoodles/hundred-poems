@@ -5,11 +5,11 @@ import PoemsView from './components/PoemsView';
 const App = () => {
   const [showFurigana, toggleShowFurigana] = useState(false);
   const [traditionalJapanese, toggleTraditionalJapanese] = useState(false);
-  const [showRomajiColumn, toggleShowRomajiColumn] = useState(false);
-  const [showEnglishColumn, toggleShowEnglishColumn] = useState(false);
+  const [showRomajiColumn, toggleShowRomajiColumn] = useState(true);
+  const [showEnglishColumn, toggleShowEnglishColumn] = useState(true);
   const [currentPoem, setCurrentPoem] = useState(0);
-  const [carouselView, toggleCarouselView] = useState(true);
-  const [selectedLayout, setSelectedLayout] = useState('main--left');
+  const [carouselView, toggleCarouselView] = useState(false);
+  const [selectedLayout, setSelectedLayout] = useState('columns');
 
   const handleToggleCarouselView = () => {
     toggleCarouselView(!carouselView);
@@ -46,9 +46,7 @@ const prevPoem = () => {
 const handleOptionChange = (event) => {
   setSelectedLayout(event.target.value);
 }
-// console.log(`current: ${currentPoem}`);
-// console.log(`carouselView?: ${carouselView}`);
-// console.log(`showRomajiColumn?: ${showRomajiColumn}`);
+
 // console.log(selectedLayout);
   return (
     <div className="App">
@@ -119,7 +117,13 @@ const handleOptionChange = (event) => {
               <span className="slider round"></span>
             </div>
           </label>
-          <select name="selected_layout" id="selected_layout" value={selectedLayout} onChange={handleOptionChange}>
+          <select name="selected_layout"
+            id="selected_layout"
+            value={selectedLayout}
+            onChange={handleOptionChange}
+            disabled={!(showRomajiColumn || showEnglishColumn)}
+            >
+            <option value="columns">Columns</option>
             <option value="main--left">Main left</option>
             <option value="main--right">Main right</option>
             <option value="main--top">Main top</option>
@@ -128,9 +132,12 @@ const handleOptionChange = (event) => {
         </section>
       </nav>
       <main className={`poems ${carouselView ?
-      'poems--carousel' : ''} ${showRomajiColumn || showEnglishColumn ?
+      'poems--carousel' : ''} ${showRomajiColumn || showEnglishColumn ? // START: at least two areas active
         showRomajiColumn && showEnglishColumn ?
-        'poems--three-cards' : 'poems--two-cards' : ''}`}>
+        'poems--three-cards' : //all areas are active = true
+        showEnglishColumn ?'poems--two-cards poems--two-cards-english' : 'poems--two-cards poems--two-cards-romaji'
+        : '' // END: at least two areas active = false
+        } ${selectedLayout}`}>
         { <PoemsView
           poems={poems}
           traditionalJapanese={traditionalJapanese}
