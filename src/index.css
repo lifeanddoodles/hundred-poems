@@ -25,6 +25,7 @@ button {
   background-color: #e6e6e6;
   border: 1px solid transparent;
   padding: 0.75em 1em;
+  margin-block-end: 1em;
 }
 
 button:hover,
@@ -36,22 +37,53 @@ button:active {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  position: relative;
 }
 
 .site-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  background-color: #f3f3f3;
+  padding: 1em 1.5em;
   position: fixed;
   top: 0;
-  background-color: #f3f3f3;
+  z-index: 10;
   width: 100%;
-  padding: 1em 1.5em;
+  height: 4.5em;
 }
 
-.poems {
-  margin-block-start: 9.5em;
-  flex-grow: 1;
+.settings-controls__toggle--mobile {
+  z-index: 10;
+  position: absolute;
+}
+
+.settings-controls__toggle + .settings-controls__toggle {
+  margin-inline-start: 1em;
+}
+
+.settings-controls {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: oldlace;
+  flex-direction: column;
+}
+
+.settings-controls.is-open {
+  display: flex;
+}
+
+.settings-controls__submenu {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-controls__control {
+  margin-block-end: 1em;
 }
 
 .poem-controls {
@@ -64,6 +96,11 @@ button:active {
   width: 50%;
 }
 
+.poems {
+  margin-block-start: 4.5em;
+  flex-grow: 1;
+}
+
 .poem {
   display: flex;
   flex-direction: column;
@@ -71,40 +108,53 @@ button:active {
   justify-content: center;
   background-color: #f9f9f9;
   padding: 0 1em;
+  margin-block-end: 2em;
 }
 
 @media screen and (min-width: 45em) {
+  .columns .poem__columns,
+  .poems--two-cards .poem__columns {
+    display: flex;
+    /* max-width: 100%;
+      overflow-x: scroll; */
+    min-width: 42em;
+  }
+
+  .poems--two-cards .poem__card {
+    width: 50%;
+  }
+
+  .poems--three-cards.columns .poem__card {
+    width: calc(100% / 3);
+  }
+}
+
+@media screen and (min-width: 69.5em) {
+  .settings-controls {
+    position: initial;
+    height: auto;
+  }
+
+  .settings-controls__toggle--mobile {
+    display: none;
+  }
+
   @supports (display: flex) {
-    .columns .poem__columns,
-    .poems--two-cards .poem__columns {
+    .site-header {
       display: flex;
-      max-width: 100%;
-      overflow-x: scroll;
     }
 
-    .poems--two-cards .poem__card {
-      width: 50%;
+    .settings-controls {
+      display: flex;
     }
 
-    .poems--two-cards.main--right .poem__columns {
-      flex-direction: row-reverse;
+    .settings-controls,
+    .settings-controls__submenu {
+      flex-direction: row;
     }
 
-    .poems--two-cards.main--top .poem__columns {
-      flex-direction: column;
-    }
-
-    .poems--two-cards.main--bottom .poem__columns {
-      flex-direction: column-reverse;
-    }
-
-    .poems--two-cards.main--top .poem__card,
-    .poems--two-cards.main--bottom .poem__card {
-      width: 100%;
-    }
-
-    .poems--three-cards.columns .poem__card {
-      width: calc(100% / 3);
+    .settings-controls__control:not(:first-child) {
+      margin-inline-start: 1em;
     }
   }
 
@@ -131,22 +181,22 @@ button:active {
       grid-area: secondary--two;
     }
 
-    .poems--three-cards.main--left .poem__columns {
+    .main--left .poem__columns {
       grid-template-areas:
         'main secondary--one'
         'main secondary--two';
     }
-    .poems--three-cards.main--right .poem__columns {
+    .main--right .poem__columns {
       grid-template-areas:
         'secondary--one main'
         'secondary--two main';
     }
-    .poems--three-cards.main--top .poem__columns {
+    .main--top .poem__columns {
       grid-template-areas:
         'main main'
         'secondary--one secondary--two';
     }
-    .poems--three-cards.main--bottom .poem__columns {
+    .main--bottom .poem__columns {
       grid-template-areas:
         'secondary--one secondary--two'
         'main main';
@@ -296,19 +346,16 @@ button:active {
 
 .poems--carousel .poem {
   width: 100%;
+  display: none;
+  margin-block-end: 0;
 }
 
-.poems--carousel .poem {
-  display: none;
+.poems--carousel .poem__columns {
+  height: calc(100vh);
 }
 
 .poem.active {
   display: flex;
-}
-
-.controls__label {
-  display: inline-block;
-  margin-block-end: 1em;
 }
 
 /* The toggle - the box around the slider */
@@ -374,13 +421,7 @@ input:checked + .slider:before {
   margin-inline-start: 0.5em;
 }
 
-@media screen and (min-width: 30em) {
-  .controls__label {
-    width: 50%;
-  }
-}
-
-@media screen and (min-width: 48em) {
+/* @media screen and (min-width: 48em) {
   .controls {
     display: flex;
   }
@@ -392,4 +433,46 @@ input:checked + .slider:before {
   .controls__label + .controls__label {
     margin-inline-start: 1em;
   }
+} */
+
+.poem__card--ja {
+  position: relative;
 }
+
+.poem__card--ja::before,
+.poem__card--ja::after {
+  content: '';
+  position: absolute;
+  height: 1em;
+  left: 0;
+  right: 0;
+}
+
+/* .poem__card--ja::before {
+  top: 0;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+} */
+
+.poem__card--ja::after {
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+/* .poem__card--ja {
+  overflow: hidden;
+  flex: 0;
+  transition: flex ease-out 1s;
+}
+.poem__card--ja:hover {
+  flex: 1;
+} */
