@@ -21,6 +21,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+button,
+input,
+select {
+  font-size: 1em;
+}
+
 button {
   background-color: #e6e6e6;
   border: 1px solid transparent;
@@ -59,8 +65,11 @@ button:active {
   margin-inline-start: 1em;
 }
 
-.settings-controls {
-  display: none;
+.settings-controls-container {
+  display: flex;
+}
+
+.settings-controls-container.is-open {
   position: absolute;
   left: 0;
   right: 0;
@@ -73,13 +82,20 @@ button:active {
   flex-direction: column;
 }
 
-.settings-controls.is-open {
-  display: flex;
+.settings-controls__submenu {
+  display: none;
 }
 
-.settings-controls__submenu {
+.settings-controls-container.is-open .settings-controls__submenu,
+.settings-controls__submenu.is-open {
   display: flex;
   flex-direction: column;
+}
+
+.settings-controls-container .settings-controls__japanese-area.is-open,
+.settings-controls-container .settings-controls__layout.is-open {
+  background-color: ivory;
+  padding: 1em;
 }
 
 .settings-controls__control {
@@ -99,25 +115,121 @@ button:active {
 .poems {
   margin-block-start: 4.5em;
   flex-grow: 1;
+  padding: 0 1em;
 }
 
 .poem {
+  background-image: url('images/gold_scale_@2X.png');
+  padding: 1em;
+  margin-block-end: 2em;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:root {
+  --top-start: initial;
+  --right-start: 0;
+  --scroll-width: none;
+  --scroll-height: 3em;
+  --shadow-width: 100%;
+  --shadow-height: 2em;
+  --shadow-left: 0;
+  --shadow-bottom: 3em;
+  --degrees: 0deg;
+}
+
+.poem::before,
+.poem::after {
+  content: '';
+  position: absolute;
+}
+
+.poem::before {
+  top: var(--top-start);
+  right: var(--right-start);
+  bottom: var(--shadow-bottom);
+  left: var(--shadow-left);
+  width: var(--shadow-width);
+  height: var(--shadow-height);
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    var(--degrees),
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.poem::after {
+  top: var(--top-start);
+  right: var(--right-start);
+  bottom: 0;
+  left: 0;
+  width: var(--scroll-width);
+  height: var(--scroll-height);
+  margin-left: -0.25em;
+  margin-right: -0.25em;
+  background: rgb(242, 220, 175);
+  background: linear-gradient(
+    var(--degrees),
+    rgba(242, 220, 175, 1) 0%,
+    rgba(254, 240, 208, 1) 50%,
+    rgba(218, 190, 129, 1) 100%
+  );
+}
+
+/* .poem__card--ja {
+  overflow: hidden;
+  flex: 0;
+  transition: flex ease-out 1s;
+}
+.poem__card--ja:hover {
+  flex: 1;
+} */
+
+.poem__paper {
+  background: beige;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #f9f9f9;
-  padding: 0 1em;
-  margin-block-end: 2em;
+  display: flex;
+  width: 100%;
+  max-width: 130ch;
+  padding: 0 0 3em 0;
 }
 
 @media screen and (min-width: 45em) {
+  :root {
+    --top-start: 0;
+    --right-start: initial;
+    --scroll-width: 3em;
+    --scroll-height: auto;
+    --shadow-width: 2em;
+    --shadow-height: 100%;
+    --shadow-left: 3em;
+    --shadow-bottom: 0;
+    --degrees: 90deg;
+  }
+
+  .poem__paper {
+    padding: 0 0 0 3em;
+  }
+
+  .poem::after {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -0.25em;
+    margin-bottom: -0.25em;
+  }
+
   .columns .poem__columns,
   .poems--two-cards .poem__columns {
     display: flex;
-    /* max-width: 100%;
-      overflow-x: scroll; */
-    min-width: 42em;
+    /* width: 100%;
+    min-width: 42em; */
+    flex-wrap: wrap;
   }
 
   .poems--two-cards .poem__card {
@@ -129,35 +241,7 @@ button:active {
   }
 }
 
-@media screen and (min-width: 69.5em) {
-  .settings-controls {
-    position: initial;
-    height: auto;
-  }
-
-  .settings-controls__toggle--mobile {
-    display: none;
-  }
-
-  @supports (display: flex) {
-    .site-header {
-      display: flex;
-    }
-
-    .settings-controls {
-      display: flex;
-    }
-
-    .settings-controls,
-    .settings-controls__submenu {
-      flex-direction: row;
-    }
-
-    .settings-controls__control:not(:first-child) {
-      margin-inline-start: 1em;
-    }
-  }
-
+@media screen and (min-width: 50em) {
   @supports (display: grid) {
     .poems {
       margin-block-start: 4.5em;
@@ -207,6 +291,37 @@ button:active {
     .main--top .poem__card--ja,
     .main--bottom .poem__card--ja {
       justify-self: center;
+    }
+  }
+}
+@media screen and (min-width: 75em) {
+  .settings-controls-container {
+    position: initial;
+    height: auto;
+  }
+
+  .settings-controls__toggle--mobile {
+    display: none;
+  }
+
+  @supports (display: flex) {
+    .site-header {
+      display: flex;
+    }
+
+    .settings-controls-container,
+    .settings-controls-container .settings-controls__submenu {
+      display: flex;
+    }
+
+    .settings-controls-container,
+    .settings-controls__submenu {
+      flex-direction: row;
+    }
+
+    .settings-controls__submenu + .settings-controls__submenu,
+    .settings-controls__control:not(:first-child) {
+      margin-inline-start: 1em;
     }
   }
 }
@@ -354,7 +469,7 @@ button:active {
   height: calc(100vh);
 }
 
-.poem.active {
+.poems--carousel .poem.active {
   display: flex;
 }
 
@@ -421,58 +536,6 @@ input:checked + .slider:before {
   margin-inline-start: 0.5em;
 }
 
-/* @media screen and (min-width: 48em) {
-  .controls {
-    display: flex;
-  }
-
-  .controls__label {
-    width: initial;
-  }
-
-  .controls__label + .controls__label {
-    margin-inline-start: 1em;
-  }
-} */
-
 .poem__card--ja {
   position: relative;
 }
-
-.poem__card--ja::before,
-.poem__card--ja::after {
-  content: '';
-  position: absolute;
-  height: 1em;
-  left: 0;
-  right: 0;
-}
-
-/* .poem__card--ja::before {
-  top: 0;
-  background: rgb(0, 0, 0);
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.1) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
-} */
-
-.poem__card--ja::after {
-  bottom: 0;
-  background: rgb(0, 0, 0);
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.2) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
-}
-
-/* .poem__card--ja {
-  overflow: hidden;
-  flex: 0;
-  transition: flex ease-out 1s;
-}
-.poem__card--ja:hover {
-  flex: 1;
-} */

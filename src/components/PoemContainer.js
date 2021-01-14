@@ -10,6 +10,7 @@ const PoemContainer = ({
         
     return (
         <article className={`poem ${poem.id === currentPoem +1 ? 'active' : ''}`} key={poem.id}>
+            <div className="poem__paper">
             <header className="poem__number"><h2 id={poem.id}>Poem {poem.id}</h2></header>
             <section className="poem__columns">
                 <PoemColumns
@@ -20,6 +21,7 @@ const PoemContainer = ({
                     showRomajiColumn={showRomajiColumn}
                 />
             </section>
+            </div>
         </article>
     )
 }
