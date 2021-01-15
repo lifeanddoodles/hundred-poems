@@ -1,6 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { poems } from './data/poemsSample';
 import PoemsView from './components/PoemsView';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCog, faColumns, faEye, faEyeSlash, faLanguage } from '@fortawesome/free-solid-svg-icons'
+
+// const element = <FontAwesomeIcon icon={faCoffee} />
 
 const App = () => {
   const [showFurigana, toggleShowFurigana] = useState(false);
@@ -115,20 +119,20 @@ const NavigationToggle = () => {
       className="settings-controls__toggle settings-controls__toggle--mobile"
       onClick={() => handleNavMenuToggle(allControls)}
     >
-      Menu
+      <FontAwesomeIcon icon={faCog} /> Menu
     </button> : isMedium ?
     <React.Fragment>
       <button
         className="settings-controls__toggle settings-controls__toggle--japanese"
         onClick={() => handleNavMenuToggle(japaneseControls)}
       >
-        Change Japanese
+        <FontAwesomeIcon icon={faLanguage} /> Change Japanese
       </button>
       <button
         className="settings-controls__toggle settings-controls__toggle--layout"
         onClick={() => handleNavMenuToggle(layoutControls)}
       >
-        Change layout
+        <FontAwesomeIcon icon={faColumns} /> Change layout
       </button>
     </React.Fragment> : ''
   )
