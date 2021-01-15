@@ -1,3 +1,15 @@
+:root {
+  --top-start: initial;
+  --right-start: 0;
+  --scroll-width: none;
+  --scroll-height: 3em;
+  --shadow-width: 100%;
+  --shadow-height: 2em;
+  --shadow-left: 0;
+  --shadow-bottom: 3em;
+  --degrees: 0deg;
+}
+
 *,
 *::after,
 *::before {
@@ -110,34 +122,23 @@ button:active {
 .control {
   pointer-events: all;
   width: 50%;
+  margin-block-end: 0;
 }
 
 .poems {
   margin-block-start: 4.5em;
   flex-grow: 1;
-  padding: 0 1em;
+  padding: 1em;
 }
 
 .poem {
-  background-image: url('images/gold_scale_@2X.png');
+  background-image: url('images/gold_scale.png');
   padding: 1em;
   margin-block-end: 2em;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-:root {
-  --top-start: initial;
-  --right-start: 0;
-  --scroll-width: none;
-  --scroll-height: 3em;
-  --shadow-width: 100%;
-  --shadow-height: 2em;
-  --shadow-left: 0;
-  --shadow-bottom: 3em;
-  --degrees: 0deg;
 }
 
 .poem::before,
@@ -179,12 +180,12 @@ button:active {
   );
 }
 
-/* .poem__card--ja {
+/* .poem {
   overflow: hidden;
   flex: 0;
   transition: flex ease-out 1s;
 }
-.poem__card--ja:hover {
+.poem:hover {
   flex: 1;
 } */
 
@@ -227,26 +228,13 @@ button:active {
   .columns .poem__columns,
   .poems--two-cards .poem__columns {
     display: flex;
-    /* width: 100%;
-    min-width: 42em; */
     flex-wrap: wrap;
-  }
-
-  .poems--two-cards .poem__card {
-    width: 50%;
-  }
-
-  .poems--three-cards.columns .poem__card {
-    width: calc(100% / 3);
+    justify-content: center;
   }
 }
 
 @media screen and (min-width: 50em) {
   @supports (display: grid) {
-    .poems {
-      margin-block-start: 4.5em;
-    }
-
     .poems--three-cards:not(.columns) .poem__columns {
       display: grid;
       grid-template-rows: auto;
@@ -294,7 +282,14 @@ button:active {
     }
   }
 }
-@media screen and (min-width: 75em) {
+
+@media screen and (min-width: 65em) {
+  .poem__paper {
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 80em) {
   .settings-controls-container {
     position: initial;
     height: auto;
@@ -457,6 +452,7 @@ button:active {
 /* Carousel styles */
 .poems--carousel {
   display: flex;
+  margin-block-end: 2.75em;
 }
 
 .poems--carousel .poem {
@@ -465,12 +461,14 @@ button:active {
   margin-block-end: 0;
 }
 
-.poems--carousel .poem__columns {
-  height: calc(100vh);
-}
-
 .poems--carousel .poem.active {
   display: flex;
+}
+
+.poems--carousel + .poem-controls {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 /* The toggle - the box around the slider */

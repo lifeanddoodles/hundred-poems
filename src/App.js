@@ -87,7 +87,7 @@ const WindowResizeListener = () => {
         height: window.innerHeight,
         width: window.innerWidth
       })
-    }, 1000)
+    }, 250)
 
     window.addEventListener('resize', debouncedHandleResize)
 
@@ -98,7 +98,7 @@ const WindowResizeListener = () => {
   return null;
 }
 const isSmall = dimensions.width <= 719;
-const isMedium = dimensions.width >= 720 && dimensions.width <= 1199;
+const isMedium = dimensions.width >= 720 && dimensions.width <= 1279;
 // const isLarge = dimensions.width >= 1008;
 
 const allControls = useRef();
@@ -256,6 +256,7 @@ const NavigationToggle = () => {
           currentPoem={currentPoem}
         /> }
       </main>
+      {carouselView &&
       <section className="poem-controls">
         <button
           className="control control--prev"
@@ -267,7 +268,7 @@ const NavigationToggle = () => {
           onClick={nextPoem}>
             Next
         </button>
-      </section>
+      </section>}
     </div>
   );
 }
