@@ -4,8 +4,6 @@ import PoemsView from './components/PoemsView';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCog, faColumns, faEye, faEyeSlash, faLanguage } from '@fortawesome/free-solid-svg-icons'
 
-// const element = <FontAwesomeIcon icon={faCoffee} />
-
 const App = () => {
   const [showFurigana, toggleShowFurigana] = useState(false);
   const [traditionalJapanese, toggleTraditionalJapanese] = useState(false);
@@ -24,6 +22,13 @@ const App = () => {
     if (prevRef !== null && prevRef !== refElement) {
       prevRef.current.classList.remove('is-open');
       setPrevRef(refElement);
+    }
+  }
+
+  const handleBlur = (refElement) => {
+    console.log('blur',refElement)
+    if(refElement.current.classList.contains('is-open')) {
+      refElement.current.classList.remove('is-open');
     }
   }
 
@@ -118,6 +123,7 @@ const NavigationToggle = () => {
     <button
       className="settings-controls__toggle settings-controls__toggle--mobile"
       onClick={() => handleNavMenuToggle(allControls)}
+      onBlur={() => handleBlur(allControls)}
     >
       <FontAwesomeIcon icon={faCog} /> Menu
     </button> : isMedium ?
@@ -125,12 +131,14 @@ const NavigationToggle = () => {
       <button
         className="settings-controls__toggle settings-controls__toggle--japanese"
         onClick={() => handleNavMenuToggle(japaneseControls)}
+        onBlur={() => handleBlur(japaneseControls)}
       >
         <FontAwesomeIcon icon={faLanguage} /> Change Japanese
       </button>
       <button
         className="settings-controls__toggle settings-controls__toggle--layout"
         onClick={() => handleNavMenuToggle(layoutControls)}
+        onBlur={() => handleBlur(layoutControls)}
       >
         <FontAwesomeIcon icon={faColumns} /> Change layout
       </button>
@@ -154,6 +162,7 @@ const NavigationToggle = () => {
             >
               <label className="controls__label settings-controls__control">
                 Enable Furigana
+                <FontAwesomeIcon icon={faEyeSlash} />
                 <div className="toggle">
                   <input
                     type="checkbox"
@@ -164,9 +173,11 @@ const NavigationToggle = () => {
                   />
                   <span className="slider round"></span>
                 </div>
+                <FontAwesomeIcon icon={faEye} />
               </label>
               <label className="controls__label settings-controls__control">
                 Enable Traditional
+                <FontAwesomeIcon icon={faEyeSlash} />
                 <div className="toggle">
                   <input
                     type="checkbox"
@@ -177,6 +188,7 @@ const NavigationToggle = () => {
                   />
                   <span className="slider round"></span>
                 </div>
+                <FontAwesomeIcon icon={faEye} />
               </label>
             </section>
             <section
@@ -185,6 +197,7 @@ const NavigationToggle = () => {
             >
               <label className="controls__label settings-controls__control">
                 Carousel view
+                <FontAwesomeIcon icon={faEyeSlash} />
                 <div className="toggle">
                   <input
                     type="checkbox"
@@ -195,9 +208,11 @@ const NavigationToggle = () => {
                   />
                   <span className="slider round"></span>
                 </div>
+                <FontAwesomeIcon icon={faEye} />
               </label>
               <label className="controls__label settings-controls__control">
                 View English column
+                <FontAwesomeIcon icon={faEyeSlash} />
                 <div className="toggle">
                   <input
                     type="checkbox"
@@ -208,9 +223,11 @@ const NavigationToggle = () => {
                   />
                   <span className="slider round"></span>
                 </div>
+                <FontAwesomeIcon icon={faEye} />
               </label>
               <label className="controls__label settings-controls__control">
                 View romaji column
+                <FontAwesomeIcon icon={faEyeSlash} />
                 <div className="toggle">
                   <input
                     type="checkbox"
@@ -221,6 +238,7 @@ const NavigationToggle = () => {
                   />
                   <span className="slider round"></span>
                 </div>
+                <FontAwesomeIcon icon={faEye} />
               </label>
               <label  className="controls__label settings-controls__control" htmlFor="selected_layout">Choose layout</label>
               <select
