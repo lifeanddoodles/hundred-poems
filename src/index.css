@@ -470,9 +470,10 @@ button:active {
 .poems--carousel .active {
   position: relative;
 }
+
 .poems--carousel .active .scroll {
   position: absolute;
-  transition: all 5s;
+  transition: all 1s;
   top: 0;
   bottom: 0;
 }
@@ -482,12 +483,42 @@ button:active {
   transition: inherit;
 }
 
+.poems--carousel .scroll--unrolled {
+  clip-path: inset(0 0 0 100%);
+}
+
+@keyframes open-scroll {
+  0% {
+    clip-path: inset(0 0 0 100%);
+  }
+  100% {
+    clip-path: inset(0);
+  }
+}
+
+@keyframes close-scroll {
+  0% {
+    clip-path: inset(0);
+  }
+  100% {
+    clip-path: inset(0 0 0 100%);
+  }
+}
+
 .poems--carousel .active .scroll {
   transform: translateX(calc(100% - 3em));
 }
 
 .poems--carousel .active:hover .scroll {
   transform: translateX(0%);
+}
+
+.poems--carousel .active .scroll--unrolled {
+  animation: 1s close-scroll forwards;
+}
+
+.poems--carousel .active:hover .scroll--unrolled {
+  animation: 1s open-scroll forwards;
 }
 
 .poems--carousel + .poem-controls {
