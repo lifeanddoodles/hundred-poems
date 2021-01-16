@@ -96,6 +96,7 @@ button:active {
 
 .settings-controls__submenu {
   display: none;
+  /* transition: display ease-out 2s; */
 }
 
 .settings-controls-container.is-open .settings-controls__submenu,
@@ -132,37 +133,30 @@ button:active {
 }
 
 .poem {
+  position: relative;
+  margin-block-end: 2em;
+  overflow: hidden;
+}
+
+.scroll {
+  width: 100%;
+  transition: transform 2s ease-out;
+  /* position: absolute; */
+}
+
+.scroll--unrolled {
   background-image: url('images/gold_scale.png');
   padding: 1em;
-  margin-block-end: 2em;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 2s ease-out;
 }
 
-.poem::before,
-.poem::after {
-  content: '';
+.scroll--rolled {
+  display: block;
   position: absolute;
-}
-
-.poem::before {
-  top: var(--top-start);
-  right: var(--right-start);
-  bottom: var(--shadow-bottom);
-  left: var(--shadow-left);
-  width: var(--shadow-width);
-  height: var(--shadow-height);
-  background: rgb(0, 0, 0);
-  background: linear-gradient(
-    var(--degrees),
-    rgba(0, 0, 0, 0.1) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
-}
-
-.poem::after {
   top: var(--top-start);
   right: var(--right-start);
   bottom: 0;
@@ -180,14 +174,22 @@ button:active {
   );
 }
 
-/* .poem {
-  overflow: hidden;
-  flex: 0;
-  transition: flex ease-out 1s;
+.scroll--rolled::before {
+  top: var(--top-start);
+  right: var(--right-start);
+  bottom: var(--shadow-bottom);
+  left: var(--shadow-left);
+  width: var(--shadow-width);
+  height: var(--shadow-height);
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    var(--degrees),
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  content: '';
+  position: absolute;
 }
-.poem:hover {
-  flex: 1;
-} */
 
 .poem__paper {
   background: beige;
@@ -218,7 +220,7 @@ button:active {
     padding: 0 0 0 3em;
   }
 
-  .poem::after {
+  .scroll--rolled {
     margin-left: auto;
     margin-right: auto;
     margin-top: -0.25em;
@@ -446,13 +448,13 @@ button:active {
 .poem__card--ja-traditional .character__container {
   min-height: initial;
 }
-
 /* END: Traditional style */
 
 /* Carousel styles */
 .poems--carousel {
   display: flex;
   margin-block-end: 2.75em;
+  overflow: hidden;
 }
 
 .poems--carousel .poem {
@@ -463,6 +465,29 @@ button:active {
 
 .poems--carousel .poem.active {
   display: flex;
+}
+
+.poems--carousel .active {
+  position: relative;
+}
+.poems--carousel .active .scroll {
+  position: absolute;
+  transition: all 5s;
+  top: 0;
+  bottom: 0;
+}
+
+.scroll--rolled {
+  position: absolute;
+  transition: inherit;
+}
+
+.poems--carousel .active .scroll {
+  transform: translateX(calc(100% - 3em));
+}
+
+.poems--carousel .active:hover .scroll {
+  transform: translateX(0%);
 }
 
 .poems--carousel + .poem-controls {

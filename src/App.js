@@ -259,15 +259,6 @@ const NavigationToggle = () => {
           </div>
         </nav>
       </header>
-      <main className={`poems ${carouselView ?
-      'poems--carousel' : ''} ${multipleAreasActive ? // START: at least two areas active
-        allAreasActive ?
-        'poems--three-cards' : //all areas are active = true
-        `poems--two-cards ${showEnglishColumn ?
-          'poems--two-cards-english' :
-          'poems--two-cards-romaji'}` // say which secondary area is active
-        : '' // END: at least two areas active = false
-        } ${selectedLayout}`}>
         { <PoemsView
           poems={poems}
           traditionalJapanese={traditionalJapanese}
@@ -276,8 +267,10 @@ const NavigationToggle = () => {
           showRomajiColumn={showRomajiColumn}
           carouselView={carouselView}
           currentPoem={currentPoem}
+          selectedLayout={selectedLayout}
+          multipleAreasActive={multipleAreasActive}
+          allAreasActive={allAreasActive}
         /> }
-      </main>
       {carouselView &&
       <section className="poem-controls">
         <button
