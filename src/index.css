@@ -134,6 +134,7 @@ button:active {
 
 .poem {
   position: relative;
+  padding: 0.25em 0;
   margin-block-end: 2em;
   overflow: hidden;
 }
@@ -141,7 +142,9 @@ button:active {
 .scroll {
   width: 100%;
   transition: transform 2s ease-out;
-  /* position: absolute; */
+  position: absolute;
+  top: 0;
+  bottom: 0;
 }
 
 .scroll--unrolled {
@@ -152,6 +155,7 @@ button:active {
   align-items: center;
   justify-content: center;
   transition: transform 2s ease-out;
+  width: 100%;
 }
 
 .scroll--rolled {
@@ -472,10 +476,10 @@ button:active {
 }
 
 .poems--carousel .active .scroll {
-  position: absolute;
   transition: all 1s;
+  /* position: absolute;
   top: 0;
-  bottom: 0;
+  bottom: 0; */
 }
 
 .scroll--rolled {
@@ -483,42 +487,93 @@ button:active {
   transition: inherit;
 }
 
-.poems--carousel .scroll--unrolled {
-  clip-path: inset(0 0 0 100%);
-}
-
-@keyframes open-scroll {
-  0% {
-    clip-path: inset(0 0 0 100%);
+@media screen and (prefers-reduced-motion: no-preference) {
+  @keyframes open-scroll-hor {
+    0% {
+      clip-path: inset(0 0 0 100%);
+    }
+    100% {
+      clip-path: inset(0);
+    }
   }
-  100% {
-    clip-path: inset(0);
+
+  @keyframes close-scroll-hor {
+    0% {
+      clip-path: inset(0);
+    }
+    100% {
+      clip-path: inset(0 0 0 100%);
+    }
   }
-}
-
-@keyframes close-scroll {
-  0% {
-    clip-path: inset(0);
+  @keyframes open-scroll-ver {
+    0% {
+      clip-path: inset(0 0 100% 0);
+    }
+    100% {
+      clip-path: inset(0);
+    }
   }
-  100% {
-    clip-path: inset(0 0 0 100%);
+
+  @keyframes close-scroll-ver {
+    0% {
+      clip-path: inset(0);
+    }
+    100% {
+      clip-path: inset(0 0 100% 0);
+    }
   }
-}
 
-.poems--carousel .active .scroll {
-  transform: translateX(calc(100% - 3em));
-}
+  @keyframes open-unrolled-scroll-hor {
+    0% {
+      transform: translateX(calc(100% - 3em));
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
 
-.poems--carousel .active:hover .scroll {
-  transform: translateX(0%);
-}
+  @keyframes open-unrolled-scroll-ver {
+    0% {
+      transform: translateY(calc(-100% + 3em));
+    }
+    100% {
+      transform: translateY(0%);
+    }
+  }
 
-.poems--carousel .active .scroll--unrolled {
-  animation: 1s close-scroll forwards;
-}
+  :root {
+    --open-scroll-animation: open-scroll-ver;
+    --close-scroll-animation: close-scroll-ver;
+    --open-unrolled-scroll-animation: open-unrolled-scroll-ver;
+  }
 
-.poems--carousel .active:hover .scroll--unrolled {
-  animation: 1s open-scroll forwards;
+  @media (min-width: 45em) {
+    :root {
+      --open-scroll-animation: open-scroll-hor;
+      --close-scroll-animation: close-scroll-hor;
+      --open-unrolled-scroll-animation: open-unrolled-scroll-hor;
+    }
+
+    .poems--carousel .scroll--unrolled {
+      clip-path: inset(0 0 0 100%);
+    }
+
+    .poems--carousel .poem .scroll {
+      transform: translateX(calc(100% - 3em));
+    }
+  }
+
+  .poems--carousel .poem.active .scroll {
+    animation: 1s var(--open-unrolled-scroll-animation) forwards;
+  }
+
+  .poems--carousel .poem .scroll--unrolled {
+    animation: 1s var(--close-scroll-animation) forwards;
+  }
+
+  .poems--carousel .poem.active .scroll--unrolled {
+    animation: 1s var(--open-scroll-animation) forwards;
+  }
 }
 
 .poems--carousel + .poem-controls {

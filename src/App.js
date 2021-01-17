@@ -26,7 +26,7 @@ const App = () => {
   }
 
   const handleBlur = (refElement) => {
-    console.log('blur',refElement)
+    console.log(refElement)
     if(refElement.current.classList.contains('is-open')) {
       refElement.current.classList.remove('is-open');
     }
