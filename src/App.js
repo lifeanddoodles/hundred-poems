@@ -25,12 +25,31 @@ const App = () => {
     }
   }
 
-  const handleBlur = (refElement) => {
-    console.log(refElement)
-    if(refElement.current.classList.contains('is-open')) {
-      refElement.current.classList.remove('is-open');
-    }
+  const handleBlur = (refElement, e) => {
+    // console.log(refElement, e)
+    console.log(e.relatedTarget)
+    // let related = e.relatedTarget ? e.relatedTarget : "none";
+    // console.log(related)
+
+    // if(e.target === refElement.current) {
+    //   console.log('submenu clicked')
+    // }
+      // if (e.currentTarget === e.target) {
+      //   console.log('unfocused self');
+      // } else {
+      //   console.log('unfocused child', e.target);
+      // }
+      // if (!e.currentTarget.contains(e.relatedTarget)) {
+      //   // Not triggered when swapping focus between children
+      //   console.log('focus left self');
+      // }
   }
+  // const handleBlurAlt = (refElement) => {
+  //   console.log(refElement)
+  //   if(refElement.current.classList.contains('is-open')) {
+  //     refElement.current.classList.remove('is-open');
+  //   }
+  // }
 
   const handleToggleCarouselView = () => {
     toggleCarouselView(!carouselView);
@@ -116,6 +135,40 @@ const japaneseControls = useRef();
 
 const layoutControls = useRef();
 
+const handleToggle = (checked, setToggleFunction, e) => {
+  console.log(e);
+  if(e.type === 'change') {
+    setToggleFunction(!checked)
+  }
+  else if(e.type === 'keydown') {
+    if(e.keyCode === 13) {
+      setToggleFunction(!checked)
+    }
+  }
+}
+
+const Toggle = ({label, id, checked, toggleFunction, falseIcon, trueIcon}) => {
+  return (
+    <label className="controls__label settings-controls__control">
+      {label}
+      {falseIcon && <FontAwesomeIcon icon={falseIcon} />}
+      <div className="toggle">
+        <input
+          type="checkbox"
+          // aria-label="Enable Furigana"
+          id={id}
+          checked={checked}
+          onChange={(e) => handleToggle(checked, toggleFunction, e)}
+          onKeyDown={(e) => handleToggle(checked, toggleFunction, e)}
+          tabIndex="0"
+        />
+        <span className="slider round"></span>
+      </div>
+      {trueIcon && <FontAwesomeIcon icon={trueIcon} />}
+    </label>
+  )
+}
+
 const NavigationToggle = () => {
 
   return (
@@ -123,7 +176,7 @@ const NavigationToggle = () => {
     <button
       className="settings-controls__toggle settings-controls__toggle--mobile"
       onClick={() => handleNavMenuToggle(allControls)}
-      onBlur={() => handleBlur(allControls)}
+      onBlur={(e) => handleBlur(allControls, e)}
     >
       <FontAwesomeIcon icon={faCog} /> Menu
     </button> : isMedium ?
@@ -131,14 +184,14 @@ const NavigationToggle = () => {
       <button
         className="settings-controls__toggle settings-controls__toggle--japanese"
         onClick={() => handleNavMenuToggle(japaneseControls)}
-        onBlur={() => handleBlur(japaneseControls)}
+        onBlur={(e) => handleBlur(japaneseControls, e)}
       >
         <FontAwesomeIcon icon={faLanguage} /> Change Japanese
       </button>
       <button
         className="settings-controls__toggle settings-controls__toggle--layout"
         onClick={() => handleNavMenuToggle(layoutControls)}
-        onBlur={() => handleBlur(layoutControls)}
+        onBlur={(e) => handleBlur(layoutControls, e)}
       >
         <FontAwesomeIcon icon={faColumns} /> Change layout
       </button>
@@ -160,72 +213,52 @@ const NavigationToggle = () => {
               className="settings-controls__japanese-area settings-controls__submenu"
               ref={japaneseControls}
             >
-              <label className="controls__label settings-controls__control">
-                Enable Furigana
-                <FontAwesomeIcon icon={faEyeSlash} />
-                <div className="toggle">
-                  <input
-                    type="checkbox"
-                    aria-label="Enable Furigana"
-                    id="furigana_checkbox"
-                    checked={showFurigana}
-                    onChange={handleToggleShowFurigana}
-                  />
-                  <span className="slider round"></span>
-                </div>
-                <FontAwesomeIcon icon={faEye} />
-              </label>
-              <label className="controls__label settings-controls__control">
-                Enable Traditional
-                <FontAwesomeIcon icon={faEyeSlash} />
-                <div className="toggle">
-                  <input
-                    type="checkbox"
-                    aria-label="Enable traditional style"
-                    id="traditional_checkbox"
-                    checked={traditionalJapanese}
-                    onChange={handleToggleTraditionalJapanese}
-                  />
-                  <span className="slider round"></span>
-                </div>
-                <FontAwesomeIcon icon={faEye} />
-              </label>
+              <Toggle
+                label="Show furigana"
+                id="furigana_checkbox"
+                checked={showFurigana}
+                toggleFunction={toggleShowFurigana}
+                falseIcon={faEyeSlash}
+                trueIcon={faEye}
+              />
+              <Toggle
+                label="Enable Traditional"
+                id="traditional_checkbox"
+                checked={traditionalJapanese}
+                toggleFunction={toggleTraditionalJapanese}
+                // falseIcon={faEyeSlash}
+                // trueIcon={faEye}
+              />
             </section>
             <section
               className="settings-controls__layout settings-controls__submenu"
               ref={layoutControls}
             >
-              <label className="controls__label settings-controls__control">
-                Carousel view
-                <FontAwesomeIcon icon={faEyeSlash} />
-                <div className="toggle">
-                  <input
-                    type="checkbox"
-                    aria-label="Carousel view"
-                    id="view_carousel_checkbox"
-                    checked={carouselView}
-                    onChange={handleToggleCarouselView}
-                  />
-                  <span className="slider round"></span>
-                </div>
-                <FontAwesomeIcon icon={faEye} />
-              </label>
-              <label className="controls__label settings-controls__control">
-                View English column
-                <FontAwesomeIcon icon={faEyeSlash} />
-                <div className="toggle">
-                  <input
-                    type="checkbox"
-                    aria-label="Enable English column"
-                    id="english_checkbox"
-                    checked={showEnglishColumn}
-                    onChange={handleToggleShowEnglishColumn}
-                  />
-                  <span className="slider round"></span>
-                </div>
-                <FontAwesomeIcon icon={faEye} />
-              </label>
-              <label className="controls__label settings-controls__control">
+              <Toggle
+                label="Carousel view"
+                id="view_carousel_checkbox"
+                checked={carouselView}
+                toggleFunction={toggleCarouselView}
+                falseIcon={faEyeSlash}
+                trueIcon={faEye}
+              />
+              <Toggle
+                label="View English column"
+                id="english_checkbox"
+                checked={showEnglishColumn}
+                toggleFunction={toggleShowEnglishColumn}
+                falseIcon={faEyeSlash}
+                trueIcon={faEye}
+              />
+              <Toggle
+                label="View romaji column"
+                id="romaji_checkbox"
+                    checked={showRomajiColumn}
+                toggleFunction={toggleShowRomajiColumn}
+                falseIcon={faEyeSlash}
+                trueIcon={faEye}
+              />
+              {/* <label className="controls__label settings-controls__control">
                 View romaji column
                 <FontAwesomeIcon icon={faEyeSlash} />
                 <div className="toggle">
@@ -239,7 +272,7 @@ const NavigationToggle = () => {
                   <span className="slider round"></span>
                 </div>
                 <FontAwesomeIcon icon={faEye} />
-              </label>
+              </label> */}
               <label  className="controls__label settings-controls__control" htmlFor="selected_layout">Choose layout</label>
               <select
                 name="selected_layout"
