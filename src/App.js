@@ -14,6 +14,35 @@ const App = () => {
   const [selectedLayout, setSelectedLayout] = useState(!traditionalJapanese ? 'columns' : 'main--top');
   const [prevRef, setPrevRef] = useState(null);
 
+
+  const nextPoem = () => {
+    setCurrentPoem((currentPoem + 1) % poems.length);
+  }
+
+  const prevPoem = () => {
+    if ((currentPoem - 1) % poems.length === -1) {
+        setCurrentPoem(poems.length - 1);
+        return;
+    }
+    setCurrentPoem(currentPoem - 1);
+  }
+
+  const handleToggle = (checked, setToggleFunction, e) => {
+    // console.log(e);
+    if(e.type === 'change') {
+      setToggleFunction(!checked)
+    }
+    else if(e.type === 'keydown') {
+      if(e.keyCode === 13) {
+        setToggleFunction(!checked)
+      }
+    }
+  }
+
+  const handleOptionChange = (event) => {
+    setSelectedLayout(event.target.value);
+  }
+
   const handleNavMenuToggle = (refElement) => {
     if(prevRef === null) {
       setPrevRef(refElement);
@@ -26,8 +55,18 @@ const App = () => {
   }
 
   const handleBlur = (refElement, e) => {
+    // console.log(e)
+    if(e.currentTarget.contains(e.target)) {
+      console.log(e.currentTarget, e.target);
+    }
+    // console.log(e.currentTarget, e.relatedTarget)
+    // if (!e.currentTarget.contains(e.relatedTarget)) {
+    //   if(refElement.current.classList.contains('is-open')) {
+    //     refElement.current.classList.remove('is-open');
+    //   }
+    // }
+    // console.log(e.relatedTarget)
     // console.log(refElement, e)
-    console.log(e.relatedTarget)
     // let related = e.relatedTarget ? e.relatedTarget : "none";
     // console.log(related)
 
@@ -51,153 +90,150 @@ const App = () => {
   //   }
   // }
 
-  const handleToggleCarouselView = () => {
-    toggleCarouselView(!carouselView);
-  }
+  const allControls = useRef();
 
-  const handleToggleShowFurigana = () => {
-    toggleShowFurigana(!showFurigana);
-  }
+  const japaneseControls = useRef();
 
-  const handleToggleTraditionalJapanese = () => {
-    toggleTraditionalJapanese(!traditionalJapanese);
-  }
+  const layoutControls = useRef();
 
-  const handleToggleShowRomajiColumn = () => {
-    toggleShowRomajiColumn(!showRomajiColumn);
-  }
+  const allAreasActive = showRomajiColumn && showEnglishColumn;
 
-  const handleToggleShowEnglishColumn = () => {
-    toggleShowEnglishColumn(!showEnglishColumn);
-  }
+  const twoAreasActive = (showRomajiColumn || showEnglishColumn) && !allAreasActive;
 
-  const nextPoem = () => {
-    setCurrentPoem((currentPoem + 1) % poems.length);
-}
+  const multipleAreasActive = twoAreasActive || allAreasActive;
 
-const prevPoem = () => {
-    if ((currentPoem - 1) % poems.length === -1) {
-        setCurrentPoem(poems.length - 1);
-        return;
-    }
-    setCurrentPoem(currentPoem - 1);
-}
-
-const handleOptionChange = (event) => {
-  setSelectedLayout(event.target.value);
-}
-
-const allAreasActive = showRomajiColumn && showEnglishColumn;
-
-const twoAreasActive = (showRomajiColumn || showEnglishColumn) && !allAreasActive;
-
-const multipleAreasActive = twoAreasActive || allAreasActive;
-
-function debounce(fn, ms) {
-  let timer
-  return _ => {
-    clearTimeout(timer)
-    timer = setTimeout(_ => {
-      timer = null
-      fn.apply(this, arguments)
-    }, ms)
-  };
-}
-
-const [dimensions, setDimensions] = useState({ 
-  height: window.innerHeight,
-  width: window.innerWidth
-});
-const WindowResizeListener = () => {
-  useEffect(() => {
-    const debouncedHandleResize = debounce(function handleResize() {
-      setDimensions({
-        height: window.innerHeight,
-        width: window.innerWidth
-      })
-    }, 250)
-
-    window.addEventListener('resize', debouncedHandleResize)
-
+  function debounce(fn, ms) {
+    let timer
     return _ => {
-      window.removeEventListener('resize', debouncedHandleResize)
-    }
-  })
-  return null;
-}
-const isSmall = dimensions.width <= 719;
-const isMedium = dimensions.width >= 720 && dimensions.width <= 1279;
-// const isLarge = dimensions.width >= 1008;
-
-const allControls = useRef();
-
-const japaneseControls = useRef();
-
-const layoutControls = useRef();
-
-const handleToggle = (checked, setToggleFunction, e) => {
-  console.log(e);
-  if(e.type === 'change') {
-    setToggleFunction(!checked)
+      clearTimeout(timer)
+      timer = setTimeout(_ => {
+        timer = null
+        fn.apply(this, arguments)
+      }, ms)
+    };
   }
-  else if(e.type === 'keydown') {
-    if(e.keyCode === 13) {
-      setToggleFunction(!checked)
-    }
+
+  const [dimensions, setDimensions] = useState({ 
+    height: window.innerHeight,
+    width: window.innerWidth
+  });
+  const WindowResizeListener = () => {
+    useEffect(() => {
+      const debouncedHandleResize = debounce(function handleResize() {
+        setDimensions({
+          height: window.innerHeight,
+          width: window.innerWidth
+        })
+      }, 250)
+
+      window.addEventListener('resize', debouncedHandleResize)
+
+      return _ => {
+        window.removeEventListener('resize', debouncedHandleResize)
+      }
+    })
+    return null;
   }
-}
+  const isSmall = dimensions.width <= 719;
+  const isMedium = dimensions.width >= 720 && dimensions.width <= 1279;
+  // const isLarge = dimensions.width >= 1008;
 
-const Toggle = ({label, id, checked, toggleFunction, falseIcon, trueIcon}) => {
-  return (
-    <label className="controls__label settings-controls__control">
-      {label}
-      {falseIcon && <FontAwesomeIcon icon={falseIcon} />}
-      <div className="toggle">
-        <input
-          type="checkbox"
-          // aria-label="Enable Furigana"
-          id={id}
-          checked={checked}
-          onChange={(e) => handleToggle(checked, toggleFunction, e)}
-          onKeyDown={(e) => handleToggle(checked, toggleFunction, e)}
-          tabIndex="0"
-        />
-        <span className="slider round"></span>
-      </div>
-      {trueIcon && <FontAwesomeIcon icon={trueIcon} />}
-    </label>
-  )
-}
+  const Toggle = ({label, id, checked, toggleFunction, falseIcon, trueIcon}) => {
+    return (
+      <label className="controls__label settings-controls__control">
+        {label}
+        {falseIcon && <FontAwesomeIcon icon={falseIcon} />}
+        <div className="toggle">
+          <input
+            type="checkbox"
+            // aria-label={ariaLabel}
+            id={id}
+            checked={checked}
+            onChange={(e) => handleToggle(checked, toggleFunction, e)}
+            onKeyDown={(e) => handleToggle(checked, toggleFunction, e)}
+            tabIndex="0"
+          />
+          <span className="slider round"></span>
+        </div>
+        {trueIcon && <FontAwesomeIcon icon={trueIcon} />}
+      </label>
+    )
+  }
 
-const NavigationToggle = () => {
+  const NavigationToggle = () => {
+    return (
+      isSmall ?
+      <button
+        className="settings-controls__toggle settings-controls__toggle--mobile"
+        onClick={() => handleNavMenuToggle(allControls)}
+        onBlur={(e) => handleBlur(allControls, e)}
+      >
+        <FontAwesomeIcon icon={faCog} /> Menu
+      </button> : isMedium ?
+      <React.Fragment>
+        {/* <button
+          className="settings-controls__toggle settings-controls__toggle--japanese"
+          onClick={() => handleNavMenuToggle(japaneseControls)}
+          onBlur={(e) => handleBlur(japaneseControls, e)}
+        >
+          <FontAwesomeIcon icon={faLanguage} /> Change Japanese
+        </button> */}
+        <button
+          className="settings-controls__toggle settings-controls__toggle--layout"
+          onClick={() => handleNavMenuToggle(layoutControls)}
+          onBlur={(e) => handleBlur(layoutControls, e)}
+        >
+          <FontAwesomeIcon icon={faColumns} /> Change layout
+        </button>
+      </React.Fragment> : ''
+    )
+  }
 
-  return (
-    isSmall ?
-    <button
-      className="settings-controls__toggle settings-controls__toggle--mobile"
-      onClick={() => handleNavMenuToggle(allControls)}
-      onBlur={(e) => handleBlur(allControls, e)}
+  const MenuItem = ({ itemComponent }) => { 
+    return (
+      <>
+       {itemComponent}  
+      </>
+    )
+  }
+
+  const MenuToggle = ({buttonText, icon, isOpen, setIsOpen}) => {
+    return (
+      <button
+        aria-haspopup="true"
+        aria-expanded={isOpen}
+        className="settings-controls__toggle"
+        onClick={() => setIsOpen(!isOpen)}
+        // onBlur={(e) => handleBlur(allControls, e)}
+        // onBlur={(e) => handleBlur(japaneseControls, e)}
+      >
+        {icon && <><FontAwesomeIcon icon={icon} />{' '}</>}{buttonText}
+        {/* {isOpen ? 'Close' : buttonText } */}
+      </button>
+    )
+  }
+
+  const Menu = React.forwardRef((props, ref) => {
+    const {buttonText, icon, children} = props;
+    const [isOpen, setIsOpen] = useState(false);
+    return (
+    <section
+      className={`settings-controls__container ${isOpen ? 'is-open' : ''}`}
+      ref={ref}
+      onBlur={(e) => handleBlur(ref, e)}
     >
-      <FontAwesomeIcon icon={faCog} /> Menu
-    </button> : isMedium ?
-    <React.Fragment>
-      <button
-        className="settings-controls__toggle settings-controls__toggle--japanese"
-        onClick={() => handleNavMenuToggle(japaneseControls)}
-        onBlur={(e) => handleBlur(japaneseControls, e)}
-      >
-        <FontAwesomeIcon icon={faLanguage} /> Change Japanese
-      </button>
-      <button
-        className="settings-controls__toggle settings-controls__toggle--layout"
-        onClick={() => handleNavMenuToggle(layoutControls)}
-        onBlur={(e) => handleBlur(layoutControls, e)}
-      >
-        <FontAwesomeIcon icon={faColumns} /> Change layout
-      </button>
-    </React.Fragment> : ''
-  )
-}
+      <MenuToggle
+        buttonText={buttonText}
+        icon={icon}
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+      />
+      <div className={`settings-controls__options`} role="presentation">
+      { isOpen ? children : '' }
+      </div>
+    </section>
+    )
+  })
 
   return (
     <div className="App">
@@ -209,7 +245,31 @@ const NavigationToggle = () => {
             className="settings-controls-container"
             ref={allControls}
           >
-            <section
+            <Menu
+              buttonText="Change Japanese"
+              icon={faLanguage}
+              ref={japaneseControls}
+            >
+              <MenuItem itemComponent={
+                <Toggle
+                  label="Show furigana"
+                  id="furigana_checkbox"
+                  checked={showFurigana}
+                  toggleFunction={toggleShowFurigana}
+                  falseIcon={faEyeSlash}
+                  trueIcon={faEye}
+                />
+              }/>
+              <MenuItem itemComponent={
+                <Toggle
+                  label="Enable Traditional"
+                  id="traditional_checkbox"
+                  checked={traditionalJapanese}
+                  toggleFunction={toggleTraditionalJapanese}
+                />
+              }/>
+            </Menu>
+            {/* <section
               className="settings-controls__japanese-area settings-controls__submenu"
               ref={japaneseControls}
             >
@@ -226,10 +286,8 @@ const NavigationToggle = () => {
                 id="traditional_checkbox"
                 checked={traditionalJapanese}
                 toggleFunction={toggleTraditionalJapanese}
-                // falseIcon={faEyeSlash}
-                // trueIcon={faEye}
               />
-            </section>
+            </section> */}
             <section
               className="settings-controls__layout settings-controls__submenu"
               ref={layoutControls}
@@ -258,21 +316,6 @@ const NavigationToggle = () => {
                 falseIcon={faEyeSlash}
                 trueIcon={faEye}
               />
-              {/* <label className="controls__label settings-controls__control">
-                View romaji column
-                <FontAwesomeIcon icon={faEyeSlash} />
-                <div className="toggle">
-                  <input
-                    type="checkbox"
-                    aria-label="Enable romaji column"
-                    id="romaji_checkbox"
-                    checked={showRomajiColumn}
-                    onChange={handleToggleShowRomajiColumn}
-                  />
-                  <span className="slider round"></span>
-                </div>
-                <FontAwesomeIcon icon={faEye} />
-              </label> */}
               <label  className="controls__label settings-controls__control" htmlFor="selected_layout">Choose layout</label>
               <select
                 name="selected_layout"
@@ -291,6 +334,11 @@ const NavigationToggle = () => {
             </section>
           </div>
         </nav>
+        
+        {/* <Menu buttonText="Second nav">
+          <a href="/home">Home</a>
+          <a href="/about">About</a>
+        </Menu> */}
       </header>
         { <PoemsView
           poems={poems}

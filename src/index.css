@@ -648,3 +648,13 @@ input:checked + .slider:before {
 .poem__card--ja {
   position: relative;
 }
+
+.settings-controls__container.is-open .settings-controls__options {
+  display: flex;
+  flex-direction: column;
+  background-color: ivory;
+  padding: 1em;
+  margin-top: -1em;
+}
+/* .settings-controls__toggle {
+} */
