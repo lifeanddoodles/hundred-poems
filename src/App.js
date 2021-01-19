@@ -43,36 +43,52 @@ const App = () => {
     setSelectedLayout(event.target.value);
   }
 
-  const handleNavMenuToggle = (refElement) => {
-    if(prevRef === null) {
-      setPrevRef(refElement);
-    }
-    refElement.current.classList.toggle('is-open');
-    if (prevRef !== null && prevRef !== refElement) {
-      prevRef.current.classList.remove('is-open');
-      setPrevRef(refElement);
-    }
-  }
-
   const handleBlur = (refElement, e) => {
-    // console.log(e)
-    if(e.currentTarget.contains(e.target)) {
-      console.log(e.currentTarget, e.target);
-    }
+    // console.log(e.currentTarget, refElement, e.target);
+    // console.log(refElement.current.outerText, e.target.innerText, e.relatedTarget.innerText, );
+    // console.log('before:' + refElement.current.className + ", " + refElement.current.outerText );
+      if(e.relatedTarget !== null) {
+        if(e.target.parentElement.classList.contains('is-open')) {
+        // if(refElement.current.classList.contains('is-open')) {
+          // refElement.current.classList.remove('is-open');
+          // e.target.parentElement.classList.remove('is-open');
+          // console.log(e)
+          console.log('contains class')
+        }
+      }
+      // if(!e.currentTarget.contains(e.relatedTarget)) {
+      //   if(refElement.current.classList.contains('is-open')) {
+      //     // refElement.current.classList.remove('is-open');
+      //   }
+      //   // console.log(refElement.current.outerText, e.currentTarget.innerText, e.target.innerText, e.relatedTarget.innerText, );
+      //   // console.log('after:' + refElement.current.className + ", " + refElement.current.outerText );
+      // }
+      // if(!refElement.current.contains(e.currentTarget) || !refElement.current.contains(e.relatedTarget)) {
+      //   if(refElement.current.classList.contains('is-open')) {
+      //     refElement.current.classList.remove('is-open');
+      //   }
+      //   console.log(refElement.current.outerText, e.currentTarget.innerText, e.target.innerText, e.relatedTarget.innerText, );
+      //   // console.log('after:' + refElement.current.className + ", " + refElement.current.outerText );
+      // }
+      // if(!refElement.current.contains(e.target) && refElement.current.classList.contains('is-open')) {
+      //   refElement.current.classList.remove('is-open');
+      //   console.log('after:' + refElement.current.className + ", " + refElement.current.outerText );
+      // }
+    // if(e.currentTarget.contains(e.target)) {
+      // console.log(e.currentTarget, e.target);
+    // }
     // console.log(e.currentTarget, e.relatedTarget)
-    // if (!e.currentTarget.contains(e.relatedTarget)) {
+    // if (e.currentTarget !== e.target || !e.currentTarget.contains(e.relatedTarget)) {
     //   if(refElement.current.classList.contains('is-open')) {
     //     refElement.current.classList.remove('is-open');
     //   }
     // }
-    // console.log(e.relatedTarget)
-    // console.log(refElement, e)
-    // let related = e.relatedTarget ? e.relatedTarget : "none";
-    // console.log(related)
-
-    // if(e.target === refElement.current) {
-    //   console.log('submenu clicked')
+    // if (e.currentTarget !== e.target && !e.currentTarget.contains(e.target) ) {
+      // if(refElement.current.classList.contains('is-open')) {
+      //   refElement.current.classList.remove('is-open');
+      // }
     // }
+
       // if (e.currentTarget === e.target) {
       //   console.log('unfocused self');
       // } else {
@@ -83,12 +99,6 @@ const App = () => {
       //   console.log('focus left self');
       // }
   }
-  // const handleBlurAlt = (refElement) => {
-  //   console.log(refElement)
-  //   if(refElement.current.classList.contains('is-open')) {
-  //     refElement.current.classList.remove('is-open');
-  //   }
-  // }
 
   const allControls = useRef();
 
@@ -134,14 +144,15 @@ const App = () => {
     })
     return null;
   }
-  const isSmall = dimensions.width <= 719;
-  const isMedium = dimensions.width >= 720 && dimensions.width <= 1279;
+  // const isSmall = dimensions.width <= 719;
+  // const isMedium = dimensions.width >= 720 && dimensions.width <= 1279;
   // const isLarge = dimensions.width >= 1008;
 
   const Toggle = ({label, id, checked, toggleFunction, falseIcon, trueIcon}) => {
     return (
       <label className="controls__label settings-controls__control">
-        {label}
+        <span className="control__label-text">{label}</span>
+        <span className="control__toggle-container">
         {falseIcon && <FontAwesomeIcon icon={falseIcon} />}
         <div className="toggle">
           <input
@@ -156,36 +167,8 @@ const App = () => {
           <span className="slider round"></span>
         </div>
         {trueIcon && <FontAwesomeIcon icon={trueIcon} />}
+        </span>
       </label>
-    )
-  }
-
-  const NavigationToggle = () => {
-    return (
-      isSmall ?
-      <button
-        className="settings-controls__toggle settings-controls__toggle--mobile"
-        onClick={() => handleNavMenuToggle(allControls)}
-        onBlur={(e) => handleBlur(allControls, e)}
-      >
-        <FontAwesomeIcon icon={faCog} /> Menu
-      </button> : isMedium ?
-      <React.Fragment>
-        {/* <button
-          className="settings-controls__toggle settings-controls__toggle--japanese"
-          onClick={() => handleNavMenuToggle(japaneseControls)}
-          onBlur={(e) => handleBlur(japaneseControls, e)}
-        >
-          <FontAwesomeIcon icon={faLanguage} /> Change Japanese
-        </button> */}
-        <button
-          className="settings-controls__toggle settings-controls__toggle--layout"
-          onClick={() => handleNavMenuToggle(layoutControls)}
-          onBlur={(e) => handleBlur(layoutControls, e)}
-        >
-          <FontAwesomeIcon icon={faColumns} /> Change layout
-        </button>
-      </React.Fragment> : ''
     )
   }
 
@@ -197,15 +180,14 @@ const App = () => {
     )
   }
 
-  const MenuToggle = ({buttonText, icon, isOpen, setIsOpen}) => {
+  const MenuToggle = ({buttonText, icon, isOpen, setIsOpen, handleBlur, menuRef}) => {
     return (
       <button
         aria-haspopup="true"
         aria-expanded={isOpen}
-        className="settings-controls__toggle"
+        className={`settings-controls__toggle`}
         onClick={() => setIsOpen(!isOpen)}
-        // onBlur={(e) => handleBlur(allControls, e)}
-        // onBlur={(e) => handleBlur(japaneseControls, e)}
+        onBlur={(e) => handleBlur(menuRef, e)}
       >
         {icon && <><FontAwesomeIcon icon={icon} />{' '}</>}{buttonText}
         {/* {isOpen ? 'Close' : buttonText } */}
@@ -214,22 +196,25 @@ const App = () => {
   }
 
   const Menu = React.forwardRef((props, ref) => {
-    const {buttonText, icon, children} = props;
+    const {buttonText, icon, isMobileNav, children} = props;
     const [isOpen, setIsOpen] = useState(false);
     return (
     <section
-      className={`settings-controls__container ${isOpen ? 'is-open' : ''}`}
+      className={`settings-controls__container ${isOpen ? 'is-open' : ''}  ${isMobileNav ? 'settings-controls__container--mobile' : 'settings-controls__container--submenu'}`}
       ref={ref}
-      onBlur={(e) => handleBlur(ref, e)}
+      // onBlur={(e) => handleBlur(ref, e)}
     >
       <MenuToggle
         buttonText={buttonText}
         icon={icon}
         isOpen={isOpen}
         setIsOpen={setIsOpen}
+        // onBlur={(e) => handleBlur(ref, e)}
+        handleBlur={handleBlur}
+        menuRef={ref}
       />
       <div className={`settings-controls__options`} role="presentation">
-      { isOpen ? children : '' }
+      {children}
       </div>
     </section>
     )
@@ -240,10 +225,11 @@ const App = () => {
       <WindowResizeListener />
       <header className="site-header">
         <nav className={`settings-controls`}>
-          <NavigationToggle />
-          <div
-            className="settings-controls-container"
+          <Menu
+            buttonText="Settings"
+            icon={faCog}
             ref={allControls}
+            isMobileNav
           >
             <Menu
               buttonText="Change Japanese"
@@ -269,27 +255,9 @@ const App = () => {
                 />
               }/>
             </Menu>
-            {/* <section
-              className="settings-controls__japanese-area settings-controls__submenu"
-              ref={japaneseControls}
-            >
-              <Toggle
-                label="Show furigana"
-                id="furigana_checkbox"
-                checked={showFurigana}
-                toggleFunction={toggleShowFurigana}
-                falseIcon={faEyeSlash}
-                trueIcon={faEye}
-              />
-              <Toggle
-                label="Enable Traditional"
-                id="traditional_checkbox"
-                checked={traditionalJapanese}
-                toggleFunction={toggleTraditionalJapanese}
-              />
-            </section> */}
-            <section
-              className="settings-controls__layout settings-controls__submenu"
+            <Menu
+              buttonText="Change layout"
+              icon={faColumns}
               ref={layoutControls}
             >
               <Toggle
@@ -311,7 +279,7 @@ const App = () => {
               <Toggle
                 label="View romaji column"
                 id="romaji_checkbox"
-                    checked={showRomajiColumn}
+                checked={showRomajiColumn}
                 toggleFunction={toggleShowRomajiColumn}
                 falseIcon={faEyeSlash}
                 trueIcon={faEye}
@@ -331,14 +299,9 @@ const App = () => {
                 <option value="main--top">Main top</option>
                 <option value="main--bottom">Main bottom</option>
               </select>
-            </section>
-          </div>
+            </Menu>
+          </Menu>
         </nav>
-        
-        {/* <Menu buttonText="Second nav">
-          <a href="/home">Home</a>
-          <a href="/about">About</a>
-        </Menu> */}
       </header>
         { <PoemsView
           poems={poems}

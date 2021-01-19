@@ -28,7 +28,7 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   font-size: 1em;
-  background-color: #f3f3f3;
+  background-color: #fffdf6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -40,15 +40,17 @@ select {
 }
 
 button {
-  background-color: #e6e6e6;
+  pointer-events: all;
+  background-color: #0189b9;
   border: 1px solid transparent;
   padding: 0.75em 1em;
   margin-block-end: 1em;
+  color: #fcfcfc;
 }
 
 button:hover,
 button:active {
-  background-color: #ccc;
+  background-color: #006387;
 }
 
 .App {
@@ -59,7 +61,7 @@ button:active {
 }
 
 .site-header {
-  background-color: #f3f3f3;
+  background-color: #debd6e;
   padding: 1em 1.5em;
   position: fixed;
   top: 0;
@@ -68,20 +70,20 @@ button:active {
   height: 4.5em;
 }
 
-.settings-controls__toggle--mobile {
-  z-index: 10;
-  position: absolute;
-}
-
-.settings-controls__toggle + .settings-controls__toggle {
-  margin-inline-start: 1em;
-}
-
-.settings-controls-container {
+.settings-controls__container {
   display: flex;
+  position: relative;
 }
 
-.settings-controls-container.is-open {
+.settings-controls__options {
+  pointer-events: none;
+}
+
+.settings-controls__container--mobile > .settings-controls__options {
+  display: none;
+}
+
+.settings-controls__container--mobile.is-open {
   position: absolute;
   left: 0;
   right: 0;
@@ -90,29 +92,50 @@ button:active {
   height: 100vh;
   align-items: center;
   justify-content: center;
-  background-color: oldlace;
+  background-color: #fbf6e0;
   flex-direction: column;
 }
 
-.settings-controls__submenu {
-  display: none;
-  /* transition: display ease-out 2s; */
+.settings-controls__container--mobile.is-open > .settings-controls__toggle {
+  z-index: 10;
+  position: absolute;
+  left: 1.5em;
+  top: 1em;
 }
 
-.settings-controls-container.is-open .settings-controls__submenu,
-.settings-controls__submenu.is-open {
+.settings-controls__container.is-open .settings-controls__options {
   display: flex;
   flex-direction: column;
+  background-color: #fbf6e0;
+  padding: 1em;
+  margin-top: -1em;
 }
 
-.settings-controls-container .settings-controls__japanese-area.is-open,
-.settings-controls-container .settings-controls__layout.is-open {
-  background-color: ivory;
-  padding: 1em;
+.settings-controls__container--submenu .settings-controls__toggle {
+  display: none;
+}
+
+.settings-controls__container--submenu .settings-controls__options {
+  display: flex;
 }
 
 .settings-controls__control {
   margin-block-end: 1em;
+  pointer-events: all;
+}
+
+.controls__label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.control__label-text {
+  margin-right: 1em;
+}
+
+.control__toggle-container {
+  width: 5.375em;
+  text-align: center;
 }
 
 .poem-controls {
@@ -134,7 +157,7 @@ button:active {
 
 .poem {
   position: relative;
-  padding: 0.25em 0;
+  padding: 0.25em;
   margin-block-end: 2em;
   overflow: hidden;
 }
@@ -169,12 +192,12 @@ button:active {
   height: var(--scroll-height);
   margin-left: -0.25em;
   margin-right: -0.25em;
-  background: rgb(242, 220, 175);
+  background: rgb(200, 172, 99);
   background: linear-gradient(
     var(--degrees),
-    rgba(242, 220, 175, 1) 0%,
+    rgba(200, 172, 99, 1) 0%,
     rgba(254, 240, 208, 1) 50%,
-    rgba(218, 190, 129, 1) 100%
+    rgba(222, 189, 110, 1) 100%
   );
 }
 
@@ -196,7 +219,7 @@ button:active {
 }
 
 .poem__paper {
-  background: beige;
+  background: #fbf6e0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -296,13 +319,31 @@ button:active {
 }
 
 @media screen and (min-width: 80em) {
-  .settings-controls-container {
+  .settings-controls__container {
     position: initial;
     height: auto;
   }
 
-  .settings-controls__toggle--mobile {
+  .settings-controls__container--mobile > .settings-controls__toggle {
     display: none;
+  }
+
+  .settings-controls__container--mobile > .settings-controls__options {
+    display: flex;
+  }
+
+  .settings-controls__container--submenu {
+    position: relative;
+  }
+  .settings-controls__container--submenu .settings-controls__options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: max-content;
+  }
+
+  .settings-controls__container--submenu .settings-controls__toggle {
+    display: block;
   }
 
   @supports (display: flex) {
@@ -310,18 +351,7 @@ button:active {
       display: flex;
     }
 
-    .settings-controls-container,
-    .settings-controls-container .settings-controls__submenu {
-      display: flex;
-    }
-
-    .settings-controls-container,
-    .settings-controls__submenu {
-      flex-direction: row;
-    }
-
-    .settings-controls__submenu + .settings-controls__submenu,
-    .settings-controls__control:not(:first-child) {
+    .settings-controls__container--submenu:not(:first-child) {
       margin-inline-start: 1em;
     }
   }
@@ -477,9 +507,6 @@ button:active {
 
 .poems--carousel .active .scroll {
   transition: all 1s;
-  /* position: absolute;
-  top: 0;
-  bottom: 0; */
 }
 
 .scroll--rolled {
@@ -588,6 +615,7 @@ button:active {
   display: inline-block;
   width: 2.5em;
   height: 1.5em;
+  margin-inline: 0.25em;
 }
 
 /* Hide default HTML checkbox */
@@ -641,20 +669,6 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-.controls__label .toggle {
-  margin-inline-start: 0.5em;
-}
-
 .poem__card--ja {
   position: relative;
 }
-
-.settings-controls__container.is-open .settings-controls__options {
-  display: flex;
-  flex-direction: column;
-  background-color: ivory;
-  padding: 1em;
-  margin-top: -1em;
-}
-/* .settings-controls__toggle {
-} */
