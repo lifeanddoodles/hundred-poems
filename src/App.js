@@ -11,8 +11,9 @@ const App = () => {
   const [showEnglishColumn, toggleShowEnglishColumn] = useState(true);
   const [currentPoem, setCurrentPoem] = useState(0);
   const [carouselView, toggleCarouselView] = useState(false);
-  const [selectedLayout, setSelectedLayout] = useState(!traditionalJapanese ? 'columns' : 'main--top');
-  const [prevRef, setPrevRef] = useState(null);
+  const [selectedLayout, setSelectedLayout] = useState('columns');
+  // const [selectedLayout, setSelectedLayout] = useState(!traditionalJapanese ? 'columns' : 'main--top');
+  // const [prevRef, setPrevRef] = useState(null);
 
 
   const nextPoem = () => {
@@ -47,57 +48,31 @@ const App = () => {
     // console.log(e.currentTarget, refElement, e.target);
     // console.log(refElement.current.outerText, e.target.innerText, e.relatedTarget.innerText, );
     // console.log('before:' + refElement.current.className + ", " + refElement.current.outerText );
-      if(e.relatedTarget !== null) {
-        if(e.target.parentElement.classList.contains('is-open')) {
-        // if(refElement.current.classList.contains('is-open')) {
-          // refElement.current.classList.remove('is-open');
-          // e.target.parentElement.classList.remove('is-open');
-          // console.log(e)
-          console.log('contains class')
-        }
-      }
-      // if(!e.currentTarget.contains(e.relatedTarget)) {
-      //   if(refElement.current.classList.contains('is-open')) {
+      // if(e.relatedTarget !== null) {
+      //   if(e.target.parentElement.classList.contains('is-open')) {
+      //   // if(refElement.current.classList.contains('is-open')) {
       //     // refElement.current.classList.remove('is-open');
+      //     // e.target.parentElement.classList.remove('is-open');
+      //     // console.log(e)
+      //     console.log('contains class')
       //   }
-      //   // console.log(refElement.current.outerText, e.currentTarget.innerText, e.target.innerText, e.relatedTarget.innerText, );
-      //   // console.log('after:' + refElement.current.className + ", " + refElement.current.outerText );
       // }
-      // if(!refElement.current.contains(e.currentTarget) || !refElement.current.contains(e.relatedTarget)) {
-      //   if(refElement.current.classList.contains('is-open')) {
-      //     refElement.current.classList.remove('is-open');
-      //   }
-      //   console.log(refElement.current.outerText, e.currentTarget.innerText, e.target.innerText, e.relatedTarget.innerText, );
-      //   // console.log('after:' + refElement.current.className + ", " + refElement.current.outerText );
-      // }
-      // if(!refElement.current.contains(e.target) && refElement.current.classList.contains('is-open')) {
-      //   refElement.current.classList.remove('is-open');
-      //   console.log('after:' + refElement.current.className + ", " + refElement.current.outerText );
-      // }
-    // if(e.currentTarget.contains(e.target)) {
-      // console.log(e.currentTarget, e.target);
-    // }
-    // console.log(e.currentTarget, e.relatedTarget)
-    // if (e.currentTarget !== e.target || !e.currentTarget.contains(e.relatedTarget)) {
-    //   if(refElement.current.classList.contains('is-open')) {
-    //     refElement.current.classList.remove('is-open');
-    //   }
-    // }
-    // if (e.currentTarget !== e.target && !e.currentTarget.contains(e.target) ) {
-      // if(refElement.current.classList.contains('is-open')) {
-      //   refElement.current.classList.remove('is-open');
-      // }
-    // }
 
-      // if (e.currentTarget === e.target) {
-      //   console.log('unfocused self');
-      // } else {
-      //   console.log('unfocused child', e.target);
+      if (e.currentTarget === e.target) {
+        console.log('unfocused self',  e.currentTarget ? `Current: ${e.currentTarget.outerText}` : '', e.target ? `Target: ${e.target.outerText}` : '', e.relatedTarget ? `Related: ${ e.relatedTarget.outerText}` : '');
+      }
+      // else if(e.currentTarget.children.contains(e.relatedTarget)) {
+      //   console.log('unfocused child',  e.currentTarget ? `Current: ${e.currentTarget.outerText}` : '', e.target ? `Target: ${e.target.outerText}` : '', e.relatedTarget ? `Related: ${ e.relatedTarget.outerText}` : '');
       // }
-      // if (!e.currentTarget.contains(e.relatedTarget)) {
-      //   // Not triggered when swapping focus between children
-      //   console.log('focus left self');
+      // if (e.currentTarget.contains(e.relatedTarget)) {
+      //   console.log('focus on child');
       // }
+      if (!e.currentTarget.contains(e.relatedTarget)) {
+        // Not triggered when swapping focus between children
+        // e.currentTarget.parentElement.classList.remove('is-open');
+        // e.currentTarget.parentElement.classList.add('is-open-removed');
+        console.log('focus left self',   e.currentTarget ? `Current: ${e.currentTarget.outerText}` : '', e.target ? `Target: ${e.target.outerText}` : '', e.relatedTarget ? `Related: ${ e.relatedTarget.outerText}` : '');
+      }
   }
 
   const allControls = useRef();

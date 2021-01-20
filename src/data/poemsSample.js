@@ -5,7 +5,8 @@ export const poems = [
             "ja" : {
                 "content": [
                     {
-                        "roleInSentence": "",
+                        "roleInSentence": "Name",
+                        "specialRule": "",
                         "word": [
                             {
                                 "character": "天",
@@ -13,6 +14,7 @@ export const poems = [
                                 "romaji": "ten",
                                 "isParticle": false,
                                 "isKanji": true,
+                                "hasSpecialReading": false,
                             },
                             {
                                 "character": "智",
@@ -20,11 +22,13 @@ export const poems = [
                                 "romaji": "ji",
                                 "isParticle": false,
                                 "isKanji": true,
+                                "hasSpecialReading": false,
                             },
                         ],
                     },
                     {
-                        "roleInSentence": "",
+                        "roleInSentence": "Title/Position",
+                        "specialRule": "",
                         "word": [
                             {
                                 "character": "天",
@@ -32,6 +36,7 @@ export const poems = [
                                 "romaji": "ten",
                                 "isParticle": false,
                                 "isKanji": true,
+                                "hasSpecialReading": false,
                             },
                             {
                                 "character": "皇",
@@ -39,6 +44,7 @@ export const poems = [
                                 "romaji": "nou",
                                 "isParticle": false,
                                 "isKanji": true,
+                                "hasSpecialReading": false,
                             },
                         ],
                     },
@@ -47,11 +53,13 @@ export const poems = [
             "en": {
                 "content": [
                     {
-                        "roleInSentence": "",
+                        "roleInSentence": "Title/Position",
+                        "specialRule": "",
                         "word": "Emperor",
                     },
                     {
-                        "roleInSentence": "",
+                        "roleInSentence": "Name",
+                        "specialRule": "",
                         "word": "Tenji",
                     },
                 ],
@@ -63,6 +71,7 @@ export const poems = [
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "秋",
@@ -70,11 +79,13 @@ export const poems = [
                                     "romaji": "aki",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "の",
@@ -82,11 +93,13 @@ export const poems = [
                                     "romaji": "no",
                                     "isParticle": true,
                                     "isKanji": false,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "田",
@@ -94,11 +107,13 @@ export const poems = [
                                     "romaji": "ta",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "の",
@@ -106,6 +121,7 @@ export const poems = [
                                     "romaji": "no",
                                     "isParticle": true,
                                     "isKanji": false,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
@@ -113,6 +129,7 @@ export const poems = [
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "か",
@@ -120,6 +137,7 @@ export const poems = [
                                     "romaji": "ka",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "り",
@@ -127,6 +145,7 @@ export const poems = [
                                     "romaji": "ri",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "ほ",
@@ -134,11 +153,13 @@ export const poems = [
                                     "romaji": "ho",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "の",
@@ -146,11 +167,13 @@ export const poems = [
                                     "romaji": "no",
                                     "isParticle": true,
                                     "isKanji": false,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "庵",
@@ -158,11 +181,13 @@ export const poems = [
                                     "romaji": "io",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "の",
@@ -170,6 +195,7 @@ export const poems = [
                                     "romaji": "no",
                                     "isParticle": true,
                                     "isKanji": false,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
@@ -177,6 +203,7 @@ export const poems = [
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "苫",
@@ -184,11 +211,13 @@ export const poems = [
                                     "romaji": "toma",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "を",
@@ -196,11 +225,13 @@ export const poems = [
                                     "romaji": "wo",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "あ",
@@ -208,6 +239,7 @@ export const poems = [
                                     "romaji": "a",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "ら",
@@ -215,6 +247,7 @@ export const poems = [
                                     "romaji": "ra",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "み",
@@ -222,6 +255,7 @@ export const poems = [
                                     "romaji": "mi",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
@@ -229,6 +263,7 @@ export const poems = [
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "わ",
@@ -236,6 +271,7 @@ export const poems = [
                                     "romaji": "wa",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "が",
@@ -243,11 +279,13 @@ export const poems = [
                                     "romaji": "ga",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "衣",
@@ -255,6 +293,7 @@ export const poems = [
                                     "romaji": "koromo",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "手",
@@ -262,11 +301,13 @@ export const poems = [
                                     "romaji": "de",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "は",
@@ -274,6 +315,7 @@ export const poems = [
                                     "romaji": "wa",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
@@ -281,6 +323,7 @@ export const poems = [
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "露",
@@ -288,11 +331,13 @@ export const poems = [
                                     "romaji": "tsuyu",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "に",
@@ -300,11 +345,13 @@ export const poems = [
                                     "romaji": "ni",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "ぬ",
@@ -312,6 +359,7 @@ export const poems = [
                                     "romaji": "nu",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "れ",
@@ -319,6 +367,7 @@ export const poems = [
                                     "romaji": "re",
                                     "isParticle": false,
                                     "isKanji": false,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "つ",
@@ -326,6 +375,7 @@ export const poems = [
                                     "romaji": "tsu",
                                     "isParticle": false,
                                     "isKanji": false,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "つ",
@@ -333,6 +383,7 @@ export const poems = [
                                     "romaji": "tsu",
                                     "isParticle": false,
                                     "isKanji": false,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
@@ -344,90 +395,110 @@ export const poems = [
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                     ],
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "",
                         },
                     ],
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "",
                         },
                     ],
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                     ],
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "",
                         },
                     ],
@@ -441,7 +512,8 @@ export const poems = [
             "ja" : {
                 "content": [
                     {
-                        "roleInSentence": "",
+                        "roleInSentence": "Name",
+                        "specialRule": "",
                         "word": [
                             {
                                 "character": "持",
@@ -449,6 +521,7 @@ export const poems = [
                                 "romaji": "ji",
                                 "isParticle": false,
                                 "isKanji": true,
+                                "hasSpecialReading": false,
                             },
                             {
                                 "character": "統",
@@ -456,11 +529,13 @@ export const poems = [
                                 "romaji": "tou",
                                 "isParticle": false,
                                 "isKanji": true,
+                                "hasSpecialReading": false,
                             },
                         ],
                     },
                     {
-                        "roleInSentence": "",
+                        "roleInSentence": "Title/Position",
+                        "specialRule": "",
                         "word": [
                             {
                                 "character": "天",
@@ -468,6 +543,7 @@ export const poems = [
                                 "romaji": "ten",
                                 "isParticle": false,
                                 "isKanji": true,
+                                "hasSpecialReading": false,
                             },
                             {
                                 "character": "皇",
@@ -475,6 +551,7 @@ export const poems = [
                                 "romaji": "nou",
                                 "isParticle": false,
                                 "isKanji": true,
+                                "hasSpecialReading": false,
                             },
                         ],
                     },
@@ -483,11 +560,13 @@ export const poems = [
             "en": {
                 "content": [
                     {
-                        "roleInSentence": "",
+                        "roleInSentence": "Title/Position",
+                        "specialRule": "",
                         "word": "Empress",
                     },
                     {
-                        "roleInSentence": "",
+                        "roleInSentence": "Name",
+                        "specialRule": "",
                         "word": "Jitō",
                     },
                 ],
@@ -499,6 +578,7 @@ export const poems = [
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "春",
@@ -506,12 +586,14 @@ export const poems = [
                                     "romaji": "haru",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
     
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "過",
@@ -519,6 +601,7 @@ export const poems = [
                                     "romaji": "su",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "ぎ",
@@ -526,6 +609,7 @@ export const poems = [
                                     "romaji": "gi",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "て",
@@ -533,6 +617,7 @@ export const poems = [
                                     "romaji": "te",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
     
                             ],
@@ -541,6 +626,7 @@ export const poems = [
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "夏",
@@ -548,12 +634,14 @@ export const poems = [
                                     "romaji": "natsu",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
     
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "来",
@@ -561,6 +649,7 @@ export const poems = [
                                     "romaji": "ki",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "に",
@@ -568,6 +657,7 @@ export const poems = [
                                     "romaji": "ni",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "け",
@@ -575,6 +665,7 @@ export const poems = [
                                     "romaji": "ke",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "ら",
@@ -582,6 +673,7 @@ export const poems = [
                                     "romaji": "ra",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "し",
@@ -589,6 +681,7 @@ export const poems = [
                                     "romaji": "shi",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
     
                             ],
@@ -597,6 +690,7 @@ export const poems = [
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "白",
@@ -604,6 +698,7 @@ export const poems = [
                                     "romaji": "shiro",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "妙",
@@ -611,12 +706,14 @@ export const poems = [
                                     "romaji": "tae",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
     
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "の",
@@ -624,6 +721,7 @@ export const poems = [
                                     "romaji": "no",
                                     "isParticle": true,
                                     "isKanji": false,
+                                    "hasSpecialReading": false,
                                 },
     
                             ],
@@ -632,6 +730,7 @@ export const poems = [
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "衣",
@@ -639,12 +738,14 @@ export const poems = [
                                     "romaji": "koromo",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
     
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "干",
@@ -652,6 +753,7 @@ export const poems = [
                                     "romaji": "ho",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "す",
@@ -659,12 +761,14 @@ export const poems = [
                                     "romaji": "su",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
     
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "て",
@@ -672,6 +776,7 @@ export const poems = [
                                     "romaji": "cho",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "ふ",
@@ -679,6 +784,7 @@ export const poems = [
                                     "romaji": "u",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
     
                             ],
@@ -687,6 +793,7 @@ export const poems = [
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "天",
@@ -694,12 +801,14 @@ export const poems = [
                                     "romaji": "ama",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
     
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "の",
@@ -707,12 +816,14 @@ export const poems = [
                                     "romaji": "no",
                                     "isParticle": true,
                                     "isKanji": false,
+                                    "hasSpecialReading": false,
                                 },
     
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "香",
@@ -720,6 +831,7 @@ export const poems = [
                                     "romaji": "ka",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "具",
@@ -727,6 +839,7 @@ export const poems = [
                                     "romaji": "gu",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "山",
@@ -734,6 +847,7 @@ export const poems = [
                                     "romaji": "yama",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
     
                             ],
@@ -746,90 +860,110 @@ export const poems = [
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                     ],
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "",
                         },
                     ],
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "",
                         },
                     ],
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                     ],
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "",
                         },
                     ],
@@ -844,6 +978,7 @@ export const poems = [
                 "content": [
                     {
                         "roleInSentence": "",
+                        "specialRule": "",
                         "word": [
                             {
                                 "character": "天",
@@ -851,6 +986,7 @@ export const poems = [
                                 "romaji": "ten",
                                 "isParticle": false,
                                 "isKanji": true,
+                                "hasSpecialReading": false,
                             },
                             {
                                 "character": "智",
@@ -858,11 +994,13 @@ export const poems = [
                                 "romaji": "ji",
                                 "isParticle": false,
                                 "isKanji": true,
+                                "hasSpecialReading": false,
                             },
                         ],
                     },
                     {
                         "roleInSentence": "",
+                        "specialRule": "",
                         "word": [
                             {
                                 "character": "天",
@@ -870,6 +1008,7 @@ export const poems = [
                                 "romaji": "ten",
                                 "isParticle": false,
                                 "isKanji": true,
+                                "hasSpecialReading": false,
                             },
                             {
                                 "character": "皇",
@@ -877,6 +1016,7 @@ export const poems = [
                                 "romaji": "nou",
                                 "isParticle": false,
                                 "isKanji": true,
+                                "hasSpecialReading": false,
                             },
                         ],
                     },
@@ -886,10 +1026,12 @@ export const poems = [
                 "content": [
                     {
                         "roleInSentence": "",
+                        "specialRule": "",
                         "word": "Number",
                     },
                     {
                         "roleInSentence": "",
+                        "specialRule": "",
                         "word": "Three",
                     },
                 ],
@@ -901,6 +1043,7 @@ export const poems = [
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "秋",
@@ -908,11 +1051,13 @@ export const poems = [
                                     "romaji": "aki",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "の",
@@ -920,11 +1065,13 @@ export const poems = [
                                     "romaji": "no",
                                     "isParticle": true,
                                     "isKanji": false,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "田",
@@ -932,11 +1079,13 @@ export const poems = [
                                     "romaji": "ta",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "の",
@@ -944,6 +1093,7 @@ export const poems = [
                                     "romaji": "no",
                                     "isParticle": true,
                                     "isKanji": false,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
@@ -951,6 +1101,7 @@ export const poems = [
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "か",
@@ -958,6 +1109,7 @@ export const poems = [
                                     "romaji": "ka",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "り",
@@ -965,6 +1117,7 @@ export const poems = [
                                     "romaji": "ri",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "ほ",
@@ -972,11 +1125,13 @@ export const poems = [
                                     "romaji": "ho",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "の",
@@ -984,11 +1139,13 @@ export const poems = [
                                     "romaji": "no",
                                     "isParticle": true,
                                     "isKanji": false,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "庵",
@@ -996,11 +1153,13 @@ export const poems = [
                                     "romaji": "io",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "の",
@@ -1008,6 +1167,7 @@ export const poems = [
                                     "romaji": "no",
                                     "isParticle": true,
                                     "isKanji": false,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
@@ -1015,6 +1175,7 @@ export const poems = [
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "苫",
@@ -1022,11 +1183,13 @@ export const poems = [
                                     "romaji": "toma",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "を",
@@ -1034,11 +1197,13 @@ export const poems = [
                                     "romaji": "wo",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "あ",
@@ -1046,6 +1211,7 @@ export const poems = [
                                     "romaji": "a",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "ら",
@@ -1053,6 +1219,7 @@ export const poems = [
                                     "romaji": "ra",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "み",
@@ -1060,6 +1227,7 @@ export const poems = [
                                     "romaji": "mi",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
@@ -1067,6 +1235,7 @@ export const poems = [
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "わ",
@@ -1074,6 +1243,7 @@ export const poems = [
                                     "romaji": "wa",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "が",
@@ -1081,11 +1251,13 @@ export const poems = [
                                     "romaji": "ga",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "衣",
@@ -1093,6 +1265,7 @@ export const poems = [
                                     "romaji": "koromo",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "手",
@@ -1100,11 +1273,13 @@ export const poems = [
                                     "romaji": "de",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "は",
@@ -1112,6 +1287,7 @@ export const poems = [
                                     "romaji": "wa",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
@@ -1119,6 +1295,7 @@ export const poems = [
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "露",
@@ -1126,11 +1303,13 @@ export const poems = [
                                     "romaji": "tsuyu",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "に",
@@ -1138,11 +1317,13 @@ export const poems = [
                                     "romaji": "ni",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "ぬ",
@@ -1150,6 +1331,7 @@ export const poems = [
                                     "romaji": "nu",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "れ",
@@ -1157,6 +1339,7 @@ export const poems = [
                                     "romaji": "re",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "つ",
@@ -1164,6 +1347,7 @@ export const poems = [
                                     "romaji": "tsu",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "つ",
@@ -1171,6 +1355,7 @@ export const poems = [
                                     "romaji": "tsu",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                             ],
                         },
@@ -1182,90 +1367,110 @@ export const poems = [
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                     ],
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "",
                         },
                     ],
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "",
                         },
                     ],
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                     ],
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "",
                         },
                     ],
@@ -1280,6 +1485,7 @@ export const poems = [
                 "content": [
                     {
                         "roleInSentence": "",
+                        "specialRule": "",
                         "word": [
                             {
                                 "character": "持",
@@ -1287,6 +1493,7 @@ export const poems = [
                                 "romaji": "ji",
                                 "isParticle": false,
                                 "isKanji": true,
+                                "hasSpecialReading": false,
                             },
                             {
                                 "character": "統",
@@ -1294,11 +1501,13 @@ export const poems = [
                                 "romaji": "tou",
                                 "isParticle": false,
                                 "isKanji": true,
+                                "hasSpecialReading": false,
                             },
                         ],
                     },
                     {
                         "roleInSentence": "",
+                        "specialRule": "",
                         "word": [
                             {
                                 "character": "天",
@@ -1306,6 +1515,7 @@ export const poems = [
                                 "romaji": "ten",
                                 "isParticle": false,
                                 "isKanji": true,
+                                "hasSpecialReading": false,
                             },
                             {
                                 "character": "皇",
@@ -1313,6 +1523,7 @@ export const poems = [
                                 "romaji": "nou",
                                 "isParticle": false,
                                 "isKanji": true,
+                                "hasSpecialReading": false,
                             },
                         ],
                     },
@@ -1322,10 +1533,12 @@ export const poems = [
                 "content": [
                     {
                         "roleInSentence": "",
+                        "specialRule": "",
                         "word": "Number",
                     },
                     {
                         "roleInSentence": "",
+                        "specialRule": "",
                         "word": "Four",
                     },
                 ],
@@ -1337,6 +1550,7 @@ export const poems = [
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "春",
@@ -1344,12 +1558,14 @@ export const poems = [
                                     "romaji": "haru",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
     
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "過",
@@ -1357,6 +1573,7 @@ export const poems = [
                                     "romaji": "su",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "ぎ",
@@ -1364,6 +1581,7 @@ export const poems = [
                                     "romaji": "gi",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "て",
@@ -1371,6 +1589,7 @@ export const poems = [
                                     "romaji": "te",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
     
                             ],
@@ -1379,6 +1598,7 @@ export const poems = [
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "夏",
@@ -1386,12 +1606,14 @@ export const poems = [
                                     "romaji": "natsu",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
     
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "来",
@@ -1399,6 +1621,7 @@ export const poems = [
                                     "romaji": "ki",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "に",
@@ -1406,6 +1629,7 @@ export const poems = [
                                     "romaji": "ni",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "け",
@@ -1413,6 +1637,7 @@ export const poems = [
                                     "romaji": "ke",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "ら",
@@ -1420,6 +1645,7 @@ export const poems = [
                                     "romaji": "ra",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "し",
@@ -1427,6 +1653,7 @@ export const poems = [
                                     "romaji": "shi",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
     
                             ],
@@ -1435,6 +1662,7 @@ export const poems = [
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "白",
@@ -1442,6 +1670,7 @@ export const poems = [
                                     "romaji": "shiro",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "妙",
@@ -1449,12 +1678,14 @@ export const poems = [
                                     "romaji": "tae",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
     
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "の",
@@ -1462,6 +1693,7 @@ export const poems = [
                                     "romaji": "no",
                                     "isParticle": true,
                                     "isKanji": false,
+                                    "hasSpecialReading": false,
                                 },
     
                             ],
@@ -1470,6 +1702,7 @@ export const poems = [
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "衣",
@@ -1477,12 +1710,14 @@ export const poems = [
                                     "romaji": "koromo",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
     
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "干",
@@ -1490,6 +1725,7 @@ export const poems = [
                                     "romaji": "ho",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "す",
@@ -1497,12 +1733,14 @@ export const poems = [
                                     "romaji": "su",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
     
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "て",
@@ -1510,6 +1748,7 @@ export const poems = [
                                     "romaji": "cho",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "ふ",
@@ -1517,6 +1756,7 @@ export const poems = [
                                     "romaji": "u",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
     
                             ],
@@ -1525,6 +1765,7 @@ export const poems = [
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "天",
@@ -1532,12 +1773,14 @@ export const poems = [
                                     "romaji": "ama",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
     
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "の",
@@ -1545,12 +1788,14 @@ export const poems = [
                                     "romaji": "no",
                                     "isParticle": true,
                                     "isKanji": false,
+                                    "hasSpecialReading": false,
                                 },
     
                             ],
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": [
                                 {
                                     "character": "香",
@@ -1558,6 +1803,7 @@ export const poems = [
                                     "romaji": "ka",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "具",
@@ -1565,6 +1811,7 @@ export const poems = [
                                     "romaji": "gu",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
                                 {
                                     "character": "山",
@@ -1572,6 +1819,7 @@ export const poems = [
                                     "romaji": "yama",
                                     "isParticle": false,
                                     "isKanji": true,
+                                    "hasSpecialReading": false,
                                 },
     
                             ],
@@ -1584,90 +1832,110 @@ export const poems = [
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                     ],
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "",
                         },
                     ],
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "",
                         },
                     ],
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                     ],
                     [
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "test",
                         },
                         {
                             "roleInSentence": "",
+                            "specialRule": "",
                             "word": "",
                         },
                     ],

@@ -18,8 +18,10 @@ const Word = ({
                         showFurigana={showFurigana}
                     />
         }) : null;
+        const toolTipAttr = wordObjectInLine.roleInSentence !== "" ? {'data-tooltip': wordObjectInLine.roleInSentence } : ''
+console.log(wordObjectInLine)
     return (
-        <span className="word__container">
+        <span className={`word__container ${wordObjectInLine.roleInSentence !== "" ? 'tooltip' : ''}`} {...toolTipAttr}>
             {wordCallback === getEachCharacter ? allCharacters : wordObjectInLine.word}
         </span>
     )

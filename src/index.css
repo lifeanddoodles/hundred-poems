@@ -168,6 +168,7 @@ button:active {
   position: absolute;
   top: 0;
   bottom: 0;
+  pointer-events: none;
 }
 
 .scroll--unrolled {
@@ -380,6 +381,10 @@ button:active {
 .poem__card--ja .line {
   display: flex;
   align-items: flex-end;
+}
+
+.word__container {
+  position: relative;
 }
 
 .poem__card--ja .word__container {
@@ -671,4 +676,26 @@ input:checked + .slider:before {
 
 .poem__card--ja {
   position: relative;
+}
+
+/* Tooltip */
+.tooltip::before {
+  color: black;
+  z-index: 1;
+  font-size: 1rem;
+  line-height: 1.25;
+  font-weight: normal;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  background: hsla(45, 82%, 64%, 0.9);
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  display: none;
+  transform: translateY(-50%);
+}
+
+.tooltip:hover::before {
+  display: block;
 }
