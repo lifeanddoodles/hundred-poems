@@ -6,7 +6,7 @@ export const poems = [
                 "content": [
                     {
                         "roleInSentence": "Name",
-                        "specialRule": "",
+                        "specialRule": "Special reading. の particle added after clan name.",
                         "word": [
                             {
                                 "character": "天",

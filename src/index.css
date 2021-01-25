@@ -383,10 +383,6 @@ button:active {
   align-items: flex-end;
 }
 
-.word__container {
-  position: relative;
-}
-
 .poem__card--ja .word__container {
   display: flex;
   align-items: flex-end;
@@ -679,7 +675,49 @@ input:checked + .slider:before {
 }
 
 /* Tooltip */
-.tooltip::before {
+.tooltip {
+  position: relative;
+  border-bottom: 1px dashed blue;
+}
+
+.tooltip-role::before {
+  color: black;
+  z-index: 1;
+  direction: ltr;
+  font-size: 1rem;
+  line-height: 1.25;
+  font-weight: normal;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  background: hsla(45, 82%, 64%, 0.9);
+  /* content: attr(data-tooltip-special); */
+  content: attr(data-tooltip-role) '. ' attr(data-tooltip-special);
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  display: none;
+  transform: translateY(-50%);
+}
+
+.tooltip-role:hover::before {
+  display: block;
+}
+
+/* .tooltip-special::after {
+  position: absolute;
+  z-index: 1;
+  font-size: 1rem;
+  display: block;
+  content: '';
+  height: 1em;
+  width: 1em;
+  background-color: #ccc;
+  border-radius: 50%;
+  top: 0;
+  left: 100%;
+}
+
+.tooltip-special::before {
   color: black;
   z-index: 1;
   font-size: 1rem;
@@ -688,14 +726,14 @@ input:checked + .slider:before {
   padding: 0.5rem 0.75rem;
   border-radius: 0.5rem;
   background: hsla(45, 82%, 64%, 0.9);
-  content: attr(data-tooltip);
+  content: attr(data-tooltip-special);
   position: absolute;
-  top: 50%;
-  left: 100%;
+  top: calc(50% - 1em);
+  left: calc(100% + 1em);
   display: none;
   transform: translateY(-50%);
 }
 
-.tooltip:hover::before {
+.tooltip-special:hover::before {
   display: block;
-}
+} */

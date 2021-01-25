@@ -4,17 +4,26 @@ import PoemsView from './components/PoemsView';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCog, faColumns, faEye, faEyeSlash, faLanguage } from '@fortawesome/free-solid-svg-icons'
 
-const App = () => {
-  const [showFurigana, toggleShowFurigana] = useState(false);
-  const [traditionalJapanese, toggleTraditionalJapanese] = useState(false);
-  const [showRomajiColumn, toggleShowRomajiColumn] = useState(true);
-  const [showEnglishColumn, toggleShowEnglishColumn] = useState(true);
-  const [currentPoem, setCurrentPoem] = useState(0);
-  const [carouselView, toggleCarouselView] = useState(false);
-  const [selectedLayout, setSelectedLayout] = useState('columns');
-  // const [selectedLayout, setSelectedLayout] = useState(!traditionalJapanese ? 'columns' : 'main--top');
-  // const [prevRef, setPrevRef] = useState(null);
+const useStateWithLocalStorage = localStorageKey => {
+  const [value, setValue] = useState(
+    localStorage.getItem(localStorageKey) || ''
+  );
+ 
+  useEffect(() => {
+    localStorage.setItem(localStorageKey, value);
+  }, [value]);
+ 
+  return [value, setValue];
+};
 
+const App = () => {
+  const [showFurigana, toggleShowFurigana] = useStateWithLocalStorage('showFurigana');
+  const [traditionalJapanese, toggleTraditionalJapanese] = useStateWithLocalStorage('traditionalJapanese');
+  const [showRomajiColumn, toggleShowRomajiColumn] = useStateWithLocalStorage('showRomajiColumn');
+  const [showEnglishColumn, toggleShowEnglishColumn] = useStateWithLocalStorage('showEnglishColumn');
+  const [carouselView, toggleCarouselView] = useStateWithLocalStorage('carouselView');
+  const [currentPoem, setCurrentPoem] = useState(0);
+  const [selectedLayout, setSelectedLayout] = useState('columns');
 
   const nextPoem = () => {
     setCurrentPoem((currentPoem + 1) % poems.length);
@@ -28,51 +37,19 @@ const App = () => {
     setCurrentPoem(currentPoem - 1);
   }
 
-  const handleToggle = (checked, setToggleFunction, e) => {
-    // console.log(e);
-    if(e.type === 'change') {
-      setToggleFunction(!checked)
-    }
-    else if(e.type === 'keydown') {
-      if(e.keyCode === 13) {
-        setToggleFunction(!checked)
-      }
-    }
-  }
-
   const handleOptionChange = (event) => {
     setSelectedLayout(event.target.value);
   }
 
   const handleBlur = (refElement, e) => {
-    // console.log(e.currentTarget, refElement, e.target);
-    // console.log(refElement.current.outerText, e.target.innerText, e.relatedTarget.innerText, );
-    // console.log('before:' + refElement.current.className + ", " + refElement.current.outerText );
-      // if(e.relatedTarget !== null) {
-      //   if(e.target.parentElement.classList.contains('is-open')) {
-      //   // if(refElement.current.classList.contains('is-open')) {
-      //     // refElement.current.classList.remove('is-open');
-      //     // e.target.parentElement.classList.remove('is-open');
-      //     // console.log(e)
-      //     console.log('contains class')
-      //   }
+      // if (e.currentTarget === e.target) {
+      //   console.log('unfocused self',  e.currentTarget ? `Current: ${e.currentTarget.outerText}` : '', e.target ? `Target: ${e.target.outerText}` : '', e.relatedTarget ? `Related: ${ e.relatedTarget.outerText}` : '');
       // }
-
-      if (e.currentTarget === e.target) {
-        console.log('unfocused self',  e.currentTarget ? `Current: ${e.currentTarget.outerText}` : '', e.target ? `Target: ${e.target.outerText}` : '', e.relatedTarget ? `Related: ${ e.relatedTarget.outerText}` : '');
-      }
-      // else if(e.currentTarget.children.contains(e.relatedTarget)) {
-      //   console.log('unfocused child',  e.currentTarget ? `Current: ${e.currentTarget.outerText}` : '', e.target ? `Target: ${e.target.outerText}` : '', e.relatedTarget ? `Related: ${ e.relatedTarget.outerText}` : '');
+      // if (!e.currentTarget.contains(e.relatedTarget)) {
+      //   // Not triggered when swapping focus between children
+      //   // e.currentTarget.parentElement.classList.remove('is-open');
+      //   console.log('focus left self',   e.currentTarget ? `Current: ${e.currentTarget.outerText}` : '', e.target ? `Target: ${e.target.outerText}` : '', e.relatedTarget ? `Related: ${ e.relatedTarget.outerText}` : '');
       // }
-      // if (e.currentTarget.contains(e.relatedTarget)) {
-      //   console.log('focus on child');
-      // }
-      if (!e.currentTarget.contains(e.relatedTarget)) {
-        // Not triggered when swapping focus between children
-        // e.currentTarget.parentElement.classList.remove('is-open');
-        // e.currentTarget.parentElement.classList.add('is-open-removed');
-        console.log('focus left self',   e.currentTarget ? `Current: ${e.currentTarget.outerText}` : '', e.target ? `Target: ${e.target.outerText}` : '', e.relatedTarget ? `Related: ${ e.relatedTarget.outerText}` : '');
-      }
   }
 
   const allControls = useRef();
@@ -87,43 +64,38 @@ const App = () => {
 
   const multipleAreasActive = twoAreasActive || allAreasActive;
 
-  function debounce(fn, ms) {
-    let timer
-    return _ => {
-      clearTimeout(timer)
-      timer = setTimeout(_ => {
-        timer = null
-        fn.apply(this, arguments)
-      }, ms)
-    };
+  const handleToggle = (localStorageKey, event) => {
+    if((event.type === 'change') || (event.type === 'keydown' && event.keyCode === 13)) {
+    switch (localStorageKey) {
+      case 'showFurigana':
+        toggleShowFurigana(!showFurigana);
+        break;
+      case 'traditionalJapanese':
+        toggleTraditionalJapanese(!traditionalJapanese);
+        break;
+      case 'showEnglishColumn':
+        toggleShowEnglishColumn(!showEnglishColumn);
+        break;
+      case 'showRomajiColumn':
+        toggleShowRomajiColumn(!showRomajiColumn);
+        break;
+      case 'carouselView':
+        toggleCarouselView(!carouselView);
+        break;
+      default:
+        break;
+    }
+  }
   }
 
-  const [dimensions, setDimensions] = useState({ 
-    height: window.innerHeight,
-    width: window.innerWidth
-  });
-  const WindowResizeListener = () => {
-    useEffect(() => {
-      const debouncedHandleResize = debounce(function handleResize() {
-        setDimensions({
-          height: window.innerHeight,
-          width: window.innerWidth
-        })
-      }, 250)
-
-      window.addEventListener('resize', debouncedHandleResize)
-
-      return _ => {
-        window.removeEventListener('resize', debouncedHandleResize)
-      }
-    })
-    return null;
+  const valueToBoolean = (value) => {
+    if (value !== 'false') {
+      return !!value;
+    }
+    return false
   }
-  // const isSmall = dimensions.width <= 719;
-  // const isMedium = dimensions.width >= 720 && dimensions.width <= 1279;
-  // const isLarge = dimensions.width >= 1008;
 
-  const Toggle = ({label, id, checked, toggleFunction, falseIcon, trueIcon}) => {
+  const Toggle = ({label, id, localStorageKey, checkedValue, toggleFunction, falseIcon, trueIcon}) => {
     return (
       <label className="controls__label settings-controls__control">
         <span className="control__label-text">{label}</span>
@@ -134,9 +106,9 @@ const App = () => {
             type="checkbox"
             // aria-label={ariaLabel}
             id={id}
-            checked={checked}
-            onChange={(e) => handleToggle(checked, toggleFunction, e)}
-            onKeyDown={(e) => handleToggle(checked, toggleFunction, e)}
+            checked={valueToBoolean(checkedValue)}
+            onChange={event => handleToggle(localStorageKey, event)}
+            onKeyDown={event => handleToggle(localStorageKey, event)}
             tabIndex="0"
           />
           <span className="slider round"></span>
@@ -165,7 +137,6 @@ const App = () => {
         onBlur={(e) => handleBlur(menuRef, e)}
       >
         {icon && <><FontAwesomeIcon icon={icon} />{' '}</>}{buttonText}
-        {/* {isOpen ? 'Close' : buttonText } */}
       </button>
     )
   }
@@ -197,7 +168,6 @@ const App = () => {
 
   return (
     <div className="App">
-      <WindowResizeListener />
       <header className="site-header">
         <nav className={`settings-controls`}>
           <Menu
@@ -215,7 +185,8 @@ const App = () => {
                 <Toggle
                   label="Show furigana"
                   id="furigana_checkbox"
-                  checked={showFurigana}
+                  localStorageKey='showFurigana'
+                  checkedValue={showFurigana}
                   toggleFunction={toggleShowFurigana}
                   falseIcon={faEyeSlash}
                   trueIcon={faEye}
@@ -225,7 +196,8 @@ const App = () => {
                 <Toggle
                   label="Enable Traditional"
                   id="traditional_checkbox"
-                  checked={traditionalJapanese}
+                  localStorageKey='traditionalJapanese'
+                  checkedValue={traditionalJapanese}
                   toggleFunction={toggleTraditionalJapanese}
                 />
               }/>
@@ -238,7 +210,8 @@ const App = () => {
               <Toggle
                 label="Carousel view"
                 id="view_carousel_checkbox"
-                checked={carouselView}
+                localStorageKey='carouselView'
+                checkedValue={carouselView}
                 toggleFunction={toggleCarouselView}
                 falseIcon={faEyeSlash}
                 trueIcon={faEye}
@@ -246,7 +219,8 @@ const App = () => {
               <Toggle
                 label="View English column"
                 id="english_checkbox"
-                checked={showEnglishColumn}
+                localStorageKey='showEnglishColumn'
+                checkedValue={showEnglishColumn}
                 toggleFunction={toggleShowEnglishColumn}
                 falseIcon={faEyeSlash}
                 trueIcon={faEye}
@@ -254,12 +228,18 @@ const App = () => {
               <Toggle
                 label="View romaji column"
                 id="romaji_checkbox"
-                checked={showRomajiColumn}
+                localStorageKey='showRomajiColumn'
+                checkedValue={showRomajiColumn}
                 toggleFunction={toggleShowRomajiColumn}
                 falseIcon={faEyeSlash}
                 trueIcon={faEye}
               />
-              <label  className="controls__label settings-controls__control" htmlFor="selected_layout">Choose layout</label>
+              <label
+                className="controls__label settings-controls__control"
+                htmlFor="selected_layout"
+              >
+                Choose layout
+              </label>
               <select
                 name="selected_layout"
                 id="selected_layout"
@@ -268,7 +248,7 @@ const App = () => {
                 onChange={handleOptionChange}
                 disabled={!allAreasActive}
                 >
-                <option disabled={traditionalJapanese} value="columns">Columns</option>
+                <option disabled={!!traditionalJapanese} value="columns">Columns</option>
                 <option value="main--left">Main left</option>
                 <option value="main--right">Main right</option>
                 <option value="main--top">Main top</option>
@@ -280,11 +260,11 @@ const App = () => {
       </header>
         { <PoemsView
           poems={poems}
-          traditionalJapanese={traditionalJapanese}
-          showFurigana={showFurigana}
-          showEnglishColumn={showEnglishColumn}
-          showRomajiColumn={showRomajiColumn}
-          carouselView={carouselView}
+          traditionalJapanese={valueToBoolean(traditionalJapanese)}
+          showFurigana={valueToBoolean(showFurigana)}
+          showEnglishColumn={valueToBoolean(showEnglishColumn)}
+          showRomajiColumn={valueToBoolean(showRomajiColumn)}
+          carouselView={valueToBoolean(carouselView)}
           currentPoem={currentPoem}
           selectedLayout={selectedLayout}
           multipleAreasActive={multipleAreasActive}
