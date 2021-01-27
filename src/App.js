@@ -4,9 +4,9 @@ import PoemsView from './components/PoemsView';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCog, faColumns, faEye, faEyeSlash, faLanguage } from '@fortawesome/free-solid-svg-icons'
 
-const useStateWithLocalStorage = localStorageKey => {
+const useStateWithLocalStorage = (localStorageKey, initialValue = '') => {
   const [value, setValue] = useState(
-    localStorage.getItem(localStorageKey) || ''
+    localStorage.getItem(localStorageKey) || initialValue
   );
  
   useEffect(() => {
@@ -20,10 +20,11 @@ const App = () => {
   const [showFurigana, toggleShowFurigana] = useStateWithLocalStorage('showFurigana');
   const [traditionalJapanese, toggleTraditionalJapanese] = useStateWithLocalStorage('traditionalJapanese');
   const [showRomajiColumn, toggleShowRomajiColumn] = useStateWithLocalStorage('showRomajiColumn');
-  const [showEnglishColumn, toggleShowEnglishColumn] = useStateWithLocalStorage('showEnglishColumn');
+  const [showEnglishColumn, toggleShowEnglishColumn] = useStateWithLocalStorage('showEnglishColumn', 'true');
   const [carouselView, toggleCarouselView] = useStateWithLocalStorage('carouselView');
-  const [currentPoem, setCurrentPoem] = useState(0);
-  const [selectedLayout, setSelectedLayout] = useState('columns');
+  const [selectedLayout, setSelectedLayout] = useStateWithLocalStorage('selectedLayout', 'columns');
+  // const [currentPoem, setCurrentPoem] = useState(0);
+  const [currentPoem, setCurrentPoem] = useStateWithLocalStorage('currentPoem');
 
   const nextPoem = () => {
     setCurrentPoem((currentPoem + 1) % poems.length);
@@ -37,9 +38,9 @@ const App = () => {
     setCurrentPoem(currentPoem - 1);
   }
 
-  const handleOptionChange = (event) => {
-    setSelectedLayout(event.target.value);
-  }
+  // const handleOptionChange = (event) => {
+  //   setSelectedLayout(event.target.value);
+  // }
 
   const handleBlur = (refElement, e) => {
       // if (e.currentTarget === e.target) {
@@ -64,28 +65,34 @@ const App = () => {
 
   const multipleAreasActive = twoAreasActive || allAreasActive;
 
-  const handleToggle = (localStorageKey, event) => {
+  const handleUpdate = (localStorageKey, event) => {
     if((event.type === 'change') || (event.type === 'keydown' && event.keyCode === 13)) {
-    switch (localStorageKey) {
-      case 'showFurigana':
-        toggleShowFurigana(!showFurigana);
-        break;
-      case 'traditionalJapanese':
-        toggleTraditionalJapanese(!traditionalJapanese);
-        break;
-      case 'showEnglishColumn':
-        toggleShowEnglishColumn(!showEnglishColumn);
-        break;
-      case 'showRomajiColumn':
-        toggleShowRomajiColumn(!showRomajiColumn);
-        break;
-      case 'carouselView':
-        toggleCarouselView(!carouselView);
-        break;
-      default:
-        break;
+      switch (localStorageKey) {
+        case 'showFurigana':
+          toggleShowFurigana(!showFurigana);
+          break;
+        case 'traditionalJapanese':
+          toggleTraditionalJapanese(!traditionalJapanese);
+          break;
+        case 'showEnglishColumn':
+          toggleShowEnglishColumn(!showEnglishColumn);
+          break;
+        case 'showRomajiColumn':
+          toggleShowRomajiColumn(!showRomajiColumn);
+          break;
+        case 'carouselView':
+          toggleCarouselView(!carouselView);
+          if(!currentPoem){
+            setCurrentPoem(0)
+          }
+          break;
+        case 'selectedLayout':
+          setSelectedLayout(event.target.value);
+          break;
+        default:
+          break;
+      }
     }
-  }
   }
 
   const valueToBoolean = (value) => {
@@ -107,8 +114,8 @@ const App = () => {
             // aria-label={ariaLabel}
             id={id}
             checked={valueToBoolean(checkedValue)}
-            onChange={event => handleToggle(localStorageKey, event)}
-            onKeyDown={event => handleToggle(localStorageKey, event)}
+            onChange={event => handleUpdate(localStorageKey, event)}
+            onKeyDown={event => handleUpdate(localStorageKey, event)}
             tabIndex="0"
           />
           <span className="slider round"></span>
@@ -165,7 +172,7 @@ const App = () => {
     </section>
     )
   })
-
+// console.log(typeof(currentPoem))
   return (
     <div className="App">
       <header className="site-header">
@@ -245,7 +252,8 @@ const App = () => {
                 id="selected_layout"
                 className="settings-controls__control"
                 value={selectedLayout}
-                onChange={handleOptionChange}
+                onChange={event => handleUpdate('selectedLayout', event)}
+                onKeyDown={event => handleUpdate('selectedLayout', event)}
                 disabled={!allAreasActive}
                 >
                 <option disabled={!!traditionalJapanese} value="columns">Columns</option>
@@ -265,12 +273,12 @@ const App = () => {
           showEnglishColumn={valueToBoolean(showEnglishColumn)}
           showRomajiColumn={valueToBoolean(showRomajiColumn)}
           carouselView={valueToBoolean(carouselView)}
-          currentPoem={currentPoem}
+          currentPoem={parseInt(currentPoem)}
           selectedLayout={selectedLayout}
           multipleAreasActive={multipleAreasActive}
           allAreasActive={allAreasActive}
         /> }
-      {carouselView &&
+      {valueToBoolean(carouselView) &&
       <section className="poem-controls">
         <button
           className="control control--prev"
