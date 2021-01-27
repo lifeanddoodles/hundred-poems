@@ -21,17 +21,17 @@ const Word = ({
 
     const toolTipRoleAttr = wordObjectInLine.roleInSentence !== "" ? {'data-tooltip-role': `${wordObjectInLine.roleInSentence}` } : ''
     const toolTipSpecialAttr = wordObjectInLine.specialRule !== "" ? {'data-tooltip-special': `${wordObjectInLine.specialRule}` } : ''
-    // console.log(wordObjectInLine)
+    
     return (
-        <span className={`word__container ${wordObjectInLine.roleInSentence !== "" || wordObjectInLine.roleInSentence !== ""  ?
-        'tooltip' : ''} ${wordObjectInLine.roleInSentence !== "" ?
-        'tooltip-role' : ''}  ${wordObjectInLine.specialRule !== "" ?
-        'tooltip-special' : ''}`}
-            {...toolTipRoleAttr}
-            {...toolTipSpecialAttr}
-        >
-            {wordCallback === getEachCharacter ? allCharacters : wordObjectInLine.word}
-        </span>
+        <>
+            <span className={`word__container ${wordObjectInLine.roleInSentence !== "" ?
+            'tooltip tooltip-role' : ''}`}
+                {...toolTipRoleAttr}
+            >
+                {wordCallback === getEachCharacter ? allCharacters : wordObjectInLine.word}
+            </span>
+            {wordObjectInLine.specialRule ? <button className={`tooltip-special`} {...toolTipSpecialAttr}>!</button> : ''}
+        </>
     )
 }
 

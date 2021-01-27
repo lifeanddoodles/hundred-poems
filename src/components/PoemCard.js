@@ -12,15 +12,10 @@ const PoemCard = ({
     let langAttr = 
     (charactersCallback !== 'romaji' && language !== 'en') ?
     {'lang': language} : '';
-    
-    let directionAttr = 
-    (language === 'ja' && charactersCallback !== 'romaji' && traditionalJapanese) ?
-    {'dir': 'rtl'} : '';
 
     return (
         <section
             {...langAttr}
-            // {...directionAttr}
             className={
                 `poem__card poem__card--${charactersCallback !== 'romaji' ?
                 `${language}` : 'romaji' } ${(language === 'ja' && charactersCallback !== 'romaji' && traditionalJapanese) ?
