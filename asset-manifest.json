@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/hundred-poems/static/css/main.61c4a4bb.chunk.css",
-    "main.js": "/hundred-poems/static/js/main.47ef84c5.chunk.js",
-    "main.js.map": "/hundred-poems/static/js/main.47ef84c5.chunk.js.map",
+    "main.css": "/hundred-poems/static/css/main.2dc95385.chunk.css",
+    "main.js": "/hundred-poems/static/js/main.e362b7aa.chunk.js",
+    "main.js.map": "/hundred-poems/static/js/main.e362b7aa.chunk.js.map",
     "runtime-main.js": "/hundred-poems/static/js/runtime-main.f5d7ed43.js",
     "runtime-main.js.map": "/hundred-poems/static/js/runtime-main.f5d7ed43.js.map",
-    "static/js/2.218dfc67.chunk.js": "/hundred-poems/static/js/2.218dfc67.chunk.js",
-    "static/js/2.218dfc67.chunk.js.map": "/hundred-poems/static/js/2.218dfc67.chunk.js.map",
+    "static/js/2.d05cf324.chunk.js": "/hundred-poems/static/js/2.d05cf324.chunk.js",
+    "static/js/2.d05cf324.chunk.js.map": "/hundred-poems/static/js/2.d05cf324.chunk.js.map",
     "index.html": "/hundred-poems/index.html",
-    "static/css/main.61c4a4bb.chunk.css.map": "/hundred-poems/static/css/main.61c4a4bb.chunk.css.map",
-    "static/js/2.218dfc67.chunk.js.LICENSE.txt": "/hundred-poems/static/js/2.218dfc67.chunk.js.LICENSE.txt"
+    "static/css/main.2dc95385.chunk.css.map": "/hundred-poems/static/css/main.2dc95385.chunk.css.map",
+    "static/js/2.d05cf324.chunk.js.LICENSE.txt": "/hundred-poems/static/js/2.d05cf324.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f5d7ed43.js",
-    "static/js/2.218dfc67.chunk.js",
-    "static/css/main.61c4a4bb.chunk.css",
-    "static/js/main.47ef84c5.chunk.js"
+    "static/js/2.d05cf324.chunk.js",
+    "static/css/main.2dc95385.chunk.css",
+    "static/js/main.e362b7aa.chunk.js"
   ]
 }
