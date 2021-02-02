@@ -2,7 +2,6 @@ import React, {useEffect, useState, createContext} from 'react';
 import { poems } from './data/poemsSample';
 
 export const PoemsContext = createContext();
-export const SettingsContext = createContext();
 
 const useStateWithLocalStorage = (localStorageKey, initialValue = '') => {
   const [value, setValue] = useState(
