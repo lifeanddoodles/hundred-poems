@@ -5,7 +5,7 @@ const Word = ({
     wordObjectInLine,
     wordCallback,
     charactersCallback,
-    showFurigana}) => {
+    }) => {
 
     const allCharacters = wordCallback === getEachCharacter ? wordObjectInLine.word.map((
         characterObject,
@@ -15,7 +15,6 @@ const Word = ({
                     key={index}
                     characterObject={characterObject}
                     characterCallback={charactersCallback}
-                    showFurigana={showFurigana}
                 />
     }) : null;
 

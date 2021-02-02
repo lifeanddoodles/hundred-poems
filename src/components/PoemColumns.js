@@ -1,36 +1,42 @@
-import PoemCard from "./PoemCard";
+import {useContext} from 'react';
 import {
     getEachCharacter,
     getCompleteWordString
 } from "../helpers";
+import { valueToBoolean } from "../utils";
+import { PoemsContext } from '../PoemsContext';
+import PoemCard from "./PoemCard";
 
 const PoemColumns = ({
     poem,
-    traditionalJapanese,
-    showFurigana,
-    showEnglishColumn,
-    showRomajiColumn}) => {
+    }) => {
+
+    const {
+        showEnglishColumn,
+        showRomajiColumn
+    } = useContext(PoemsContext);
 
     return [
         <PoemCard
             key={`${poem.id}--ja`}
-            poem={poem} language={'ja'}
+            poem={poem}
+            language={'ja'}
             wordCallback={getEachCharacter}
             charactersCallback='character'
-            traditionalJapanese={traditionalJapanese}
-            showFurigana={showFurigana}
         />,
-        showEnglishColumn &&
+        valueToBoolean(showEnglishColumn) &&
         <PoemCard
             key={`${poem.id}--en`}
-            poem={poem} language={'en'}
+            poem={poem}
+            language={'en'}
             wordCallback={getCompleteWordString}
             charactersCallback={null}
         />,
-        showRomajiColumn &&
+        valueToBoolean(showRomajiColumn) &&
         <PoemCard
             key={`${poem.id}--romaji`}
-            poem={poem} language={'ja'}
+            poem={poem}
+            language={'ja'}
             wordCallback={getEachCharacter}
             charactersCallback='romaji'
         />,

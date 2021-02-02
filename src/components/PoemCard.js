@@ -1,3 +1,6 @@
+import {useContext} from 'react';
+import { valueToBoolean } from "../utils";
+import { PoemsContext } from '../PoemsContext';
 import AuthorTitle from './AuthorTitle';
 import PoemText from './PoemText';
 
@@ -6,8 +9,11 @@ const PoemCard = ({
     language,
     wordCallback,
     charactersCallback,
-    traditionalJapanese,
-    showFurigana}) => {
+    }) => {
+
+    const {
+        traditionalJapanese,
+    } = useContext(PoemsContext);
 
     let langAttr = 
     (charactersCallback !== 'romaji' && language !== 'en') ?
@@ -18,7 +24,7 @@ const PoemCard = ({
             {...langAttr}
             className={
                 `poem__card poem__card--${charactersCallback !== 'romaji' ?
-                `${language}` : 'romaji' } ${(language === 'ja' && charactersCallback !== 'romaji' && traditionalJapanese) ?
+                `${language}` : 'romaji' } ${(language === 'ja' && charactersCallback !== 'romaji' && valueToBoolean(traditionalJapanese)) ?
                 'poem__card--ja-traditional' : ''}`
             }
         >
@@ -27,14 +33,12 @@ const PoemCard = ({
                 language={language}
                 wordCallback={wordCallback}
                 charactersCallback={charactersCallback}
-                showFurigana={showFurigana}
             />
             <PoemText
                 poemLines={poem.poem}
                 language={language}
                 wordCallback={wordCallback}
                 charactersCallback={charactersCallback}
-                showFurigana={showFurigana}
             />
         </section>
     )

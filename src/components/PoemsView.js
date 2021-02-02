@@ -1,26 +1,31 @@
+import {useContext} from 'react';
+import { valueToBoolean } from "../utils";
+import { PoemsContext } from '../PoemsContext';
 import PoemContainer from './PoemContainer';
 
-const PoemsView = ({
-    poems,
-    traditionalJapanese,
-    showFurigana,
-    showEnglishColumn,
-    showRomajiColumn,
-    currentPoem,
-    selectedLayout,
-    carouselView,
-    multipleAreasActive,
-    allAreasActive
-}) => {
+const PoemsView = () => {
+    const {
+        poems,
+        showRomajiColumn,
+        showEnglishColumn,
+        carouselView,
+        selectedLayout,
+    } = useContext(PoemsContext);
+
+    const allAreasActive = valueToBoolean(showRomajiColumn) && valueToBoolean(showEnglishColumn);
+
+    const twoAreasActive = (valueToBoolean(showRomajiColumn) || valueToBoolean(showEnglishColumn)) && !allAreasActive;
+
+    const multipleAreasActive = twoAreasActive || allAreasActive;
 
     return (
-        <main className={`poems ${carouselView ?
+        <main className={`poems ${valueToBoolean(carouselView) ?
             'poems--carousel' : ''} ${
                 multipleAreasActive ? // START: at least two areas active
                     allAreasActive ?
                     'poems--three-cards' : //all areas are active = true
                     `poems--two-cards ${
-                        showEnglishColumn ?
+                        valueToBoolean(showEnglishColumn) ?
                         'poems--two-cards-english' :
                         'poems--two-cards-romaji'}` // say which secondary area is active
                 : '' // END: at least two areas active = false
@@ -30,12 +35,6 @@ const PoemsView = ({
                 poems.map(poem => <PoemContainer
                     key={poem.id}
                     poem={poem}
-                    carouselView={carouselView}
-                    traditionalJapanese={traditionalJapanese}
-                    showFurigana={showFurigana}
-                    showEnglishColumn={showEnglishColumn}
-                    showRomajiColumn={showRomajiColumn}
-                    currentPoem={currentPoem}
                 />)
             }
         </main>

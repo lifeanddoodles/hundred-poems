@@ -1,15 +1,23 @@
+import React, {useContext} from 'react';
+import { valueToBoolean } from "../utils";
+import { PoemsContext } from '../PoemsContext';
+
 const CharacterContainer = ({
     characterObject,
     characterCallback,
-    showFurigana}) => {
+    }) => {
 
+    const {
+        showFurigana,
+    } = useContext(PoemsContext);
+    
     const isKanji = characterObject.isKanji;
 
     return (
         characterCallback === 'character' ?
         <span className="character__container">
             {
-                (isKanji && showFurigana ) &&
+                (isKanji && valueToBoolean(showFurigana) ) &&
                 <span className="furigana">
                     {characterObject.furigana}
                 </span>

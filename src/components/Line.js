@@ -5,7 +5,7 @@ const Line = ({
     lineInPoem,
     wordCallback,
     charactersCallback,
-    showFurigana }) => {
+    }) => {
         
         const words = lineInPoem.map((
             wordObjectInLine,
@@ -17,7 +17,6 @@ const Line = ({
                             wordObjectInLine={wordObjectInLine}
                             wordCallback={wordCallback}
                             charactersCallback={charactersCallback}
-                            showFurigana={showFurigana}
                         />
                         {index < lineInPoem.length - 1 ? space : ''}
                     </React.Fragment>

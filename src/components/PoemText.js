@@ -6,7 +6,6 @@ const PoemText = ({
     language,
     wordCallback,
     charactersCallback,
-    showFurigana
 }) => {
     
     const newLine = '\u000A';
@@ -19,7 +18,6 @@ const PoemText = ({
                         lineInPoem={lineInPoem}
                         wordCallback={wordCallback}
                         charactersCallback={charactersCallback}
-                        showFurigana={showFurigana}
                     />
                     {
                         index < poemLines[language].content.length ?
