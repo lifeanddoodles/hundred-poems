@@ -11,15 +11,15 @@ const CarouselControls = () => {
     } = useContext(PoemsContext);
 
     const nextPoem = () => {
-        setCurrentPoem((currentPoem + 1) % poems.length);
+        setCurrentPoem((parseInt(currentPoem) + 1) % poems.length);
     }
     
     const prevPoem = () => {
-        if ((currentPoem - 1) % poems.length === -1) {
+        if ((parseInt(currentPoem) - 1) % poems.length === -1) {
             setCurrentPoem(poems.length - 1);
             return;
         }
-        setCurrentPoem(currentPoem - 1);
+        setCurrentPoem(parseInt(currentPoem) - 1);
     }
 
     return (
