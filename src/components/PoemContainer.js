@@ -2,7 +2,6 @@ import {useContext} from 'react';
 import { valueToBoolean } from "../utils";
 import PoemColumns from "./PoemColumns";
 import { PoemsContext } from '../PoemsContext';
-import { parse } from '@fortawesome/fontawesome-svg-core';
 
 const PoemContainer = ({
     poem,
