@@ -8,7 +8,7 @@ const Toggle = ({label, id, localStorageKey, checkedValue, falseIcon, trueIcon})
     return (
       <label className="controls__label settings-controls__control">
         <span className="control__label-text">{label}</span>
-        <span className="control__toggle-container">
+        <span className={`control__toggle-container ${valueToBoolean(checkedValue) ? 'toggled' : 'not-toggled'}`}>
         {falseIcon && <FontAwesomeIcon icon={falseIcon} />}
         <div className="toggle">
           <input

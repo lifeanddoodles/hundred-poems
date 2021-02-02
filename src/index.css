@@ -734,3 +734,15 @@ input:checked + .slider:before {
 .tooltip-special:hover::before {
   display: block;
 }
+
+.control__toggle-container svg {
+  color: lightgray;
+}
+
+.control__toggle-container.not-toggled svg:first-child {
+  color: #2196f3;
+}
+
+.control__toggle-container.toggled svg:last-child {
+  color: #2196f3;
+}
