@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
-import { valueToBoolean } from "../../utils";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { valueToBoolean } from "../../utils";
 import { PoemsContext } from '../../PoemsContext';
 
 const Toggle = ({label, id, localStorageKey, checkedValue, falseIcon, trueIcon}) => {

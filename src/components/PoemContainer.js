@@ -1,12 +1,9 @@
 import {useContext} from 'react';
 import { valueToBoolean } from "../utils";
-import PoemColumns from "./PoemColumns";
 import { PoemsContext } from '../PoemsContext';
+import PoemColumns from "./PoemColumns";
 
-const PoemContainer = ({
-    poem,
-    }) => {
-
+const PoemContainer = ({ poem }) => {
     const {
         carouselView,
         currentPoem,
@@ -18,9 +15,7 @@ const PoemContainer = ({
                 <div className="poem__paper">
                     <header className="poem__number"><h2 id={poem.id}>Poem {poem.id}</h2></header>
                     <section className="poem__columns">
-                        <PoemColumns
-                            poem={poem}
-                        />
+                        <PoemColumns poem={poem} />
                     </section>
                 </div>
             </div>

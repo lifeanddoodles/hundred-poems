@@ -8,15 +8,12 @@ const Menu = React.forwardRef((props, ref) => {
     <section
       className={`settings-controls__container ${isOpen ? 'is-open' : ''}  ${isMobileNav ? 'settings-controls__container--mobile' : 'settings-controls__container--submenu'}`}
       ref={ref}
-      // onBlur={(e) => handleBlur(ref, e)}
     >
       <MenuToggle
         buttonText={buttonText}
         icon={icon}
         isOpen={isOpen}
         setIsOpen={setIsOpen}
-        // onBlur={(e) => handleBlur(ref, e)}
-        // handleBlur={handleBlur}
         menuRef={ref}
       />
       <div className={`settings-controls__options`} role="presentation">
