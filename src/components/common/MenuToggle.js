@@ -10,9 +10,7 @@ const MenuToggle = ({
   mobileNav = false }) => {
 
   const handleKeyDown = (event) => {
-    if (event.keyCode === 13) {
-      toggle()
-    } else if (event.keyCode === 9) {
+    if (event.keyCode === 9) {
       handleBlur(event)
     } else if (event.keyCode === 27) {
       setIsOpen(false)
