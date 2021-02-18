@@ -75,10 +75,6 @@ button:active {
   position: relative;
 }
 
-.settings-controls__options {
-  pointer-events: none;
-}
-
 .settings-controls__container--mobile > .settings-controls__options {
   display: none;
 }
@@ -720,7 +716,7 @@ input:checked + .slider:before {
 }
 
 .tooltip-special::before {
-  content: attr(data-tooltip-special);
+  content: attr(data-tooltip);
   top: calc(50% - 1em);
   left: calc(100% + 0.5em);
   transform: translateY(-50%);

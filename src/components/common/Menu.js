@@ -1,28 +1,40 @@
-import React, {createContext, useState} from 'react';
-import MenuToggle from "./MenuToggle";
+import React from 'react';
+import classNames from 'classnames';
+import MenuToggle from './MenuToggle';
+import { useMenu } from './hooks/useMenu';
 
-export const MenuContext = createContext();
+const Menu = ({
+  buttonText,
+  children,
+  icon,
+}) => {
+  const { isOpen, setIsOpen, toggle } = useMenu();
 
-const Menu = React.forwardRef((props, ref) => {
-    const {buttonText, icon, isMobileNav, children} = props;
-    const [isOpen, setIsOpen] = useState(false);
+  const menuClass = classNames(
+    'settings-controls__container',
+    'settings-controls__container--mobile',
+    {
+    'is-open': isOpen,
+  });
 
-    return (
-    <MenuContext.Provider value={{ref, isOpen, setIsOpen}}>
-      <section
-        className={`settings-controls__container ${isOpen ? 'is-open' : ''}  ${isMobileNav ? 'settings-controls__container--mobile' : 'settings-controls__container--submenu'}`}
-        ref={ref}
+  return (
+    <section className={menuClass}>
+      <MenuToggle
+        buttonText={buttonText}
+        icon={icon}
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        toggle={toggle}
+        mobileNav={true}
+      />
+      <div 
+        className="settings-controls__options"
+        role="presentation"
       >
-        <MenuToggle
-          buttonText={buttonText}
-          icon={icon}
-        />
-        <div className={`settings-controls__options`} role="presentation">
         {children}
-        </div>
-      </section>
-    </MenuContext.Provider>
-    )
-  })
+      </div>
+    </section>
+  )
+}
 
 export default Menu

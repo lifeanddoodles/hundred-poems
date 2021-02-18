@@ -2,7 +2,7 @@
   "name": "hundredpoems",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://lifeanddoodles.github.io/hundred-poems",
+  "homepage": "https://lifeanddoodles.github.io/hundred-poems",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
@@ -38,5 +38,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "classnames": "^2.2.6",
+    "lodash": "^4.17.20"
   }
 }

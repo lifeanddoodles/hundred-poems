@@ -24,22 +24,21 @@ export const PoemsProvider = (props) => {
   const [selectedLayout, setSelectedLayout] = useStateWithLocalStorage('selectedLayout', 'columns');
   const [currentPoem, setCurrentPoem] = useStateWithLocalStorage('currentPoem');
   const handleUpdate = (localStorageKey, event) => {
-    if((event.type === 'change') || (event.type === 'keydown' && event.keyCode === 13)) {
       switch (localStorageKey) {
         case 'showFurigana':
-          toggleShowFurigana(!showFurigana);
+          toggleShowFurigana(showFurigana => !showFurigana);
           break;
         case 'traditionalJapanese':
-          toggleTraditionalJapanese(!traditionalJapanese);
+          toggleTraditionalJapanese(traditionalJapanese => !traditionalJapanese);
           break;
         case 'showEnglishColumn':
-          toggleShowEnglishColumn(!showEnglishColumn);
+          toggleShowEnglishColumn(showEnglishColumn => !showEnglishColumn);
           break;
         case 'showRomajiColumn':
-          toggleShowRomajiColumn(!showRomajiColumn);
+          toggleShowRomajiColumn(showRomajiColumn => !showRomajiColumn);
           break;
         case 'carouselView':
-          toggleCarouselView(!carouselView);
+          toggleCarouselView(carouselView => !carouselView);
           if(!currentPoem){
             setCurrentPoem(0)
           }
@@ -50,7 +49,6 @@ export const PoemsProvider = (props) => {
         default:
           break;
       }
-    }
   }
 
   return (

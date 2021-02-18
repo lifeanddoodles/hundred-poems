@@ -1,4 +1,5 @@
 import CharacterContainer from "./CharacterContainer";
+import Tooltip from "./Tooltip";
 import { getEachCharacter } from "../helpers";
 
 const Word = ({
@@ -19,7 +20,7 @@ const Word = ({
     }) : null;
 
     const toolTipRoleAttr = wordObjectInLine.roleInSentence !== "" ? {'data-tooltip-role': `${wordObjectInLine.roleInSentence}` } : ''
-    const toolTipSpecialAttr = wordObjectInLine.specialRule !== "" ? {'data-tooltip-special': `${wordObjectInLine.specialRule}` } : ''
+    // const toolTipSpecialAttr = wordObjectInLine.specialRule !== "" ? {'data-tooltip-special': `${wordObjectInLine.specialRule}` } : ''
     
     return (
         <>
@@ -29,7 +30,7 @@ const Word = ({
             >
                 {wordCallback === getEachCharacter ? allCharacters : wordObjectInLine.word}
             </span>
-            {wordObjectInLine.specialRule ? <button className={`tooltip-special`} {...toolTipSpecialAttr}>!</button> : ''}
+            {wordObjectInLine.specialRule ? <Tooltip className={`tooltip-special`} dataTooltip={wordObjectInLine.specialRule}>!</Tooltip> : ''}
         </>
     )
 }
