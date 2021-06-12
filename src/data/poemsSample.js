@@ -1,1946 +1,2600 @@
 export const poems = [
-    {
-        "id": 1,
-        "author": {
-            "ja" : {
-                "content": [
-                    {
-                        "roleInSentence": "Name",
-                        "specialRule": "Special reading. の particle added after clan name.",
-                        "word": [
-                            {
-                                "character": "天",
-                                "furigana": "てん",
-                                "romaji": "ten",
-                                "isParticle": false,
-                                "isKanji": true,
-                                "hasSpecialReading": false,
-                            },
-                            {
-                                "character": "智",
-                                "furigana": "ぢ",
-                                "romaji": "ji",
-                                "isParticle": false,
-                                "isKanji": true,
-                                "hasSpecialReading": false,
-                            },
-                        ],
-                    },
-                    {
-                        "roleInSentence": "Title/Position",
-                        "specialRule": "",
-                        "word": [
-                            {
-                                "character": "天",
-                                "furigana": "てん",
-                                "romaji": "ten",
-                                "isParticle": false,
-                                "isKanji": true,
-                                "hasSpecialReading": false,
-                            },
-                            {
-                                "character": "皇",
-                                "furigana": "のう",
-                                "romaji": "nou",
-                                "isParticle": false,
-                                "isKanji": true,
-                                "hasSpecialReading": false,
-                            },
-                        ],
-                    },
-                ],
-            },
-            "en": {
-                "content": [
-                    {
-                        "roleInSentence": "Title/Position",
-                        "specialRule": "",
-                        "word": "Emperor",
-                    },
-                    {
-                        "roleInSentence": "Name",
-                        "specialRule": "",
-                        "word": "Tenji",
-                    },
-                ],
-            },
-        },
-        "poem": {
-            "ja" : {
-                "content": [
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "秋",
-                                    "furigana": "あき",
-                                    "romaji": "aki",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "の",
-                                    "furigana": "",
-                                    "romaji": "no",
-                                    "isParticle": true,
-                                    "isKanji": false,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "田",
-                                    "furigana": "た",
-                                    "romaji": "ta",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "の",
-                                    "furigana": "",
-                                    "romaji": "no",
-                                    "isParticle": true,
-                                    "isKanji": false,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "か",
-                                    "furigana": "",
-                                    "romaji": "ka",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "り",
-                                    "furigana": "",
-                                    "romaji": "ri",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "ほ",
-                                    "furigana": "",
-                                    "romaji": "ho",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "の",
-                                    "furigana": "",
-                                    "romaji": "no",
-                                    "isParticle": true,
-                                    "isKanji": false,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "庵",
-                                    "furigana": "いお",
-                                    "romaji": "io",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "の",
-                                    "furigana": "",
-                                    "romaji": "no",
-                                    "isParticle": true,
-                                    "isKanji": false,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "苫",
-                                    "furigana": "とま",
-                                    "romaji": "toma",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "を",
-                                    "furigana": "",
-                                    "romaji": "wo",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "あ",
-                                    "furigana": "",
-                                    "romaji": "a",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "ら",
-                                    "furigana": "",
-                                    "romaji": "ra",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "み",
-                                    "furigana": "",
-                                    "romaji": "mi",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "わ",
-                                    "furigana": "",
-                                    "romaji": "wa",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "が",
-                                    "furigana": "",
-                                    "romaji": "ga",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "衣",
-                                    "furigana": "ころも",
-                                    "romaji": "koromo",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "手",
-                                    "furigana": "で",
-                                    "romaji": "de",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "は",
-                                    "furigana": "",
-                                    "romaji": "wa",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "露",
-                                    "furigana": "つゆ",
-                                    "romaji": "tsuyu",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "に",
-                                    "furigana": "",
-                                    "romaji": "ni",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "ぬ",
-                                    "furigana": "",
-                                    "romaji": "nu",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "れ",
-                                    "furigana": "",
-                                    "romaji": "re",
-                                    "isParticle": false,
-                                    "isKanji": false,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "つ",
-                                    "furigana": "",
-                                    "romaji": "tsu",
-                                    "isParticle": false,
-                                    "isKanji": false,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "つ",
-                                    "furigana": "",
-                                    "romaji": "tsu",
-                                    "isParticle": false,
-                                    "isKanji": false,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                    ],
-                ],
-            },
-            "en": {
-                "content": [
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "",
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "",
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "",
-                        },
-                    ],
-                ],
-            },
-        }
+  {
+    "id":1,
+    "author":{
+      "ja":{
+        "content":[
+          {
+            "roleInSentence":"Name",
+            "specialRule":"",
+            "word":[
+              {
+                "character":"天",
+                "furigana":"てん",
+                "romaji":"ten",
+                "isParticle":false,
+                "isKanji":true,
+                "hasSpecialReading":false
+              },
+              {
+                "character":"智",
+                "furigana":"ぢ",
+                "romaji":"ji",
+                "isParticle":false,
+                "isKanji":true,
+                "hasSpecialReading":false
+              }
+            ]
+          },
+          {
+            "roleInSentence":"Title/Position",
+            "specialRule":"",
+            "word":[
+              {
+                "character":"天",
+                "furigana":"てん",
+                "romaji":"ten",
+                "isParticle":false,
+                "isKanji":true,
+                "hasSpecialReading":false
+              },
+              {
+                "character":"皇",
+                "furigana":"のう",
+                "romaji":"nou",
+                "isParticle":false,
+                "isKanji":true,
+                "hasSpecialReading":false
+              }
+            ]
+          }
+        ]
+      },
+      "en":{
+        "content":[
+          {
+            "roleInSentence":"",
+            "specialRule":"",
+            "word":"Emperor"
+          },
+          {
+            "roleInSentence":"",
+            "specialRule":"",
+            "word":"Tenji"
+          }
+        ]
+      }
     },
-    {
-        "id": 2,
-        "author": {
-            "ja" : {
-                "content": [
-                    {
-                        "roleInSentence": "Name",
-                        "specialRule": "",
-                        "word": [
-                            {
-                                "character": "持",
-                                "furigana": "じ",
-                                "romaji": "ji",
-                                "isParticle": false,
-                                "isKanji": true,
-                                "hasSpecialReading": false,
-                            },
-                            {
-                                "character": "統",
-                                "furigana": "とう",
-                                "romaji": "tou",
-                                "isParticle": false,
-                                "isKanji": true,
-                                "hasSpecialReading": false,
-                            },
-                        ],
-                    },
-                    {
-                        "roleInSentence": "Title/Position",
-                        "specialRule": "",
-                        "word": [
-                            {
-                                "character": "天",
-                                "furigana": "てん",
-                                "romaji": "ten",
-                                "isParticle": false,
-                                "isKanji": true,
-                                "hasSpecialReading": false,
-                            },
-                            {
-                                "character": "皇",
-                                "furigana": "のう",
-                                "romaji": "nou",
-                                "isParticle": false,
-                                "isKanji": true,
-                                "hasSpecialReading": false,
-                            },
-                        ],
-                    },
-                ],
+    "poem":{
+      "ja":{
+        "content":[
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"秋",
+                  "furigana":"あき",
+                  "romaji":"aki",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                }
+              ]
             },
-            "en": {
-                "content": [
-                    {
-                        "roleInSentence": "Title/Position",
-                        "specialRule": "",
-                        "word": "Empress",
-                    },
-                    {
-                        "roleInSentence": "Name",
-                        "specialRule": "",
-                        "word": "Jitō",
-                    },
-                ],
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"の",
+                  "furigana":"",
+                  "romaji":"no",
+                  "isParticle":true,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
             },
-        },
-        "poem": {
-            "ja" : {
-                "content": [
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "春",
-                                    "furigana": "はる",
-                                    "romaji": "haru",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-    
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "過",
-                                    "furigana": "す",
-                                    "romaji": "su",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "ぎ",
-                                    "furigana": "",
-                                    "romaji": "gi",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "て",
-                                    "furigana": "",
-                                    "romaji": "te",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-    
-                            ],
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "夏",
-                                    "furigana": "なつ",
-                                    "romaji": "natsu",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-    
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "来",
-                                    "furigana": "き",
-                                    "romaji": "ki",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "に",
-                                    "furigana": "",
-                                    "romaji": "ni",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "け",
-                                    "furigana": "",
-                                    "romaji": "ke",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "ら",
-                                    "furigana": "",
-                                    "romaji": "ra",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "し",
-                                    "furigana": "",
-                                    "romaji": "shi",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-    
-                            ],
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "白",
-                                    "furigana": "しろ",
-                                    "romaji": "shiro",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "妙",
-                                    "furigana": "たえ",
-                                    "romaji": "tae",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-    
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "の",
-                                    "furigana": "",
-                                    "romaji": "no",
-                                    "isParticle": true,
-                                    "isKanji": false,
-                                    "hasSpecialReading": false,
-                                },
-    
-                            ],
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "衣",
-                                    "furigana": "ころも",
-                                    "romaji": "koromo",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-    
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "干",
-                                    "furigana": "ほ",
-                                    "romaji": "ho",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "す",
-                                    "furigana": "",
-                                    "romaji": "su",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-    
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "て",
-                                    "furigana": "ちょ",
-                                    "romaji": "cho",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "ふ",
-                                    "furigana": "う",
-                                    "romaji": "u",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-    
-                            ],
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "天",
-                                    "furigana": "あま",
-                                    "romaji": "ama",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-    
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "の",
-                                    "furigana": "",
-                                    "romaji": "no",
-                                    "isParticle": true,
-                                    "isKanji": false,
-                                    "hasSpecialReading": false,
-                                },
-    
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "香",
-                                    "furigana": "か",
-                                    "romaji": "ka",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "具",
-                                    "furigana": "ぐ",
-                                    "romaji": "gu",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "山",
-                                    "furigana": "やま",
-                                    "romaji": "yama",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-    
-                            ],
-                        },
-                    ],
-                ],
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"田",
+                  "furigana":"た",
+                  "romaji":"ta",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                }
+              ]
             },
-            "en": {
-                "content": [
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "",
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "",
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "",
-                        },
-                    ],
-                ],
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"の",
+                  "furigana":"",
+                  "romaji":"no",
+                  "isParticle":true,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"か",
+                  "furigana":"",
+                  "romaji":"ka",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"り",
+                  "furigana":"",
+                  "romaji":"ri",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"ほ",
+                  "furigana":"",
+                  "romaji":"ho",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
             },
-        }
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"の",
+                  "furigana":"",
+                  "romaji":"no",
+                  "isParticle":true,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"庵",
+                  "furigana":"いお",
+                  "romaji":"io",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"の",
+                  "furigana":"",
+                  "romaji":"no",
+                  "isParticle":true,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"苫",
+                  "furigana":"とま",
+                  "romaji":"toma",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"を",
+                  "furigana":"",
+                  "romaji":"wo",
+                  "isParticle":true,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"あ",
+                  "furigana":"",
+                  "romaji":"a",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"ら",
+                  "furigana":"",
+                  "romaji":"ra",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"み",
+                  "furigana":"",
+                  "romaji":"mi",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"わ",
+                  "furigana":"",
+                  "romaji":"wa",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"が",
+                  "furigana":"",
+                  "romaji":"ga",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"衣",
+                  "furigana":"ころも",
+                  "romaji":"koromo",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"手",
+                  "furigana":"で",
+                  "romaji":"de",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"は",
+                  "furigana":"",
+                  "romaji":"wa",
+                  "isParticle":true,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"露",
+                  "furigana":"つゆ",
+                  "romaji":"tsuyu",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"に",
+                  "furigana":"",
+                  "romaji":"ni",
+                  "isParticle":true,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"ぬ",
+                  "furigana":"",
+                  "romaji":"nu",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"れ",
+                  "furigana":"",
+                  "romaji":"re",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"つ",
+                  "furigana":"",
+                  "romaji":"tsu",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"つ",
+                  "furigana":"",
+                  "romaji":"tsu",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            }
+          ]
+        ]
+      },
+      "en":{
+        "content":[
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"Coarse"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"the"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"rush-mat"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"roof"
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"Sheltering"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"the"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"harvest"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"hut"
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"Of"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"the"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"autumn"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"rice"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"field;"
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"And"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"my"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"sleeves"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"are"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"growing"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"wet"
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"With"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"the"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"moisture"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"dripping"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"through."
+            }
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id":2,
+    "author":{
+      "ja":{
+        "content":[
+          {
+            "roleInSentence":"",
+            "specialRule":"",
+            "word":[
+              {
+                "character":"持",
+                "furigana":"じ",
+                "romaji":"ji",
+                "isParticle":false,
+                "isKanji":true,
+                "hasSpecialReading":false
+              },
+              {
+                "character":"統",
+                "furigana":"とう",
+                "romaji":"tou",
+                "isParticle":false,
+                "isKanji":true,
+                "hasSpecialReading":false
+              }
+            ]
+          },
+          {
+            "roleInSentence":"",
+            "specialRule":"",
+            "word":[
+              {
+                "character":"天",
+                "furigana":"てん",
+                "romaji":"ten",
+                "isParticle":false,
+                "isKanji":true,
+                "hasSpecialReading":false
+              },
+              {
+                "character":"皇",
+                "furigana":"のう",
+                "romaji":"nou",
+                "isParticle":false,
+                "isKanji":true,
+                "hasSpecialReading":false
+              }
+            ]
+          }
+        ]
+      },
+      "en":{
+        "content":[
+          {
+            "roleInSentence":"",
+            "specialRule":"",
+            "word":"Empress"
+          },
+          {
+            "roleInSentence":"",
+            "specialRule":"",
+            "word":"Jitō"
+          }
+        ]
+      }
     },
-    {
-        "id": 3,
-        "author": {
-            "ja" : {
-                "content": [
-                    {
-                        "roleInSentence": "",
-                        "specialRule": "",
-                        "word": [
-                            {
-                                "character": "天",
-                                "furigana": "てん",
-                                "romaji": "ten",
-                                "isParticle": false,
-                                "isKanji": true,
-                                "hasSpecialReading": false,
-                            },
-                            {
-                                "character": "智",
-                                "furigana": "ぢ",
-                                "romaji": "ji",
-                                "isParticle": false,
-                                "isKanji": true,
-                                "hasSpecialReading": false,
-                            },
-                        ],
-                    },
-                    {
-                        "roleInSentence": "",
-                        "specialRule": "",
-                        "word": [
-                            {
-                                "character": "天",
-                                "furigana": "てん",
-                                "romaji": "ten",
-                                "isParticle": false,
-                                "isKanji": true,
-                                "hasSpecialReading": false,
-                            },
-                            {
-                                "character": "皇",
-                                "furigana": "のう",
-                                "romaji": "nou",
-                                "isParticle": false,
-                                "isKanji": true,
-                                "hasSpecialReading": false,
-                            },
-                        ],
-                    },
-                ],
+    "poem":{
+      "ja":{
+        "content":[
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"春",
+                  "furigana":"はる",
+                  "romaji":"haru",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                }
+              ]
             },
-            "en": {
-                "content": [
-                    {
-                        "roleInSentence": "",
-                        "specialRule": "",
-                        "word": "Number",
-                    },
-                    {
-                        "roleInSentence": "",
-                        "specialRule": "",
-                        "word": "Three",
-                    },
-                ],
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"過",
+                  "furigana":"す",
+                  "romaji":"su",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"ぎ",
+                  "furigana":"",
+                  "romaji":"gi",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"て",
+                  "furigana":"",
+                  "romaji":"te",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"夏",
+                  "furigana":"なつ",
+                  "romaji":"natsu",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                }
+              ]
             },
-        },
-        "poem": {
-            "ja" : {
-                "content": [
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "秋",
-                                    "furigana": "あき",
-                                    "romaji": "aki",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "の",
-                                    "furigana": "",
-                                    "romaji": "no",
-                                    "isParticle": true,
-                                    "isKanji": false,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "田",
-                                    "furigana": "た",
-                                    "romaji": "ta",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "の",
-                                    "furigana": "",
-                                    "romaji": "no",
-                                    "isParticle": true,
-                                    "isKanji": false,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "か",
-                                    "furigana": "",
-                                    "romaji": "ka",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "り",
-                                    "furigana": "",
-                                    "romaji": "ri",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "ほ",
-                                    "furigana": "",
-                                    "romaji": "ho",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "の",
-                                    "furigana": "",
-                                    "romaji": "no",
-                                    "isParticle": true,
-                                    "isKanji": false,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "庵",
-                                    "furigana": "いお",
-                                    "romaji": "io",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "の",
-                                    "furigana": "",
-                                    "romaji": "no",
-                                    "isParticle": true,
-                                    "isKanji": false,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "苫",
-                                    "furigana": "とま",
-                                    "romaji": "toma",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "を",
-                                    "furigana": "",
-                                    "romaji": "wo",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "あ",
-                                    "furigana": "",
-                                    "romaji": "a",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "ら",
-                                    "furigana": "",
-                                    "romaji": "ra",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "み",
-                                    "furigana": "",
-                                    "romaji": "mi",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "わ",
-                                    "furigana": "",
-                                    "romaji": "wa",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "が",
-                                    "furigana": "",
-                                    "romaji": "ga",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "衣",
-                                    "furigana": "ころも",
-                                    "romaji": "koromo",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "手",
-                                    "furigana": "で",
-                                    "romaji": "de",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "は",
-                                    "furigana": "",
-                                    "romaji": "wa",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "露",
-                                    "furigana": "つゆ",
-                                    "romaji": "tsuyu",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "に",
-                                    "furigana": "",
-                                    "romaji": "ni",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "ぬ",
-                                    "furigana": "",
-                                    "romaji": "nu",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "れ",
-                                    "furigana": "",
-                                    "romaji": "re",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "つ",
-                                    "furigana": "",
-                                    "romaji": "tsu",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "つ",
-                                    "furigana": "",
-                                    "romaji": "tsu",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                            ],
-                        },
-                    ],
-                ],
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"来",
+                  "furigana":"き",
+                  "romaji":"ki",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"に",
+                  "furigana":"",
+                  "romaji":"ni",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"け",
+                  "furigana":"",
+                  "romaji":"ke",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"ら",
+                  "furigana":"",
+                  "romaji":"ra",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"し",
+                  "furigana":"",
+                  "romaji":"shi",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"白",
+                  "furigana":"しろ",
+                  "romaji":"shiro",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"妙",
+                  "furigana":"たえ",
+                  "romaji":"tae",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                }
+              ]
             },
-            "en": {
-                "content": [
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "",
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "",
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "",
-                        },
-                    ],
-                ],
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"の",
+                  "furigana":"",
+                  "romaji":"no",
+                  "isParticle":true,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"衣",
+                  "furigana":"ころも",
+                  "romaji":"koromo",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                }
+              ]
             },
-        }
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"干",
+                  "furigana":"ほ",
+                  "romaji":"ho",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"す",
+                  "furigana":"",
+                  "romaji":"su",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"て",
+                  "furigana":"ちょ",
+                  "romaji":"cho",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":true
+                },
+                {
+                  "character":"ふ",
+                  "furigana":"う",
+                  "romaji":"u",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":true
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"天",
+                  "furigana":"あま",
+                  "romaji":"ama",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"の",
+                  "furigana":"",
+                  "romaji":"no",
+                  "isParticle":true,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"香",
+                  "furigana":"か",
+                  "romaji":"ka",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"具",
+                  "furigana":"ぐ",
+                  "romaji":"gu",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"山",
+                  "furigana":"やま",
+                  "romaji":"yama",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                }
+              ]
+            }
+          ]
+        ]
+      },
+      "en":{
+        "content":[
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"The"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"spring"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"has"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"passed"
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"And"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"the"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"summer"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"come"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"again;"
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"For"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"the"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"silk"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"white"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"robes,"
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"So"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"they"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"say,"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"are"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"spread"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"to"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"dry"
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"On"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"the"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"\"Mount"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"of"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"Heaven's"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"Perfume.\""
+            }
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id":3,
+    "author":{
+      "ja":{
+        "content":[
+          {
+            "roleInSentence":"",
+            "specialRule":"",
+            "word":[
+              {
+                "character":"柿",
+                "furigana":"かきの",
+                "romaji":"kakino",
+                "isParticle":false,
+                "isKanji":true,
+                "hasSpecialReading":false
+              },
+              {
+                "character":"本",
+                "furigana":"もと",
+                "romaji":"moto",
+                "isParticle":false,
+                "isKanji":true,
+                "hasSpecialReading":false
+              }
+            ]
+          },
+          {
+            "roleInSentence":"",
+            "specialRule":"",
+            "word":[
+              {
+                "character":"人",
+                "furigana":"ひと",
+                "romaji":"hito",
+                "isParticle":false,
+                "isKanji":true,
+                "hasSpecialReading":false
+              },
+              {
+                "character":"麿",
+                "furigana":"まろ",
+                "romaji":"maro",
+                "isParticle":false,
+                "isKanji":true,
+                "hasSpecialReading":false
+              }
+            ]
+          }
+        ]
+      },
+      "en":{
+        "content":[
+          {
+            "roleInSentence":"",
+            "specialRule":"",
+            "word":"Kakinomoto"
+          },
+          {
+            "roleInSentence":"",
+            "specialRule":"",
+            "word":"no"
+          },
+          {
+            "roleInSentence":"",
+            "specialRule":"",
+            "word":"Hitomaro"
+          }
+        ]
+      }
     },
-    {
-        "id": 4,
-        "author": {
-            "ja" : {
-                "content": [
-                    {
-                        "roleInSentence": "",
-                        "specialRule": "",
-                        "word": [
-                            {
-                                "character": "持",
-                                "furigana": "じ",
-                                "romaji": "ji",
-                                "isParticle": false,
-                                "isKanji": true,
-                                "hasSpecialReading": false,
-                            },
-                            {
-                                "character": "統",
-                                "furigana": "とう",
-                                "romaji": "tou",
-                                "isParticle": false,
-                                "isKanji": true,
-                                "hasSpecialReading": false,
-                            },
-                        ],
-                    },
-                    {
-                        "roleInSentence": "",
-                        "specialRule": "",
-                        "word": [
-                            {
-                                "character": "天",
-                                "furigana": "てん",
-                                "romaji": "ten",
-                                "isParticle": false,
-                                "isKanji": true,
-                                "hasSpecialReading": false,
-                            },
-                            {
-                                "character": "皇",
-                                "furigana": "のう",
-                                "romaji": "nou",
-                                "isParticle": false,
-                                "isKanji": true,
-                                "hasSpecialReading": false,
-                            },
-                        ],
-                    },
-                ],
+    "poem":{
+      "ja":{
+        "content":[
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"あ",
+                  "furigana":"",
+                  "romaji":"a",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"し",
+                  "furigana":"",
+                  "romaji":"shi",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"び",
+                  "furigana":"",
+                  "romaji":"bi",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"き",
+                  "furigana":"",
+                  "romaji":"ki",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
             },
-            "en": {
-                "content": [
-                    {
-                        "roleInSentence": "",
-                        "specialRule": "",
-                        "word": "Number",
-                    },
-                    {
-                        "roleInSentence": "",
-                        "specialRule": "",
-                        "word": "Four",
-                    },
-                ],
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"の",
+                  "furigana":"",
+                  "romaji":"no",
+                  "isParticle":true,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"山",
+                  "furigana":"やま",
+                  "romaji":"yama",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"鳥",
+                  "furigana":"どり",
+                  "romaji":"dori",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                }
+              ]
             },
-        },
-        "poem": {
-            "ja" : {
-                "content": [
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "春",
-                                    "furigana": "はる",
-                                    "romaji": "haru",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-    
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "過",
-                                    "furigana": "す",
-                                    "romaji": "su",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "ぎ",
-                                    "furigana": "",
-                                    "romaji": "gi",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "て",
-                                    "furigana": "",
-                                    "romaji": "te",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-    
-                            ],
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "夏",
-                                    "furigana": "なつ",
-                                    "romaji": "natsu",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-    
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "来",
-                                    "furigana": "き",
-                                    "romaji": "ki",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "に",
-                                    "furigana": "",
-                                    "romaji": "ni",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "け",
-                                    "furigana": "",
-                                    "romaji": "ke",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "ら",
-                                    "furigana": "",
-                                    "romaji": "ra",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "し",
-                                    "furigana": "",
-                                    "romaji": "shi",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-    
-                            ],
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "白",
-                                    "furigana": "しろ",
-                                    "romaji": "shiro",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "妙",
-                                    "furigana": "たえ",
-                                    "romaji": "tae",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-    
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "の",
-                                    "furigana": "",
-                                    "romaji": "no",
-                                    "isParticle": true,
-                                    "isKanji": false,
-                                    "hasSpecialReading": false,
-                                },
-    
-                            ],
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "衣",
-                                    "furigana": "ころも",
-                                    "romaji": "koromo",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-    
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "干",
-                                    "furigana": "ほ",
-                                    "romaji": "ho",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "す",
-                                    "furigana": "",
-                                    "romaji": "su",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-    
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "て",
-                                    "furigana": "ちょ",
-                                    "romaji": "cho",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "ふ",
-                                    "furigana": "う",
-                                    "romaji": "u",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-    
-                            ],
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "天",
-                                    "furigana": "あま",
-                                    "romaji": "ama",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-    
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "の",
-                                    "furigana": "",
-                                    "romaji": "no",
-                                    "isParticle": true,
-                                    "isKanji": false,
-                                    "hasSpecialReading": false,
-                                },
-    
-                            ],
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": [
-                                {
-                                    "character": "香",
-                                    "furigana": "か",
-                                    "romaji": "ka",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "具",
-                                    "furigana": "ぐ",
-                                    "romaji": "gu",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-                                {
-                                    "character": "山",
-                                    "furigana": "やま",
-                                    "romaji": "yama",
-                                    "isParticle": false,
-                                    "isKanji": true,
-                                    "hasSpecialReading": false,
-                                },
-    
-                            ],
-                        },
-                    ],
-                ],
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"の",
+                  "furigana":"",
+                  "romaji":"no",
+                  "isParticle":true,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
             },
-            "en": {
-                "content": [
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "",
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "",
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                    ],
-                    [
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "test",
-                        },
-                        {
-                            "roleInSentence": "",
-                            "specialRule": "",
-                            "word": "",
-                        },
-                    ],
-                ],
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"尾",
+                  "furigana":"お",
+                  "romaji":"o",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                }
+              ]
             },
-        }
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"の",
+                  "furigana":"",
+                  "romaji":"no",
+                  "isParticle":true,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"し",
+                  "furigana":"",
+                  "romaji":"shi",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"だ",
+                  "furigana":"",
+                  "romaji":"da",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"り",
+                  "furigana":"",
+                  "romaji":"ri",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"尾",
+                  "furigana":"お",
+                  "romaji":"o",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"の",
+                  "furigana":"",
+                  "romaji":"no",
+                  "isParticle":true,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"な",
+                  "furigana":"",
+                  "romaji":"na",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"が",
+                  "furigana":"",
+                  "romaji":"ga",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"な",
+                  "furigana":"",
+                  "romaji":"na",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"が",
+                  "furigana":"",
+                  "romaji":"ga",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"し",
+                  "furigana":"",
+                  "romaji":"shi",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"夜",
+                  "furigana":"よ",
+                  "romaji":"yo",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"を",
+                  "furigana":"",
+                  "romaji":"wo",
+                  "isParticle":true,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"ひ",
+                  "furigana":"",
+                  "romaji":"hi",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"と",
+                  "furigana":"",
+                  "romaji":"to",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"り",
+                  "furigana":"",
+                  "romaji":"ri",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"か",
+                  "furigana":"",
+                  "romaji":"ka",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"も",
+                  "furigana":"",
+                  "romaji":"mo",
+                  "isParticle":true,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"ね",
+                  "furigana":"",
+                  "romaji":"ne",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"む",
+                  "furigana":"ん",
+                  "romaji":"n",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":true
+                }
+              ]
+            }
+          ]
+        ]
+      },
+      "en":{
+        "content":[
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"Oh,"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"the"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"foot-drawn "
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"trail"
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"Of"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"the"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"mountain-pheasant's "
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"tail"
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"Drooped "
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"like "
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"down-curved "
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"branch!"
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"Through"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"this "
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"long,"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"long-dragging"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"night"
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"Must"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"I"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"lie"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"in"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"bed"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"alone?"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id":4,
+    "author":{
+      "ja":{
+        "content":[
+          {
+            "roleInSentence":"",
+            "specialRule":"",
+            "word":[
+              {
+                "character":"山",
+                "furigana":"やま",
+                "romaji":"yama",
+                "isParticle":false,
+                "isKanji":true,
+                "hasSpecialReading":false
+              },
+              {
+                "character":"辺",
+                "furigana":"べ",
+                "romaji":"be",
+                "isParticle":false,
+                "isKanji":true,
+                "hasSpecialReading":false
+              }
+            ]
+          },
+          {
+            "roleInSentence":"",
+            "specialRule":"",
+            "word":[
+              {
+                "character":"赤",
+                "furigana":"あか",
+                "romaji":"aka",
+                "isParticle":false,
+                "isKanji":true,
+                "hasSpecialReading":false
+              },
+              {
+                "character":"人",
+                "furigana":"ひと",
+                "romaji":"hito",
+                "isParticle":false,
+                "isKanji":true,
+                "hasSpecialReading":false
+              }
+            ]
+          }
+        ]
+      },
+      "en":{
+        "content":[
+          {
+            "roleInSentence":"",
+            "specialRule":"",
+            "word":"Yamabe"
+          },
+          {
+            "roleInSentence":"",
+            "specialRule":"",
+            "word":"no"
+          },
+          {
+            "roleInSentence":"",
+            "specialRule":"",
+            "word":"Akahito"
+          }
+        ]
+      }
     },
+    "poem":{
+      "ja":{
+        "content":[
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"田",
+                  "furigana":"た",
+                  "romaji":"ta",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"子",
+                  "furigana":"ご",
+                  "romaji":"go",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"の",
+                  "furigana":"",
+                  "romaji":"no",
+                  "isParticle":true,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"浦",
+                  "furigana":"うら",
+                  "romaji":"ura",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"に",
+                  "furigana":"",
+                  "romaji":"ni",
+                  "isParticle":true,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"打",
+                  "furigana":"う",
+                  "romaji":"u",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"ち",
+                  "furigana":"",
+                  "romaji":"chi",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"出",
+                  "furigana":"い",
+                  "romaji":"i",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"で",
+                  "furigana":"",
+                  "romaji":"de",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"て",
+                  "furigana":"",
+                  "romaji":"te",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"み",
+                  "furigana":"",
+                  "romaji":"mi",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"れ",
+                  "furigana":"",
+                  "romaji":"re",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"ば",
+                  "furigana":"",
+                  "romaji":"ba",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"白",
+                  "furigana":"しろ",
+                  "romaji":"shiro",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"妙",
+                  "furigana":"たえ",
+                  "romaji":"tae",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"の",
+                  "furigana":"",
+                  "romaji":"no",
+                  "isParticle":true,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"富",
+                  "furigana":"ふ",
+                  "romaji":"fu",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"士",
+                  "furigana":"じ",
+                  "romaji":"ji",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"の",
+                  "furigana":"",
+                  "romaji":"no",
+                  "isParticle":true,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"高",
+                  "furigana":"たか",
+                  "romaji":"taka",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"嶺",
+                  "furigana":"ね",
+                  "romaji":"ne",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"に",
+                  "furigana":"",
+                  "romaji":"ni",
+                  "isParticle":true,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"雪",
+                  "furigana":"ゆき",
+                  "romaji":"yuki",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"は",
+                  "furigana":"",
+                  "romaji":"wa",
+                  "isParticle":true,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"ふ",
+                  "furigana":"",
+                  "romaji":"fu",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"り",
+                  "furigana":"",
+                  "romaji":"ri",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"つ",
+                  "furigana":"",
+                  "romaji":"tsu",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"つ",
+                  "furigana":"",
+                  "romaji":"tsu",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            }
+          ]
+        ]
+      },
+      "en":{
+        "content":[
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"When"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"I"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"take"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"the"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"path"
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"To"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"Tago's"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"coast,"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"I"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"see"
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"Perfect"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"whiteness"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"laid"
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"On"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"Mount"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"Fuji's"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"lofty"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"peak"
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"By"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"the"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"drift"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"of"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"falling"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"snow."
+            }
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id":5,
+    "author":{
+      "ja":{
+        "content":[
+          {
+            "roleInSentence":"",
+            "specialRule":"",
+            "word":[
+              {
+                "character":"猿",
+                "furigana":"さる",
+                "romaji":"saru",
+                "isParticle":false,
+                "isKanji":true,
+                "hasSpecialReading":false
+              },
+              {
+                "character":"丸",
+                "furigana":"まる",
+                "romaji":"maru",
+                "isParticle":false,
+                "isKanji":true,
+                "hasSpecialReading":false
+              }
+            ]
+          },
+          {
+            "roleInSentence":"",
+            "specialRule":"",
+            "word":[
+              {
+                "character":"大",
+                "furigana":"だ",
+                "romaji":"da",
+                "isParticle":false,
+                "isKanji":true,
+                "hasSpecialReading":false
+              },
+              {
+                "character":"夫",
+                "furigana":"ゆう",
+                "romaji":"yuu",
+                "isParticle":false,
+                "isKanji":true,
+                "hasSpecialReading":false
+              }
+            ]
+          }
+        ]
+      },
+      "en":{
+        "content":[
+          {
+            "roleInSentence":"",
+            "specialRule":"",
+            "word":"Sarumaru"
+          },
+          {
+            "roleInSentence":"",
+            "specialRule":"",
+            "word":"Dayū"
+          }
+        ]
+      }
+    },
+    "poem":{
+      "ja":{
+        "content":[
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"奥",
+                  "furigana":"おく",
+                  "romaji":"oku",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"山",
+                  "furigana":"やま",
+                  "romaji":"yama",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"に",
+                  "furigana":"",
+                  "romaji":"ni",
+                  "isParticle":true,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"紅",
+                  "furigana":"もみ",
+                  "romaji":"momi",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"葉",
+                  "furigana":"じ",
+                  "romaji":"ji",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"ふ",
+                  "furigana":"",
+                  "romaji":"fu",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"み",
+                  "furigana":"",
+                  "romaji":"mi",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"わ",
+                  "furigana":"",
+                  "romaji":"wa",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"け",
+                  "furigana":"",
+                  "romaji":"ke",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"鳴",
+                  "furigana":"な",
+                  "romaji":"na",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"く",
+                  "furigana":"",
+                  "romaji":"ku",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"鹿",
+                  "furigana":"しか",
+                  "romaji":"shika",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"の",
+                  "furigana":"",
+                  "romaji":"no",
+                  "isParticle":true,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"声",
+                  "furigana":"こえ",
+                  "romaji":"koe",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"き",
+                  "furigana":"",
+                  "romaji":"ki",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"く",
+                  "furigana":"",
+                  "romaji":"ku",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"時",
+                  "furigana":"とき",
+                  "romaji":"toki",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"ぞ",
+                  "furigana":"",
+                  "romaji":"zo",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"秋",
+                  "furigana":"あき",
+                  "romaji":"aki",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"は",
+                  "furigana":"",
+                  "romaji":"wa",
+                  "isParticle":true,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":[
+                {
+                  "character":"悲",
+                  "furigana":"かな",
+                  "romaji":"kana",
+                  "isParticle":false,
+                  "isKanji":true,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"し",
+                  "furigana":"",
+                  "romaji":"shi",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                },
+                {
+                  "character":"き",
+                  "furigana":"",
+                  "romaji":"ki",
+                  "isParticle":false,
+                  "isKanji":false,
+                  "hasSpecialReading":false
+                }
+              ]
+            }
+          ]
+        ]
+      },
+      "en":{
+        "content":[
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"In"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"the"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"mountain"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"depths,"
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"Treading"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"through"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"the"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"crimson"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"leaves,"
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"The"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"wandering"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"stag"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"calls."
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"When"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"I"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"hear"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"the"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"lonely"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"cry,"
+            }
+          ],
+          [
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"Sad--"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"how"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"sad!--"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"the"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"autumn"
+            },
+            {
+              "roleInSentence":"",
+              "specialRule":"",
+              "word":"is."
+            }
+          ]
+        ]
+      }
+    }
+  },
 ];
