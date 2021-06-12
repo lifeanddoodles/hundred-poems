@@ -5,7 +5,7 @@ export const poems = [
       "ja":{
         "content":[
           {
-            "roleInSentence":"Name",
+            "roleInSentence":"",
             "specialRule":"",
             "word":[
               {
@@ -27,7 +27,7 @@ export const poems = [
             ]
           },
           {
-            "roleInSentence":"Title/Position",
+            "roleInSentence":"",
             "specialRule":"",
             "word":[
               {
