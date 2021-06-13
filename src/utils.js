@@ -1,5 +1,5 @@
-import {useContext} from 'react';
-import { PoemsContext } from './PoemsContext';
+// import {useContext} from 'react';
+// import { PoemsContext } from './PoemsContext';
 
 export const handleBlur = (refElement, setIsOpen, event) => {
 

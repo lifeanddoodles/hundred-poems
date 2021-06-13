@@ -1,6 +1,6 @@
 import React, {useContext, useRef} from 'react';
-import SvgIcon from '@material-ui/core/SvgIcon';
-import { CogIcon } from '@material-ui/icons';
+// import SvgIcon from '@material-ui/core/SvgIcon';
+// import { CogIcon } from '@material-ui/icons';
 import { faCog, faColumns, faEye, faEyeSlash, faLanguage } from '@fortawesome/free-solid-svg-icons';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';

@@ -33,7 +33,7 @@ const Select = ({label, id, localStorageKey, options}) => {
                 onKeyDown={event => handleUpdate(localStorageKey, event)}
                 disabled={!multipleAreasActive}
             >
-                {options.map((option,index) => <option key={index} value={option.value} disabled={!allAreasActive && option.requiredAreas==allAreasActive}>{option.text}</option>)}
+                {options.map((option,index) => <option key={index} value={option.value} disabled={!allAreasActive && option.requiredAreas===allAreasActive}>{option.text}</option>)}
             </select>
         </>
     )
