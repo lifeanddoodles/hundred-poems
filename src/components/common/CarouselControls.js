@@ -1,4 +1,5 @@
 import React, {useContext} from 'react';
+import Button from '@material-ui/core/Button';
 import { valueToBoolean } from "../../utils";
 import { PoemsContext } from '../../PoemsContext';
 
@@ -25,16 +26,22 @@ const CarouselControls = () => {
     return (
         valueToBoolean(carouselView) &&
             <section className="poem-controls">
-              <button
+              <Button
                 className="control control--prev"
-                onClick={prevPoem}>
+                onClick={prevPoem}
+                variant="contained"
+                color="primary"
+                >
                   Previous
-              </button>
-              <button
+              </Button>
+              <Button
                 className="control control--next"
-                onClick={nextPoem}>
+                onClick={nextPoem}
+                variant="contained"
+                color="primary"
+                >
                   Next
-              </button>
+              </Button>
             </section>
     )
 }

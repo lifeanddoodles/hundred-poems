@@ -1,6 +1,11 @@
 import React, {useContext, useRef} from 'react';
+import SvgIcon from '@material-ui/core/SvgIcon';
+import { CogIcon } from '@material-ui/icons';
 import { faCog, faColumns, faEye, faEyeSlash, faLanguage } from '@fortawesome/free-solid-svg-icons';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
 import { PoemsContext } from '../../PoemsContext';
+import { valueToBoolean } from "../../utils";
 import Menu from "./Menu";
 import Toggle from "./Toggle";
 import Select from './Select';
@@ -19,8 +24,16 @@ const Header = () => {
     carouselView,
   } = useContext(PoemsContext);
 
+  const allAreasActive = valueToBoolean(showRomajiColumn) && valueToBoolean(showEnglishColumn);
+    
+  const twoAreasActive = (valueToBoolean(showRomajiColumn) || valueToBoolean(showEnglishColumn)) && !allAreasActive;
+  
+  const multipleAreasActive = twoAreasActive || allAreasActive;
+
     return (
-      <header className="site-header">
+      <AppBar color="secondary">
+        {/* <header className="site-header"> */}
+        <Toolbar>
         <nav className={`settings-controls`}>
           <Menu
               buttonText="Settings"
@@ -81,17 +94,19 @@ const Header = () => {
                 id="selected_layout"
                 localStorageKey='selectedLayout'
                 options={[
-                {value: "columns", text: 'Columns'},
-                {value: "main--left", text: 'Main left'},
-                {value: "main--right", text: 'Main right'},
-                {value: "main--top", text: 'Main top'},
-                {value: "main--bottom", text: 'Main bottom'}
+                {value: "columns", text: 'Columns', requiredAreas: null},
+                {value: "main--left", text: 'Japanese left', requiredAreas: multipleAreasActive},
+                {value: "main--right", text: 'Japanese right', requiredAreas: multipleAreasActive},
+                {value: "main--top", text: 'Japanese top', requiredAreas: allAreasActive},
+                {value: "main--bottom", text: 'Japanese bottom', requiredAreas: allAreasActive}
                 ]}
               />
             </Submenu>
           </Menu>
         </nav>
-      </header>
+        </Toolbar>
+      {/* </header> */}
+      </AppBar>
     )
 }
 

@@ -1,3 +1,6 @@
+import {useContext} from 'react';
+import { PoemsContext } from './PoemsContext';
+
 export const handleBlur = (refElement, setIsOpen, event) => {
 
   if (event.relatedTarget
@@ -28,3 +31,14 @@ export const valueToBoolean = (value) => {
   }
   return false
 }
+
+// const {
+//   showRomajiColumn,
+//   showEnglishColumn,
+// } = useContext(PoemsContext);
+
+// export const allAreasActive = valueToBoolean(showRomajiColumn) && valueToBoolean(showEnglishColumn);
+
+// export const twoAreasActive = (valueToBoolean(showRomajiColumn) || valueToBoolean(showEnglishColumn)) && !allAreasActive;
+
+// export const multipleAreasActive = twoAreasActive || allAreasActive;

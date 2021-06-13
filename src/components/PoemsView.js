@@ -29,7 +29,11 @@ const PoemsView = () => {
                         'poems--two-cards-english' :
                         'poems--two-cards-romaji'}` // say which secondary area is active
                 : '' // END: at least two areas active = false
-                } ${selectedLayout}`}
+                } ${allAreasActive ? 
+                        selectedLayout : 
+                            twoAreasActive && selectedLayout!=='main--top' && selectedLayout!=='main--bottom' ? 
+                                selectedLayout : 
+                                    'columns'}`}
         >
             {
                 poems.map(poem => <PoemContainer

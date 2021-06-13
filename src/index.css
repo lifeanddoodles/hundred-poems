@@ -75,6 +75,10 @@ button:active {
   position: relative;
 }
 
+.MuiAppBar-colorSecondary .settings-controls__options {
+  color: rgba(0, 0, 0, 0.87);
+}
+
 .settings-controls__container--mobile > .settings-controls__options {
   display: none;
 }
@@ -125,6 +129,12 @@ button:active {
   justify-content: space-between;
 }
 
+.control {
+  pointer-events: all;
+  width: 50%;
+  margin-block-end: 0;
+}
+
 .control__label-text {
   margin-right: 1em;
 }
@@ -139,10 +149,43 @@ button:active {
   display: flex;
 }
 
-.control {
-  pointer-events: all;
-  width: 50%;
-  margin-block-end: 0;
+@media screen and (min-width: 80em) {
+  .settings-controls__container {
+    position: initial;
+    height: auto;
+  }
+
+  .settings-controls__container--mobile > .settings-controls__toggle {
+    display: none;
+  }
+
+  .settings-controls__container--mobile > .settings-controls__options {
+    display: flex;
+  }
+
+  .settings-controls__container--submenu {
+    position: relative;
+  }
+  .settings-controls__container--submenu .settings-controls__options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: max-content;
+  }
+
+  .settings-controls__container--submenu .settings-controls__toggle {
+    display: block;
+  }
+
+  @supports (display: flex) {
+    .site-header {
+      display: flex;
+    }
+
+    .settings-controls__container--submenu:not(:first-child) {
+      margin-inline-start: 1em;
+    }
+  }
 }
 
 .poems {
@@ -156,6 +199,74 @@ button:active {
   padding: 0.25em;
   margin-block-end: 2em;
   overflow: hidden;
+}
+
+.poem__paper {
+  background: #fbf6e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  max-width: 130ch;
+  padding: 0 0 3em 0;
+}
+
+.poem__number {
+  scroll-margin-top: 72px;
+}
+
+.poem__columns {
+  width: 100%;
+  max-width: max-content;
+}
+
+.poem__card {
+  padding: 2em;
+}
+
+.poem__author {
+  width: 100%;
+  font-size: 2.5em;
+  margin-block-start: 0;
+  justify-content: center;
+}
+
+.poem__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.poem__card--ja .line {
+  display: flex;
+  align-items: flex-end;
+}
+
+.poem__card--ja .word__container {
+  display: flex;
+  align-items: flex-end;
+}
+
+.poem__card--romaji .romaji:first-child:not(.particle),
+.poem__author--en {
+  text-transform: capitalize;
+}
+
+.poem__author--romaji,
+.poem__author--en {
+  line-height: 2;
+  margin-block-end: 1rem;
+}
+
+.poem__card--romaji .poem__text,
+.poem__card--en .poem__text {
+  font-size: 1.5em;
+  line-height: 1.95;
+}
+
+.poem__card--ja .word__container + .word__container {
+  margin-inline-start: 0.75em;
 }
 
 .scroll {
@@ -215,19 +326,7 @@ button:active {
   position: absolute;
 }
 
-.poem__paper {
-  background: #fbf6e0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  width: 100%;
-  max-width: 130ch;
-  padding: 0 0 3em 0;
-}
-
-@media screen and (min-width: 45em) {
+@media screen and (min-width: 50em) {
   :root {
     --top-start: 0;
     --right-start: initial;
@@ -241,7 +340,7 @@ button:active {
   }
 
   .poem__paper {
-    padding: 0 0 0 3em;
+    padding: 0 3em;
   }
 
   .scroll--rolled {
@@ -257,9 +356,13 @@ button:active {
     flex-wrap: wrap;
     justify-content: center;
   }
+
+  .main--right .poem__card--ja {
+    order: 2;
+  }
 }
 
-@media screen and (min-width: 50em) {
+@media screen and (min-width: 60em) {
   @supports (display: grid) {
     .poems--three-cards:not(.columns) .poem__columns {
       display: grid;
@@ -277,6 +380,10 @@ button:active {
 
     .poem__card--romaji {
       grid-area: secondary--two;
+    }
+
+    .columns .poem__card {
+      min-width: 25%;
     }
 
     .main--left .poem__columns {
@@ -300,109 +407,11 @@ button:active {
         'main main';
     }
 
-    .main--left .poem__card--ja,
-    .main--right .poem__card--ja,
     .main--top .poem__card--ja,
     .main--bottom .poem__card--ja {
       justify-self: center;
     }
   }
-}
-
-@media screen and (min-width: 65em) {
-  .poem__paper {
-    padding: 0;
-  }
-}
-
-@media screen and (min-width: 80em) {
-  .settings-controls__container {
-    position: initial;
-    height: auto;
-  }
-
-  .settings-controls__container--mobile > .settings-controls__toggle {
-    display: none;
-  }
-
-  .settings-controls__container--mobile > .settings-controls__options {
-    display: flex;
-  }
-
-  .settings-controls__container--submenu {
-    position: relative;
-  }
-  .settings-controls__container--submenu .settings-controls__options {
-    display: none;
-    position: absolute;
-    top: 100%;
-    width: max-content;
-  }
-
-  .settings-controls__container--submenu .settings-controls__toggle {
-    display: block;
-  }
-
-  @supports (display: flex) {
-    .site-header {
-      display: flex;
-    }
-
-    .settings-controls__container--submenu:not(:first-child) {
-      margin-inline-start: 1em;
-    }
-  }
-}
-
-.poem__number {
-  scroll-margin-top: 72px;
-}
-
-.poem__card {
-  padding: 2em;
-}
-
-.poem__author {
-  width: 100%;
-  font-size: 2.5em;
-  margin-block-start: 0;
-  justify-content: center;
-}
-
-.poem__text {
-  display: flex;
-  flex-direction: column;
-}
-
-.poem__card--ja .line {
-  display: flex;
-  align-items: flex-end;
-}
-
-.poem__card--ja .word__container {
-  display: flex;
-  align-items: flex-end;
-}
-
-.poem__card--romaji .romaji:first-child:not(.particle),
-.poem__author--en {
-  text-transform: capitalize;
-}
-
-.poem__author--romaji,
-.poem__author--en {
-  line-height: 2;
-  margin-block-end: 1rem;
-}
-
-.poem__card--romaji .poem__text,
-.poem__card--en .poem__text {
-  font-size: 1.5em;
-  line-height: 1.95;
-}
-
-.poem__card--ja .word__container + .word__container {
-  margin-inline-start: 0.75em;
 }
 
 .character__container {
@@ -511,6 +520,7 @@ button:active {
   transition: inherit;
 }
 
+/* Animate scroll */
 @media screen and (prefers-reduced-motion: no-preference) {
   @keyframes open-scroll-hor {
     0% {

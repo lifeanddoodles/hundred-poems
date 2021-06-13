@@ -1,5 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Button from '@material-ui/core/Button';
 
 const MenuToggle = ({
   buttonText,
@@ -30,7 +31,7 @@ const MenuToggle = ({
   const blurProp = !mobileNav ? {'onBlur': handleBlur} : null
 
   return (
-    <button
+    <Button
       aria-haspopup="true"
       aria-expanded={isOpen}
       className={`settings-controls__toggle`}
@@ -38,9 +39,11 @@ const MenuToggle = ({
       onKeyDown={handleKeyDown}
       {...blurProp}
       onTouchEnd={toggle}
+      variant="contained"
+      color="primary"
     >
       {icon && <><FontAwesomeIcon icon={icon} />{' '}</>}{buttonText}
-    </button>
+    </Button>
   )
 }
 

@@ -9,8 +9,12 @@ const Select = ({label, id, localStorageKey, options}) => {
         selectedLayout,
         handleUpdate
     } = useContext(PoemsContext);
-
+      
     const allAreasActive = valueToBoolean(showRomajiColumn) && valueToBoolean(showEnglishColumn);
+    
+    const twoAreasActive = (valueToBoolean(showRomajiColumn) || valueToBoolean(showEnglishColumn)) && !allAreasActive;
+    
+    const multipleAreasActive = twoAreasActive || allAreasActive;
 
     return (
         <>
@@ -27,9 +31,9 @@ const Select = ({label, id, localStorageKey, options}) => {
                 value={selectedLayout}
                 onChange={event => handleUpdate(localStorageKey, event)}
                 onKeyDown={event => handleUpdate(localStorageKey, event)}
-                disabled={!allAreasActive}
+                disabled={!multipleAreasActive}
             >
-                {options.map((option,index) => <option key={index} value={option.value}>{option.text}</option>)}
+                {options.map((option,index) => <option key={index} value={option.value} disabled={!allAreasActive && option.requiredAreas==allAreasActive}>{option.text}</option>)}
             </select>
         </>
     )
