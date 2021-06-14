@@ -108,7 +108,7 @@ button:active {
   flex-direction: column;
   background-color: #fbf6e0;
   padding: 1em;
-  margin-top: -1em;
+  z-index: 1;
 }
 
 .settings-controls__container--submenu .settings-controls__toggle {
@@ -133,6 +133,9 @@ button:active {
   pointer-events: all;
   width: 50%;
   margin-block-end: 0;
+}
+.control.MuiButton-root {
+  border-radius: 0;
 }
 
 .control__label-text {
@@ -279,7 +282,9 @@ button:active {
 }
 
 .scroll--unrolled {
+  background-blend-mode: multiply;
   background-image: url('images/gold_scale.png');
+  background-color: #4153af;
   padding: 1em;
   position: relative;
   display: flex;
@@ -303,9 +308,9 @@ button:active {
   background: rgb(200, 172, 99);
   background: linear-gradient(
     var(--degrees),
-    rgba(200, 172, 99, 1) 0%,
+    rgba(184, 144, 75, 1) 0%,
     rgba(254, 240, 208, 1) 50%,
-    rgba(222, 189, 110, 1) 100%
+    rgba(210, 165, 87, 1) 100%
   );
 }
 
